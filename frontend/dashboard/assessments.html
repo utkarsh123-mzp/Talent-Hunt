@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assessments | Talent Hunt</title>
+
+    <link rel="stylesheet" href="../styles/assessments.css">
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <i class="ph ph-sparkle"></i>
+            </div>
+
+            <div>
+                <h2>Talent Hunt</h2>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="student-dashboard.html" class="nav-link">
+                <i class="ph ph-squares-four"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="student-profile.html" class="nav-link">
+                <i class="ph ph-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="assessments.html" class="nav-link active">
+                <i class="ph ph-clipboard-text"></i>
+                <span>Assessments</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-chart-line-up"></i>
+                <span>Talent Score</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-brain"></i>
+                <span>Skill Analysis</span>
+            </a>
+
+
+            <p class="nav-title">OPPORTUNITIES</p>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-trophy"></i>
+                <span>Competitions</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-briefcase"></i>
+                <span>Opportunities</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-medal"></i>
+                <span>Achievements</span>
+            </a>
+
+
+            <p class="nav-title">ACCOUNT</p>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button class="logout-btn" id="logoutBtn">
+
+                <i class="ph ph-sign-out"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <a href="student-dashboard.html" class="back-btn">
+                <i class="ph ph-arrow-left"></i>
+            </a>
+
+
+            <div class="topbar-title">
+
+                <h1>Assessments</h1>
+
+                <p>
+                    Discover your strengths and measure your skills.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-profile">
+
+                <div class="user-avatar">
+                    U
+                </div>
+
+                <div>
+
+                    <strong id="topName">
+                        Utkarsh
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= PAGE CONTENT ================= -->
+
+        <section class="assessment-container">
+
+
+            <!-- ================= INTRO ================= -->
+
+            <div class="assessment-intro">
+
+                <div class="intro-content">
+
+                    <span class="intro-label">
+                        <i class="ph ph-sparkle"></i>
+                        Discover Your Potential
+                    </span>
+
+                    <h2>
+                        Test your skills.
+                        <span>Unlock your talent.</span>
+                    </h2>
+
+                    <p>
+                        Take personalized assessments designed to
+                        understand your strengths, identify skill gaps,
+                        and help you discover the right opportunities.
+                    </p>
+
+                </div>
+
+
+                <div class="intro-icon">
+
+                    <i class="ph ph-brain"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= PROGRESS ================= -->
+
+            <div class="assessment-progress-card">
+
+                <div class="progress-info">
+
+                    <div class="progress-icon">
+                        <i class="ph ph-chart-line-up"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Your Assessment Progress
+                        </h3>
+
+                        <p>
+                            Complete assessments to improve
+                            your Talent Score.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-stat">
+
+                    <strong>
+                        2 <span>/ 8</span>
+                    </strong>
+
+                    <small>
+                        Completed
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= SECTION HEADER ================= -->
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h3>
+                        Available Assessments
+                    </h3>
+
+                    <p>
+                        Choose an assessment based on your interests.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= ASSESSMENT GRID ================= -->
+
+            <div class="assessment-grid">
+
+
+                <!-- TECHNICAL -->
+
+                <div class="assessment-card">
+
+                    <div class="assessment-card-top">
+
+                        <div class="assessment-icon technical">
+                            <i class="ph ph-code"></i>
+                        </div>
+
+                        <span class="difficulty medium">
+                            Intermediate
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Technical Skills
+                    </h3>
+
+                    <p>
+                        Evaluate your programming, web development
+                        and computer science fundamentals.
+                    </p>
+
+
+                    <div class="assessment-meta">
+
+                        <span>
+                            <i class="ph ph-question"></i>
+                            20 Questions
+                        </span>
+
+                        <span>
+                            <i class="ph ph-clock"></i>
+                            20 Minutes
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="start-btn"
+                        data-assessment="Technical Skills">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- APTITUDE -->
+
+                <div class="assessment-card">
+
+                    <div class="assessment-card-top">
+
+                        <div class="assessment-icon aptitude">
+                            <i class="ph ph-lightbulb"></i>
+                        </div>
+
+                        <span class="difficulty easy">
+                            Beginner
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Aptitude & Reasoning
+                    </h3>
+
+                    <p>
+                        Test your logical reasoning, quantitative
+                        ability and problem-solving skills.
+                    </p>
+
+
+                    <div class="assessment-meta">
+
+                        <span>
+                            <i class="ph ph-question"></i>
+                            15 Questions
+                        </span>
+
+                        <span>
+                            <i class="ph ph-clock"></i>
+                            15 Minutes
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="start-btn"
+                        data-assessment="Aptitude & Reasoning">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- CODING -->
+
+                <div class="assessment-card">
+
+                    <div class="assessment-card-top">
+
+                        <div class="assessment-icon coding">
+                            <i class="ph ph-terminal-window"></i>
+                        </div>
+
+                        <span class="difficulty hard">
+                            Advanced
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Coding Challenge
+                    </h3>
+
+                    <p>
+                        Solve programming problems and demonstrate
+                        your coding and algorithmic thinking skills.
+                    </p>
+
+
+                    <div class="assessment-meta">
+
+                        <span>
+                            <i class="ph ph-code"></i>
+                            5 Problems
+                        </span>
+
+                        <span>
+                            <i class="ph ph-clock"></i>
+                            30 Minutes
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="start-btn"
+                        data-assessment="Coding Challenge">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- COMMUNICATION -->
+
+                <div class="assessment-card">
+
+                    <div class="assessment-card-top">
+
+                        <div class="assessment-icon communication">
+                            <i class="ph ph-chats"></i>
+                        </div>
+
+                        <span class="difficulty easy">
+                            Beginner
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Communication Skills
+                    </h3>
+
+                    <p>
+                        Evaluate your English communication,
+                        vocabulary and comprehension abilities.
+                    </p>
+
+
+                    <div class="assessment-meta">
+
+                        <span>
+                            <i class="ph ph-question"></i>
+                            15 Questions
+                        </span>
+
+                        <span>
+                            <i class="ph ph-clock"></i>
+                            15 Minutes
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="start-btn"
+                        data-assessment="Communication Skills">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- CREATIVITY -->
+
+                <div class="assessment-card">
+
+                    <div class="assessment-card-top">
+
+                        <div class="assessment-icon creativity">
+                            <i class="ph ph-paint-brush"></i>
+                        </div>
+
+                        <span class="difficulty medium">
+                            Intermediate
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Creativity & Innovation
+                    </h3>
+
+                    <p>
+                        Discover your creative thinking, innovation
+                        and idea-generation abilities.
+                    </p>
+
+
+                    <div class="assessment-meta">
+
+                        <span>
+                            <i class="ph ph-question"></i>
+                            12 Questions
+                        </span>
+
+                        <span>
+                            <i class="ph ph-clock"></i>
+                            15 Minutes
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="start-btn"
+                        data-assessment="Creativity & Innovation">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- DATA ANALYTICS -->
+
+                <div class="assessment-card">
+
+                    <div class="assessment-card-top">
+
+                        <div class="assessment-icon analytics">
+                            <i class="ph ph-chart-bar"></i>
+                        </div>
+
+                        <span class="difficulty medium">
+                            Intermediate
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Data Analytics
+                    </h3>
+
+                    <p>
+                        Test your knowledge of data analysis,
+                        SQL, Excel and analytical thinking.
+                    </p>
+
+
+                    <div class="assessment-meta">
+
+                        <span>
+                            <i class="ph ph-question"></i>
+                            20 Questions
+                        </span>
+
+                        <span>
+                            <i class="ph ph-clock"></i>
+                            20 Minutes
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="start-btn"
+                        data-assessment="Data Analytics">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= HOW IT WORKS ================= -->
+
+            <div class="how-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h3>
+                            How Assessments Work
+                        </h3>
+
+                        <p>
+                            Simple steps to discover your talent.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <i class="ph ph-list-check"></i>
+
+                        <h4>
+                            Choose
+                        </h4>
+
+                        <p>
+                            Select an assessment based on
+                            your interests and goals.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <i class="ph ph-pencil-simple"></i>
+
+                        <h4>
+                            Take Test
+                        </h4>
+
+                        <p>
+                            Answer questions within the
+                            given time limit.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <i class="ph ph-chart-line-up"></i>
+
+                        <h4>
+                            Get Results
+                        </h4>
+
+                        <p>
+                            Receive your score and detailed
+                            performance analysis.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            04
+                        </div>
+
+                        <i class="ph ph-target"></i>
+
+                        <h4>
+                            Improve
+                        </h4>
+
+                        <p>
+                            Get personalized recommendations
+                            to improve your skills.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="../scripts/assessments.js"></script>
+
+</body>
+</html>

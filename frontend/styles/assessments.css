@@ -1,0 +1,966 @@
+/* =========================================
+   TALENT HUNT - ASSESSMENTS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6c4df6;
+    --primary-dark: #5740d8;
+    --primary-light: #f0edff;
+
+    --text-dark: #20202a;
+    --text: #555563;
+    --text-light: #858592;
+
+    --white: #ffffff;
+    --bg: #f7f8fc;
+    --border: #e7e7ef;
+
+    --success: #19a974;
+    --warning: #f4a62a;
+    --danger: #e45757;
+
+    --sidebar-width: 260px;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    background: var(--white);
+    border-right: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+}
+
+.sidebar-logo {
+    height: 85px;
+
+    padding: 0 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #8b6cff
+    );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    box-shadow: 0 8px 20px rgba(108, 77, 246, 0.25);
+}
+
+.sidebar-logo h2 {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.sidebar-logo span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+}
+
+.sidebar-nav {
+    flex: 1;
+
+    padding: 25px 15px;
+
+    overflow-y: auto;
+}
+
+.nav-title {
+    padding: 0 12px;
+
+    margin: 15px 0 9px;
+
+    color: #a0a0ad;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.nav-title:first-child {
+    margin-top: 0;
+}
+
+.nav-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 12px 13px;
+
+    margin-bottom: 4px;
+
+    border-radius: 10px;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.25s ease;
+}
+
+.nav-link i {
+    width: 20px;
+
+    font-size: 19px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.nav-link.active {
+    font-weight: 600;
+}
+
+.nav-link.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: -15px;
+
+    width: 4px;
+    height: 24px;
+
+    background: var(--primary);
+
+    border-radius: 0 5px 5px 0;
+}
+
+.sidebar-bottom {
+    padding: 15px;
+
+    border-top: 1px solid var(--border);
+}
+
+.logout-btn {
+    width: 100%;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 12px 13px;
+
+    border-radius: 10px;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.logout-btn:hover {
+    background: #fff0f0;
+    color: var(--danger);
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    margin-left: var(--sidebar-width);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.topbar {
+    height: 85px;
+
+    padding: 0 35px;
+
+    background: white;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+}
+
+.back-btn {
+    width: 40px;
+    height: 40px;
+
+    margin-right: 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    color: var(--text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    transition: 0.2s ease;
+}
+
+.back-btn:hover {
+    color: var(--primary);
+
+    background: var(--primary-light);
+
+    border-color: #dcd5ff;
+}
+
+.topbar-title {
+    flex: 1;
+}
+
+.topbar-title h1 {
+    font-size: 21px;
+}
+
+.topbar-title p {
+    margin-top: 4px;
+
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+.topbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.topbar-profile strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.topbar-profile span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+}
+
+.user-avatar {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #967cff
+    );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   ASSESSMENT CONTAINER
+========================================= */
+
+.assessment-container {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 30px 35px 50px;
+}
+
+
+/* =========================================
+   INTRO SECTION
+========================================= */
+
+.assessment-intro {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 190px;
+
+    padding: 32px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid #e3ddff;
+
+    border-radius: 17px;
+
+    background: linear-gradient(
+        135deg,
+        #f0edff,
+        #fbfaff
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.intro-content {
+    max-width: 750px;
+}
+
+.intro-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 10px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.intro-content h2 {
+    font-size: 28px;
+
+    line-height: 1.3;
+}
+
+.intro-content h2 span {
+    color: var(--primary);
+}
+
+.intro-content p {
+    max-width: 680px;
+
+    margin-top: 10px;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.intro-icon {
+    width: 105px;
+    height: 105px;
+
+    margin-right: 30px;
+
+    border-radius: 50%;
+
+    background: rgba(108, 77, 246, 0.1);
+
+    color: var(--primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 48px;
+}
+
+
+/* =========================================
+   PROGRESS CARD
+========================================= */
+
+.assessment-progress-card {
+    padding: 19px 22px;
+
+    margin-bottom: 30px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.progress-info {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.progress-icon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 11px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.progress-info h3 {
+    font-size: 14px;
+}
+
+.progress-info p {
+    margin-top: 3px;
+
+    color: var(--text-light);
+
+    font-size: 10px;
+}
+
+.progress-stat {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+}
+
+.progress-stat strong {
+    font-size: 24px;
+
+    color: var(--primary);
+}
+
+.progress-stat strong span {
+    font-size: 13px;
+
+    color: var(--text-light);
+}
+
+.progress-stat small {
+    margin-top: 2px;
+
+    color: var(--text-light);
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+    margin-bottom: 15px;
+}
+
+.section-heading h3 {
+    font-size: 17px;
+}
+
+.section-heading p {
+    margin-top: 4px;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   ASSESSMENT GRID
+========================================= */
+
+.assessment-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   ASSESSMENT CARD
+========================================= */
+
+.assessment-card {
+    padding: 20px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition: 0.25s ease;
+}
+
+.assessment-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #dcd5ff;
+
+    box-shadow: 0 12px 30px rgba(40, 40, 70, 0.07);
+}
+
+.assessment-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+}
+
+.assessment-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+.assessment-icon.technical {
+    background: #eeeaff;
+    color: #6c4df6;
+}
+
+.assessment-icon.aptitude {
+    background: #fff5df;
+    color: #e99a19;
+}
+
+.assessment-icon.coding {
+    background: #e8f4ff;
+    color: #3487d9;
+}
+
+.assessment-icon.communication {
+    background: #eafaf3;
+    color: #19a974;
+}
+
+.assessment-icon.creativity {
+    background: #fff0f5;
+    color: #d45d87;
+}
+
+.assessment-icon.analytics {
+    background: #eef0ff;
+    color: #5968d9;
+}
+
+
+/* Difficulty */
+
+.difficulty {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.difficulty.easy {
+    background: #eafaf3;
+    color: var(--success);
+}
+
+.difficulty.medium {
+    background: #fff5df;
+    color: #d58a10;
+}
+
+.difficulty.hard {
+    background: #fff0f0;
+    color: var(--danger);
+}
+
+
+/* Card content */
+
+.assessment-card h3 {
+    font-size: 15px;
+}
+
+.assessment-card > p {
+    min-height: 57px;
+
+    margin-top: 8px;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* Meta */
+
+.assessment-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 13px 0;
+
+    margin-top: 10px;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.assessment-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: var(--text-light);
+
+    font-size: 9px;
+}
+
+.assessment-meta i {
+    color: var(--primary);
+
+    font-size: 13px;
+}
+
+
+/* Start Button */
+
+.start-btn {
+    width: 100%;
+
+    margin-top: 14px;
+
+    padding: 10px 13px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    transition: 0.25s ease;
+}
+
+.start-btn:hover {
+    background: var(--primary);
+
+    color: white;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.how-section {
+    margin-top: 5px;
+}
+
+.steps-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.step {
+    position: relative;
+
+    padding: 20px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+.step-number {
+    position: absolute;
+
+    top: 12px;
+    right: 14px;
+
+    color: #d7d7e1;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.step > i {
+    width: 42px;
+    height: 42px;
+
+    margin: 5px auto 12px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+.step h4 {
+    font-size: 13px;
+}
+
+.step p {
+    margin-top: 6px;
+
+    color: var(--text-light);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    :root {
+        --sidebar-width: 230px;
+    }
+
+    .assessment-container {
+        padding: 25px;
+    }
+
+    .topbar {
+        padding: 0 25px;
+    }
+
+    .assessment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .topbar {
+        height: 72px;
+
+        padding: 0 17px;
+    }
+
+    .topbar-title h1 {
+        font-size: 17px;
+    }
+
+    .topbar-title p {
+        display: none;
+    }
+
+    .topbar-profile > div:last-child {
+        display: none;
+    }
+
+    .assessment-container {
+        padding: 18px 15px 35px;
+    }
+
+    .assessment-intro {
+        padding: 23px;
+
+        min-height: auto;
+    }
+
+    .intro-content h2 {
+        font-size: 21px;
+    }
+
+    .intro-content p {
+        font-size: 11px;
+    }
+
+    .intro-icon {
+        display: none;
+    }
+
+    .assessment-progress-card {
+        padding: 17px;
+    }
+
+    .assessment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+    .back-btn {
+        width: 36px;
+        height: 36px;
+
+        margin-right: 10px;
+    }
+
+    .user-avatar {
+        width: 37px;
+        height: 37px;
+    }
+
+    .assessment-progress-card {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .progress-stat strong {
+        font-size: 20px;
+    }
+
+    .assessment-meta {
+        gap: 10px;
+    }
+
+    .assessment-card {
+        padding: 17px;
+    }
+}

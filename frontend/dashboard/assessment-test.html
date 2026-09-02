@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Skills Assessment | Talent Hunt</title>
+
+    <link rel="stylesheet" href="../styles/assessment-test.css">
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="test-header">
+
+        <a href="assessments.html" class="back-btn">
+            <i class="ph ph-arrow-left"></i>
+            <span>Back to Assessments</span>
+        </a>
+
+        <div class="test-brand">
+            <div class="brand-icon">
+                <i class="ph ph-sparkle"></i>
+            </div>
+
+            <strong>Talent Hunt</strong>
+        </div>
+
+        <div class="test-status">
+
+            <div class="question-status">
+                <i class="ph ph-list-check"></i>
+                <span>
+                    Question <strong id="currentQuestion">1</strong>
+                    / <strong id="totalQuestions">10</strong>
+                </span>
+            </div>
+
+            <div class="timer" id="timer">
+                <i class="ph ph-clock"></i>
+                <span>20:00</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="test-container">
+
+
+        <!-- TEST INTRO -->
+
+        <section class="test-intro">
+
+            <div>
+
+                <span class="test-label">
+                    <i class="ph ph-code"></i>
+                    Technical Skills
+                </span>
+
+                <h1>
+                    Technical Skills Assessment
+                </h1>
+
+                <p>
+                    Test your programming knowledge and
+                    computer science fundamentals.
+                </p>
+
+            </div>
+
+            <div class="difficulty-badge">
+                Intermediate
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+
+        <div class="test-progress">
+
+            <div class="progress-info">
+
+                <span>
+                    Assessment Progress
+                </span>
+
+                <strong id="progressText">
+                    10%
+                </strong>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <span id="progressBar"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= QUESTION CARD ================= -->
+
+        <section class="question-card">
+
+            <div class="question-number">
+                Question <span id="questionNumber">01</span>
+            </div>
+
+            <h2 id="questionText">
+                Which of the following is a
+                programming language?
+            </h2>
+
+
+            <!-- OPTIONS -->
+
+            <div class="options" id="options">
+
+
+                <button class="option">
+
+                    <span class="option-letter">
+                        A
+                    </span>
+
+                    <span class="option-text">
+                        HTML
+                    </span>
+
+                </button>
+
+
+                <button class="option">
+
+                    <span class="option-letter">
+                        B
+                    </span>
+
+                    <span class="option-text">
+                        Python
+                    </span>
+
+                </button>
+
+
+                <button class="option">
+
+                    <span class="option-letter">
+                        C
+                    </span>
+
+                    <span class="option-text">
+                        CSS
+                    </span>
+
+                </button>
+
+
+                <button class="option">
+
+                    <span class="option-letter">
+                        D
+                    </span>
+
+                    <span class="option-text">
+                        JSON
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- QUESTION FOOTER -->
+
+            <div class="question-footer">
+
+                <button
+                    class="previous-btn"
+                    id="previousBtn">
+
+                    <i class="ph ph-arrow-left"></i>
+
+                    Previous
+
+                </button>
+
+
+                <button
+                    class="next-btn"
+                    id="nextBtn">
+
+                    Next
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </button>
+
+
+                <button
+                    class="submit-btn"
+                    id="submitBtn">
+
+                    Submit Test
+
+                    <i class="ph ph-check"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INSTRUCTIONS ================= -->
+
+        <section class="instructions-card">
+
+            <div class="instruction-title">
+
+                <i class="ph ph-info"></i>
+
+                <h3>
+                    Assessment Instructions
+                </h3>
+
+            </div>
+
+            <div class="instruction-grid">
+
+                <div>
+                    <i class="ph ph-check-circle"></i>
+                    <span>
+                        Select one answer for each question.
+                    </span>
+                </div>
+
+                <div>
+                    <i class="ph ph-clock"></i>
+                    <span>
+                        Complete the assessment within the time limit.
+                    </span>
+                </div>
+
+                <div>
+                    <i class="ph ph-arrow-left"></i>
+                    <span>
+                        You can go back and change your answers.
+                    </span>
+                </div>
+
+                <div>
+                    <i class="ph ph-warning"></i>
+                    <span>
+                        Test will automatically submit when time ends.
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESULT SCREEN ================= -->
+
+        <section
+            class="result-screen"
+            id="resultScreen">
+
+            <div class="result-icon">
+                <i class="ph ph-trophy"></i>
+            </div>
+
+            <span class="result-label">
+                Assessment Completed
+            </span>
+
+            <h2>
+                Great job!
+            </h2>
+
+            <p>
+                Here is your assessment result.
+            </p>
+
+
+            <div class="result-score">
+
+                <strong id="finalScore">
+                    0
+                </strong>
+
+                <span>
+                    / 10
+                </span>
+
+            </div>
+
+
+            <div class="result-percentage">
+                0%
+            </div>
+
+
+            <div class="result-details">
+
+                <div>
+                    <i class="ph ph-check-circle"></i>
+                    <strong id="correctAnswers">
+                        0
+                    </strong>
+                    <span>Correct</span>
+                </div>
+
+                <div>
+                    <i class="ph ph-x-circle"></i>
+                    <strong id="wrongAnswers">
+                        0
+                    </strong>
+                    <span>Wrong</span>
+                </div>
+
+                <div>
+                    <i class="ph ph-minus-circle"></i>
+                    <strong id="unanswered">
+                        0
+                    </strong>
+                    <span>Unanswered</span>
+                </div>
+
+            </div>
+
+
+            <div class="result-actions">
+
+                <button
+                    class="retry-btn"
+                    id="retryBtn">
+
+                    <i class="ph ph-arrow-clockwise"></i>
+                    Retry Assessment
+
+                </button>
+
+                <a
+                    href="assessments.html"
+                    class="back-assessment-btn">
+
+                    Back to Assessments
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../scripts/assessment-test.js"></script>
+
+</body>
+
+</html>

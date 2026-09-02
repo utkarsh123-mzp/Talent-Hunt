@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Talent Hunt</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="login-header">
+
+        <!-- Talent Hunt Logo -->
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-icon">
+                ★
+            </div>
+
+            <div class="brand-name">
+                Talent<span>Hunt</span>
+            </div>
+
+        </a>
+
+
+        <!-- Back to Home -->
+
+        <a href="index.html" class="home-link">
+            ← Back to Home
+        </a>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN LOGIN AREA
+    ========================================== -->
+
+    <main class="login-main">
+
+        <div class="login-container">
+
+
+            <!-- =====================================
+                 LEFT SIDE - INFORMATION
+            ====================================== -->
+
+            <section class="login-info">
+
+                <div class="info-badge">
+                    ✨ Welcome Back
+                </div>
+
+
+                <h1>
+                    Your Talent.
+                    <br>
+                    Your <span>Journey.</span>
+                </h1>
+
+
+                <p>
+                    Continue your journey with Talent Hunt.
+                    Discover opportunities, build your skills
+                    and showcase what makes you unique.
+                </p>
+
+
+                <!-- Benefits -->
+
+                <div class="login-benefits">
+
+                    <!-- Benefit 1 -->
+
+                    <div class="benefit-item">
+
+                        <div class="benefit-icon purple">
+                            🎯
+                        </div>
+
+                        <div>
+                            <h3>Discover Opportunities</h3>
+
+                            <p>
+                                Find competitions, internships
+                                and career opportunities.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Benefit 2 -->
+
+                    <div class="benefit-item">
+
+                        <div class="benefit-icon blue">
+                            📈
+                        </div>
+
+                        <div>
+                            <h3>Track Your Growth</h3>
+
+                            <p>
+                                Monitor your skills, assessments
+                                and achievements.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Benefit 3 -->
+
+                    <div class="benefit-item">
+
+                        <div class="benefit-icon orange">
+                            🏆
+                        </div>
+
+                        <div>
+                            <h3>Showcase Your Talent</h3>
+
+                            <p>
+                                Build your profile and let your
+                                talent get discovered.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 RIGHT SIDE - LOGIN CARD
+            ====================================== -->
+
+            <section class="login-card">
+
+
+                <!-- Card Heading -->
+
+                <div class="login-card-heading">
+
+                    <h2>
+                        Welcome Back!
+                    </h2>
+
+                    <p>
+                        Login to your Talent Hunt account
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+
+                <form id="loginForm">
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                ✉
+                            </span>
+
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                name="email"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <div class="password-label">
+
+                            <label for="loginPassword">
+                                Password
+                            </label>
+
+                            <a href="#" id="forgotPassword">
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                🔒
+                            </span>
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Show password"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Remember Me -->
+
+                    <div class="login-options">
+
+                        <label class="remember-me">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- Login Button -->
+
+                    <button
+                        type="submit"
+                        class="login-submit"
+                    >
+
+                        <span>
+                            Login to Talent Hunt
+                        </span>
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- Divider -->
+
+                    <div class="divider">
+
+                        <span></span>
+
+                        <p>OR</p>
+
+                        <span></span>
+
+                    </div>
+
+
+
+                    <!-- Social Login -->
+
+                    <div class="social-login">
+
+                        <button
+                            type="button"
+                            class="social-btn"
+                        >
+                            <span>G</span>
+                            Continue with Google
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Register -->
+
+                    <div class="register-prompt">
+
+                        <p>
+                            Don't have an account?
+                            <a href="register.html">
+                                Create Account
+                            </a>
+                        </p>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="login-footer">
+
+        <p>
+            © 2026 Talent Hunt. All rights reserved.
+        </p>
+
+        <p>
+            Discover. Nurture. Succeed.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="scripts/login.js"></script>
+
+</body>
+
+</html>

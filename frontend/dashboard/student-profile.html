@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Talent Hunt</title>
+
+    <link rel="stylesheet" href="../styles/student-profile.css">
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <i class="ph ph-sparkle"></i>
+            </div>
+
+            <div>
+                <h2>Talent Hunt</h2>
+                <span>Student Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="student-dashboard.html" class="nav-link">
+                <i class="ph ph-squares-four"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="student-profile.html" class="nav-link active">
+                <i class="ph ph-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="assessments.html" class="nav-link">
+                <i class="ph ph-clipboard-text"></i>
+                <span>Assessments</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-chart-line-up"></i>
+                <span>Talent Score</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-brain"></i>
+                <span>Skill Analysis</span>
+            </a>
+
+            <p class="nav-title">OPPORTUNITIES</p>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-trophy"></i>
+                <span>Competitions</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-briefcase"></i>
+                <span>Opportunities</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-medal"></i>
+                <span>Achievements</span>
+            </a>
+
+            <p class="nav-title">ACCOUNT</p>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button class="logout-btn" id="logoutBtn">
+                <i class="ph ph-sign-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <a href="student-dashboard.html" class="back-btn">
+                <i class="ph ph-arrow-left"></i>
+            </a>
+
+            <div class="topbar-title">
+                <h1>My Profile</h1>
+                <p>Manage your personal information and talent profile.</p>
+            </div>
+
+            <div class="topbar-profile">
+                <div class="user-avatar">U</div>
+
+                <div>
+                    <strong id="topName">Utkarsh</strong>
+                    <span>Student</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- PROFILE CONTENT -->
+        <section class="profile-container">
+
+            <!-- PROFILE HEADER -->
+            <div class="profile-header">
+
+                <div class="profile-avatar">
+                    <span id="profileInitial">U</span>
+
+                    <button class="camera-btn" id="changePhotoBtn">
+                        <i class="ph ph-camera"></i>
+                    </button>
+                </div>
+
+                <div class="profile-heading">
+                    <h2 id="profileName">Utkarsh Upadhyay</h2>
+
+                    <p>
+                        <i class="ph ph-graduation-cap"></i>
+                        B.Tech Computer Science Student
+                    </p>
+
+                    <span class="profile-status">
+                        <i class="ph ph-check-circle"></i>
+                        Profile Active
+                    </span>
+                </div>
+
+                <button class="edit-btn" id="editProfileBtn">
+                    <i class="ph ph-pencil-simple"></i>
+                    Edit Profile
+                </button>
+
+            </div>
+
+
+            <!-- PERSONAL INFORMATION -->
+            <div class="profile-card">
+
+                <div class="card-heading">
+                    <div class="heading-icon">
+                        <i class="ph ph-user"></i>
+                    </div>
+
+                    <div>
+                        <h3>Personal Information</h3>
+                        <p>Your basic personal details</p>
+                    </div>
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            value="Utkarsh Upadhyay"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            value="utkarsh@example.com"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            value="+91 XXXXX XXXXX"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input
+                            type="date"
+                            id="dob"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>City</label>
+                        <input
+                            type="text"
+                            id="city"
+                            value="Varanasi"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input
+                            type="text"
+                            id="country"
+                            value="India"
+                            disabled
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EDUCATION -->
+            <div class="profile-card">
+
+                <div class="card-heading">
+                    <div class="heading-icon">
+                        <i class="ph ph-graduation-cap"></i>
+                    </div>
+
+                    <div>
+                        <h3>Education</h3>
+                        <p>Your academic information</p>
+                    </div>
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>College / Institution</label>
+                        <input
+                            type="text"
+                            id="institution"
+                            value="Kashi Institute Of Technology"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Degree</label>
+                        <input
+                            type="text"
+                            value="B.Tech"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Branch</label>
+                        <input
+                            type="text"
+                            value="Computer Science & Engineering"
+                            disabled
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Current Year</label>
+                        <select id="year" disabled>
+                            <option>1st Year</option>
+                            <option>2nd Year</option>
+                            <option>3rd Year</option>
+                            <option selected>Final Year</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>CGPA</label>
+                        <input
+                            type="text"
+                            id="cgpa"
+                            value="8.0"
+                            disabled
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SKILLS -->
+            <div class="profile-card">
+
+                <div class="card-heading">
+                    <div class="heading-icon">
+                        <i class="ph ph-code"></i>
+                    </div>
+
+                    <div>
+                        <h3>Skills & Interests</h3>
+                        <p>Tell recruiters what you are good at</p>
+                    </div>
+                </div>
+
+
+                <div class="skills-section">
+
+                    <label>Technical Skills</label>
+
+                    <div class="skill-tags">
+
+                        <span>Python <button>×</button></span>
+                        <span>HTML <button>×</button></span>
+                        <span>CSS <button>×</button></span>
+                        <span>JavaScript <button>×</button></span>
+                        <span>SQL <button>×</button></span>
+                        <span>Power BI <button>×</button></span>
+                        <span>Excel <button>×</button></span>
+
+                    </div>
+
+                    <div class="add-skill">
+                        <input
+                            type="text"
+                            id="skillInput"
+                            placeholder="Add a skill..."
+                        >
+
+                        <button id="addSkillBtn">
+                            <i class="ph ph-plus"></i>
+                            Add
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="skills-section">
+
+                    <label>Interests</label>
+
+                    <div class="skill-tags interest-tags">
+
+                        <span>Web Development</span>
+                        <span>Data Analytics</span>
+                        <span>Artificial Intelligence</span>
+                        <span>Problem Solving</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ABOUT -->
+            <div class="profile-card">
+
+                <div class="card-heading">
+                    <div class="heading-icon">
+                        <i class="ph ph-note-pencil"></i>
+                    </div>
+
+                    <div>
+                        <h3>About Me</h3>
+                        <p>Introduce yourself and your goals</p>
+                    </div>
+                </div>
+
+                <textarea
+                    id="aboutMe"
+                    disabled
+                    placeholder="Write something about yourself..."
+                >Aspiring Software Developer passionate about Python, Web Development, Data Analytics and problem-solving.</textarea>
+
+            </div>
+
+
+            <!-- SAVE BUTTONS -->
+            <div class="profile-actions">
+
+                <button class="cancel-btn" id="cancelBtn">
+                    Cancel
+                </button>
+
+                <button class="save-btn" id="saveBtn">
+                    <i class="ph ph-floppy-disk"></i>
+                    Save Changes
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../scripts/student-profile.js"></script>
+
+</body>
+</html>

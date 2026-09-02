@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Talent Hunt</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../styles/student-dashboard.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <i class="ph ph-sparkle"></i>
+            </div>
+
+            <div>
+                <h2>Talent Hunt</h2>
+                <span>Student Portal</span>
+            </div>
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="student-dashboard.html" class="nav-link active">
+                <i class="ph ph-squares-four"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="student-profile.html" class="nav-link">
+                <i class="ph ph-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="assessments.html" class="nav-link">
+                <i class="ph ph-clipboard-text"></i>
+                <span>Assessments</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-chart-line-up"></i>
+                <span>Talent Score</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-brain"></i>
+                <span>Skill Analysis</span>
+            </a>
+
+            <p class="nav-title">OPPORTUNITIES</p>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-trophy"></i>
+                <span>Competitions</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-briefcase"></i>
+                <span>Opportunities</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-medal"></i>
+                <span>Achievements</span>
+            </a>
+
+            <p class="nav-title">ACCOUNT</p>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Logout -->
+        <div class="sidebar-bottom">
+            <button class="logout-btn" id="logoutBtn">
+                <i class="ph ph-sign-out"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="ph ph-list"></i>
+            </button>
+
+            <div class="topbar-title">
+                <h1>Student Dashboard</h1>
+                <p>Track your talent, skills and opportunities.</p>
+            </div>
+
+            <div class="topbar-right">
+
+                <!-- Notification -->
+                <button class="icon-btn">
+                    <i class="ph ph-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <!-- Profile -->
+                <div class="user-profile">
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+                    <div class="user-info">
+                        <strong id="studentName">Utkarsh</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <i class="ph ph-caret-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Dashboard Body -->
+        <section class="dashboard-container">
+
+
+            <!-- ================= WELCOME ================= -->
+            <div class="welcome-section">
+
+                <div>
+                    <span class="welcome-label">
+                        Welcome back 👋
+                    </span>
+
+                    <h2>
+                        Keep growing, <span id="welcomeName">Utkarsh!</span>
+                    </h2>
+
+                    <p>
+                        Continue developing your skills and discover
+                        new opportunities through Talent Hunt.
+                    </p>
+                </div>
+
+                <div class="welcome-icon">
+                    <i class="ph ph-rocket-launch"></i>
+                </div>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+            <div class="stats-grid">
+
+
+                <!-- Talent Score -->
+                <div class="stat-card">
+
+                    <div class="stat-icon score-icon">
+                        <i class="ph ph-star"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Talent Score</span>
+
+                        <h3>
+                            87
+                            <small>/ 100</small>
+                        </h3>
+
+                        <p class="positive">
+                            <i class="ph ph-trend-up"></i>
+                            Excellent performance
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Assessments -->
+                <div class="stat-card">
+
+                    <div class="stat-icon assessment-icon">
+                        <i class="ph ph-clipboard-text"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Assessments</span>
+
+                        <h3>08</h3>
+
+                        <p>
+                            8 completed
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Skills -->
+                <div class="stat-card">
+
+                    <div class="stat-icon skill-icon">
+                        <i class="ph ph-brain"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Skills Mastered</span>
+
+                        <h3>12</h3>
+
+                        <p>
+                            Keep learning
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Achievements -->
+                <div class="stat-card">
+
+                    <div class="stat-icon achievement-icon">
+                        <i class="ph ph-medal"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Achievements</span>
+
+                        <h3>06</h3>
+
+                        <p>
+                            Badges earned
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CONTENT GRID ================= -->
+            <div class="content-grid">
+
+
+                <!-- ================= PROGRESS ================= -->
+                <div class="dashboard-card progress-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Your Progress</h3>
+                            <p>Overall talent development</p>
+                        </div>
+
+                        <button class="more-btn">
+                            <i class="ph ph-dots-three"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="progress-content">
+
+                        <div class="progress-circle">
+
+                            <div class="circle-inner">
+                                <strong>82%</strong>
+                                <span>Progress</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-details">
+
+                            <div class="progress-item">
+                                <div>
+                                    <span>Technical Skills</span>
+                                    <strong>90%</strong>
+                                </div>
+
+                                <div class="progress-bar">
+                                    <span style="width: 90%;"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="progress-item">
+                                <div>
+                                    <span>Aptitude</span>
+                                    <strong>84%</strong>
+                                </div>
+
+                                <div class="progress-bar">
+                                    <span style="width: 84%;"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="progress-item">
+                                <div>
+                                    <span>Communication</span>
+                                    <strong>76%</strong>
+                                </div>
+
+                                <div class="progress-bar">
+                                    <span style="width: 76%;"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="progress-item">
+                                <div>
+                                    <span>Creativity</span>
+                                    <strong>72%</strong>
+                                </div>
+
+                                <div class="progress-bar">
+                                    <span style="width: 72%;"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= UPCOMING ================= -->
+                <div class="dashboard-card upcoming-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Upcoming Competition</h3>
+                            <p>Don't miss your chance</p>
+                        </div>
+
+                        <i class="ph ph-trophy header-icon"></i>
+
+                    </div>
+
+
+                    <div class="competition-box">
+
+                        <div class="competition-icon">
+                            <i class="ph ph-code"></i>
+                        </div>
+
+                        <div class="competition-info">
+
+                            <h4>National Coding Challenge</h4>
+
+                            <p>
+                                <i class="ph ph-calendar"></i>
+                                15 September 2026
+                            </p>
+
+                            <p>
+                                <i class="ph ph-users"></i>
+                                2,500+ participants
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="primary-btn">
+                        View Competition
+                        <i class="ph ph-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= RECOMMENDATIONS ================= -->
+            <div class="section-heading">
+
+                <div>
+                    <h3>Recommended For You</h3>
+                    <p>Opportunities based on your skills and interests</p>
+                </div>
+
+                <a href="#">
+                    View All
+                    <i class="ph ph-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="recommendation-grid">
+
+
+                <!-- Recommendation 1 -->
+                <div class="recommendation-card">
+
+                    <div class="recommendation-top">
+
+                        <div class="recommendation-icon">
+                            <i class="ph ph-chart-bar"></i>
+                        </div>
+
+                        <span class="match-badge">
+                            94% Match
+                        </span>
+
+                    </div>
+
+                    <h4>Data Analytics</h4>
+
+                    <p>
+                        Improve your data analysis skills with
+                        practical projects and challenges.
+                    </p>
+
+                    <div class="recommendation-footer">
+
+                        <span>
+                            <i class="ph ph-clock"></i>
+                            Beginner
+                        </span>
+
+                        <button>
+                            Explore
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Recommendation 2 -->
+                <div class="recommendation-card">
+
+                    <div class="recommendation-top">
+
+                        <div class="recommendation-icon">
+                            <i class="ph ph-code"></i>
+                        </div>
+
+                        <span class="match-badge">
+                            89% Match
+                        </span>
+
+                    </div>
+
+                    <h4>Python Coding Contest</h4>
+
+                    <p>
+                        Test your Python programming skills and
+                        compete with talented students.
+                    </p>
+
+                    <div class="recommendation-footer">
+
+                        <span>
+                            <i class="ph ph-calendar"></i>
+                            20 Sep
+                        </span>
+
+                        <button>
+                            Join Now
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Recommendation 3 -->
+                <div class="recommendation-card">
+
+                    <div class="recommendation-top">
+
+                        <div class="recommendation-icon">
+                            <i class="ph ph-robot"></i>
+                        </div>
+
+                        <span class="match-badge">
+                            86% Match
+                        </span>
+
+                    </div>
+
+                    <h4>AI & Machine Learning</h4>
+
+                    <p>
+                        Start your journey into Artificial Intelligence
+                        and Machine Learning.
+                    </p>
+
+                    <div class="recommendation-footer">
+
+                        <span>
+                            <i class="ph ph-graduation-cap"></i>
+                            Learning
+                        </span>
+
+                        <button>
+                            Explore
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= RECENT ACTIVITY ================= -->
+            <div class="dashboard-card activity-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Recent Activity</h3>
+                        <p>Your latest Talent Hunt activities</p>
+                    </div>
+
+                    <a href="#">View All</a>
+
+                </div>
+
+
+                <div class="activity-list">
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            <i class="ph ph-check-circle"></i>
+                        </div>
+
+                        <div>
+                            <h4>Python Assessment Completed</h4>
+                            <p>Score: 92%</p>
+                        </div>
+
+                        <span>Today</span>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            <i class="ph ph-medal"></i>
+                        </div>
+
+                        <div>
+                            <h4>New Achievement Unlocked</h4>
+                            <p>Python Beginner Badge</p>
+                        </div>
+
+                        <span>2 days ago</span>
+
+                    </div>
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            <i class="ph ph-user-plus"></i>
+                        </div>
+
+                        <div>
+                            <h4>Profile Updated</h4>
+                            <p>Added 2 new skills</p>
+                        </div>
+
+                        <span>4 days ago</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- Dashboard JavaScript -->
+    <script src="../scripts/student-dashboard.js"></script>
+
+</body>
+</html>
