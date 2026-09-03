@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,7 @@
     <link rel="stylesheet" href="../styles/student-dashboard.css">
 
     <!-- Icons -->
-    <link rel="stylesheet"
-          href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 </head>
 
 <body>
@@ -52,12 +52,12 @@
                 <span>Assessments</span>
             </a>
 
-            <a href="#" class="nav-link">
+            <a href="talent-score.html" class="nav-link">
                 <i class="ph ph-chart-line-up"></i>
                 <span>Talent Score</span>
             </a>
 
-            <a href="#" class="nav-link">
+            <a href="skill-analysis.html" class="nav-link">
                 <i class="ph ph-brain"></i>
                 <span>Skill Analysis</span>
             </a>
@@ -188,13 +188,13 @@
                         <span>Talent Score</span>
 
                         <h3>
-                            87
+                            <span id="talentScore">0</span>
                             <small>/ 100</small>
                         </h3>
 
-                        <p class="positive">
+                        <p class="positive" id="talentPerformance">
                             <i class="ph ph-trend-up"></i>
-                            Excellent performance
+                            Complete assessments to build your score
                         </p>
                     </div>
 
@@ -618,4 +618,5 @@
     <script src="../scripts/student-dashboard.js"></script>
 
 </body>
+
 </html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Skill Analysis | Talent Hunt</title>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Common Dashboard CSS -->
+    <link rel="stylesheet"
+          href="../styles/student-dashboard.css">
+
+    <!-- Skill Analysis CSS -->
+    <link rel="stylesheet"
+          href="../styles/skill-analysis.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <i class="ph ph-star-four"></i>
+            </div>
+
+            <div>
+                <h2>Talent Hunt</h2>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-title">
+                MAIN MENU
+            </div>
+
+
+            <a href="student-dashboard.html"
+               class="nav-link">
+
+                <i class="ph ph-squares-four"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="student-profile.html"
+               class="nav-link">
+
+                <i class="ph ph-user"></i>
+
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a href="assessments.html"
+               class="nav-link">
+
+                <i class="ph ph-clipboard-text"></i>
+
+                <span>Assessments</span>
+
+            </a>
+
+
+            <a href="talent-score.html"
+               class="nav-link">
+
+                <i class="ph ph-chart-line-up"></i>
+
+                <span>Talent Score</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                EXPLORE
+            </div>
+
+
+            <a href="skill-analysis.html"
+               class="nav-link active">
+
+                <i class="ph ph-chart-bar"></i>
+
+                <span>Skill Analysis</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                OPPORTUNITIES
+            </div>
+
+
+            <a href="#"
+               class="nav-link">
+
+                <i class="ph ph-trophy"></i>
+
+                <span>Competitions</span>
+
+            </a>
+
+
+            <a href="#"
+               class="nav-link">
+
+                <i class="ph ph-briefcase"></i>
+
+                <span>Opportunities</span>
+
+            </a>
+
+
+            <a href="#"
+               class="nav-link">
+
+                <i class="ph ph-medal"></i>
+
+                <span>Achievements</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                ACCOUNT
+            </div>
+
+
+            <a href="#"
+               class="nav-link">
+
+                <i class="ph ph-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button class="logout-btn"
+                    id="logoutBtn">
+
+                <i class="ph ph-sign-out"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button class="menu-btn"
+                    id="menuBtn">
+
+                <i class="ph ph-list"></i>
+
+            </button>
+
+
+            <div class="topbar-title">
+
+                <h1>Skill Analysis</h1>
+
+                <p>
+                    Understand your strengths and identify skill gaps.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+
+                    <i class="ph ph-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="user-profile">
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+                    <div class="user-info">
+
+                        <strong id="studentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================================
+             PAGE CONTENT
+        ========================================== -->
+
+        <section class="skill-analysis-container">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="page-label">
+                        SKILL INSIGHTS
+                    </span>
+
+                    <h2>
+                        Your Skill Analysis
+                    </h2>
+
+                    <p>
+                        Analyze your performance and discover
+                        areas where you can improve.
+                    </p>
+
+                </div>
+
+
+                <a href="assessments.html"
+                   class="analysis-btn">
+
+                    <i class="ph ph-plus"></i>
+
+                    Take Assessment
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 OVERVIEW
+            ========================================== -->
+
+            <div class="analysis-overview">
+
+
+                <!-- Skill Level -->
+
+                <div class="skill-level-card">
+
+                    <div class="overview-header">
+
+                        <div>
+
+                            <span class="overview-label">
+                                OVERALL SKILL LEVEL
+                            </span>
+
+                            <h2 id="skillLevel">
+                                Developing
+                            </h2>
+
+                            <p id="skillLevelText">
+                                Complete more assessments
+                                to build your skill profile.
+                            </p>
+
+                        </div>
+
+
+                        <div class="overview-icon">
+
+                            <i class="ph ph-brain"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="level-progress">
+
+                        <div class="level-track">
+
+                            <div class="level-fill"
+                                 id="skillLevelProgress">
+                            </div>
+
+                        </div>
+
+
+                        <div class="level-info">
+
+                            <span>
+                                Skill Level
+                            </span>
+
+                            <strong id="skillPercentage">
+                                0%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Skill Summary -->
+
+                <div class="skill-summary-card">
+
+                    <div class="summary-item">
+
+                        <div class="summary-icon strong">
+                            <i class="ph ph-check-circle"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Strong Areas
+                            </span>
+
+                            <strong id="strongCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <div class="summary-icon improve">
+                            <i class="ph ph-warning"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Needs Improvement
+                            </span>
+
+                            <strong id="improveCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <div class="summary-icon completed">
+                            <i class="ph ph-clipboard-text"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Assessments
+                            </span>
+
+                            <strong id="assessmentCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 STRENGTHS & IMPROVEMENT
+            ========================================== -->
+
+            <div class="analysis-grid">
+
+
+                <!-- Strong Skills -->
+
+                <div class="analysis-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                STRENGTHS
+                            </span>
+
+                            <h2>
+                                Your Strong Skills
+                            </h2>
+
+                        </div>
+
+                        <i class="ph ph-trend-up heading-icon">
+                        </i>
+
+                    </div>
+
+
+                    <div id="strongSkills"
+                         class="skill-list">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Improvement -->
+
+                <div class="analysis-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                DEVELOPMENT
+                            </span>
+
+                            <h2>
+                                Skills to Improve
+                            </h2>
+
+                        </div>
+
+                        <i class="ph ph-target heading-icon">
+                        </i>
+
+                    </div>
+
+
+                    <div id="weakSkills"
+                         class="skill-list">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 ASSESSMENT PERFORMANCE
+            ========================================== -->
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        PERFORMANCE
+                    </span>
+
+                    <h2>
+                        Assessment Performance
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div id="assessmentPerformance"
+                 class="performance-grid">
+
+            </div>
+
+
+
+            <!-- =========================================
+                 SKILL GAP
+            ========================================== -->
+
+            <section class="skill-gap-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            SKILL GAP ANALYSIS
+                        </span>
+
+                        <h2>
+                            Identify Your Skill Gaps
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="skillGaps"
+                     class="skill-gap-grid">
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 RECOMMENDATIONS
+            ========================================== -->
+
+            <section class="recommendation-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            RECOMMENDATIONS
+                        </span>
+
+                        <h2>
+                            Personalized Improvement Plan
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="recommendations"
+                     class="recommendation-grid">
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="../scripts/skill-analysis.js"></script>
+
+</body>
+
+</html>

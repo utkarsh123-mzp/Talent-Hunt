@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Talent Score | Talent Hunt</title>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Common Dashboard CSS -->
+    <link rel="stylesheet" href="../styles/student-dashboard.css">
+
+    <!-- Talent Score CSS -->
+    <link rel="stylesheet" href="../styles/talent-score.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <i class="ph ph-star-four"></i>
+            </div>
+
+            <div>
+                <h2>Talent Hunt</h2>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+
+            <div class="nav-title">MAIN MENU</div>
+
+            <a href="student-dashboard.html" class="nav-link">
+                <i class="ph ph-squares-four"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="student-profile.html" class="nav-link">
+                <i class="ph ph-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="assessments.html" class="nav-link">
+                <i class="ph ph-exam"></i>
+                <span>Assessments</span>
+            </a>
+
+            <a href="talent-score.html" class="nav-link active">
+                <i class="ph ph-chart-line-up"></i>
+                <span>Talent Score</span>
+            </a>
+
+
+            <div class="nav-title">EXPLORE</div>
+
+            <a href="skill-analysis.html" class="nav-link">
+                <i class="ph ph-chart-bar"></i>
+                <span>Skill Analysis</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-trophy"></i>
+                <span>Competitions</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-briefcase"></i>
+                <span>Opportunities</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="ph ph-medal"></i>
+                <span>Achievements</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Bottom -->
+        <div class="sidebar-bottom">
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="ph ph-sign-out"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="ph ph-list"></i>
+            </button>
+
+
+            <div class="topbar-title">
+
+                <h1>Talent Score</h1>
+
+                <p>
+                    Track your talent, skills and assessment performance.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+                    <i class="ph ph-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <div class="user-profile">
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+                    <div class="user-info">
+
+                        <strong id="studentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                    <i class="ph ph-caret-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE ================= -->
+
+        <section class="talent-score-container">
+
+
+            <!-- Page Heading -->
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="page-label">
+                        PERFORMANCE
+                    </span>
+
+                    <h2>
+                        Your Talent Score
+                    </h2>
+
+                    <p>
+                        Understand your performance across different skill areas.
+                    </p>
+
+                </div>
+
+                <a href="assessments.html" class="take-assessment-btn">
+                    <i class="ph ph-plus"></i>
+                    Take Assessment
+                </a>
+
+            </div>
+
+
+            <!-- ================= SCORE OVERVIEW ================= -->
+
+            <div class="score-overview">
+
+
+                <!-- Overall Score -->
+
+                <div class="overall-score-card">
+
+                    <div class="score-card-header">
+
+                        <div>
+
+                            <span class="score-label">
+                                OVERALL TALENT SCORE
+                            </span>
+
+                            <div class="score-number">
+                                <span id="overallScore">0</span>
+                                <small>/100</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="score-icon">
+                            <i class="ph ph-star-four"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Progress -->
+
+                    <div class="overall-progress">
+
+                        <div class="progress-track">
+
+                            <div
+                                class="progress-fill"
+                                id="overallProgress">
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-info">
+
+                            <span id="scoreStatus">
+                                No assessments completed
+                            </span>
+
+                            <span id="completedCount">
+                                0 Assessments
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Score Information -->
+
+                <div class="score-info-card">
+
+                    <div class="info-icon">
+                        <i class="ph ph-sparkle"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            How is your Talent Score calculated?
+                        </h3>
+
+                        <p>
+                            Your score is based on your performance
+                            across different assessments and skill areas.
+                        </p>
+
+                        <p>
+                            Complete more assessments to build a
+                            stronger talent profile.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ASSESSMENT SCORES ================= -->
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        ASSESSMENTS
+                    </span>
+
+                    <h2>
+                        Assessment Performance
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cards generated by JS -->
+
+            <div
+                class="assessment-score-grid"
+                id="assessmentScoreGrid">
+
+            </div>
+
+
+            <!-- ================= AI INSIGHTS ================= -->
+
+            <section class="improvement-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            AI INSIGHTS
+                        </span>
+
+                        <h2>
+                            Skill Improvement Suggestions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="suggestions-grid"
+                    id="suggestionsGrid">
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="../scripts/talent-score.js"></script>
+
+</body>
+
+</html>

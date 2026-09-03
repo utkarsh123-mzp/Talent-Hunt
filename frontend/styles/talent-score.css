@@ -1,0 +1,654 @@
+/* =========================================
+   TALENT HUNT
+   TALENT SCORE PAGE
+========================================= */
+
+.talent-score-container {
+    padding: 30px 35px 50px;
+}
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.page-label {
+    display: block;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    color: var(--primary);
+
+    letter-spacing: 1px;
+
+    margin-bottom: 6px;
+}
+
+.page-heading h2 {
+    font-size: 25px;
+
+    color: var(--text-dark);
+
+    margin-bottom: 5px;
+}
+
+.page-heading p {
+    font-size: 12px;
+
+    color: var(--text-light);
+}
+
+
+/* =========================================
+   TAKE ASSESSMENT BUTTON
+========================================= */
+
+.take-assessment-btn {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.take-assessment-btn:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   SCORE OVERVIEW
+========================================= */
+
+.score-overview {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   OVERALL SCORE CARD
+========================================= */
+
+.overall-score-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 26px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.score-card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.score-label {
+    display: block;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: var(--text-light);
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.score-number {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 4px;
+}
+
+.score-number span {
+    font-size: 52px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: var(--text-dark);
+}
+
+.score-number small {
+    font-size: 18px;
+
+    color: var(--text-light);
+
+    font-weight: 500;
+}
+
+
+/* Score Icon */
+
+.score-icon {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 28px;
+}
+
+
+/* =========================================
+   OVERALL PROGRESS
+========================================= */
+
+.overall-progress {
+    margin-top: 28px;
+}
+
+.progress-track {
+    width: 100%;
+
+    height: 9px;
+
+    background: #eeeeF4;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0;
+
+    height: 100%;
+
+    background: var(--primary);
+
+    border-radius: 20px;
+
+    transition: width 0.6s ease;
+}
+
+.progress-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 9px;
+
+    font-size: 11px;
+
+    color: var(--text-light);
+}
+
+
+/* =========================================
+   SCORE INFORMATION
+========================================= */
+
+.score-info-card {
+    display: flex;
+
+    gap: 16px;
+
+    background: #f7f5ff;
+
+    border: 1px solid #ebe6ff;
+
+    border-radius: 16px;
+
+    padding: 25px;
+}
+
+.info-icon {
+    min-width: 46px;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 22px;
+}
+
+.score-info-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+.score-info-card p {
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: var(--text-light);
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.section-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.section-label {
+    display: block;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.section-header h2 {
+    font-size: 21px;
+
+    color: var(--text-dark);
+}
+
+
+/* =========================================
+   ASSESSMENT SCORE GRID
+========================================= */
+
+.assessment-score-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================
+   ASSESSMENT CARD
+========================================= */
+
+.assessment-score-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.035);
+
+    transition: 0.25s ease;
+}
+
+.assessment-score-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+}
+
+
+/* Card Top */
+
+.assessment-card-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.assessment-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.assessment-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 20px;
+}
+
+.assessment-title h3 {
+    font-size: 14px;
+
+    color: var(--text-dark);
+}
+
+
+/* Score */
+
+.assessment-score {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: var(--text-dark);
+}
+
+.assessment-score small {
+    font-size: 10px;
+
+    color: var(--text-light);
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   ASSESSMENT PROGRESS
+========================================= */
+
+.assessment-progress {
+    margin-top: 8px;
+}
+
+.assessment-progress-track {
+    width: 100%;
+
+    height: 7px;
+
+    background: #eeeeF4;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.assessment-progress-fill {
+    width: 0;
+
+    height: 100%;
+
+    background: var(--primary);
+
+    border-radius: 20px;
+
+    transition: width 0.5s ease;
+}
+
+
+/* Details */
+
+.assessment-details {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 10px;
+
+    font-size: 10px;
+
+    color: var(--text-light);
+}
+
+.assessment-details i {
+    margin-right: 3px;
+}
+
+
+/* =========================================
+   NOT COMPLETED CARD
+========================================= */
+
+.assessment-score-card.not-completed {
+    opacity: 0.75;
+}
+
+.assessment-score-card.not-completed
+.assessment-icon {
+    background: #f3f3f7;
+
+    color: #999;
+}
+
+.assessment-score-card.not-completed
+.assessment-score {
+    color: #999;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-score {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 55px 20px;
+
+    background: white;
+
+    border: 1px dashed var(--border);
+
+    border-radius: 15px;
+}
+
+.empty-score i {
+    display: block;
+
+    font-size: 42px;
+
+    color: var(--primary);
+
+    margin-bottom: 12px;
+}
+
+.empty-score h3 {
+    font-size: 17px;
+
+    margin-bottom: 7px;
+}
+
+.empty-score p {
+    font-size: 12px;
+
+    color: var(--text-light);
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   AI IMPROVEMENT SECTION
+========================================= */
+
+.improvement-section {
+    margin-top: 10px;
+}
+
+.suggestions-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.suggestion-card {
+    display: flex;
+
+    gap: 14px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    transition: 0.25s ease;
+}
+
+.suggestion-card:hover {
+    transform: translateY(-3px);
+}
+
+.suggestion-icon {
+    min-width: 42px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 20px;
+}
+
+.suggestion-card h3 {
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.suggestion-card p {
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: var(--text-light);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .score-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-score-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .suggestions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .talent-score-container {
+        padding: 20px 15px 35px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .assessment-score-grid,
+    .suggestions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .score-number span {
+        font-size: 43px;
+    }
+
+    .score-info-card {
+        flex-direction: column;
+    }
+}

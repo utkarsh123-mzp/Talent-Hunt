@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const studentName = document.getElementById("studentName");
     const welcomeName = document.getElementById("welcomeName");
+    const talentScore =
+        document.getElementById("talentScore");
+
+    const talentPerformance =
+        document.getElementById("talentPerformance");
 
 
     /* =========================================
@@ -28,7 +33,66 @@ document.addEventListener("DOMContentLoaded", () => {
         welcomeName.textContent = savedName + "!";
     }
 
+    /* =========================================
+       TALENT SCORE
+    ========================================= */
 
+    const assessmentResults =
+        JSON.parse(
+            localStorage.getItem("assessmentResults")
+        ) || {};
+
+    const resultValues =
+        Object.values(assessmentResults);
+
+    let calculatedTalentScore = 0;
+
+    if (resultValues.length > 0) {
+
+        const totalPercentage =
+            resultValues.reduce(
+                (sum, result) =>
+                    sum + Number(result.percentage || 0),
+                0
+            );
+
+        calculatedTalentScore =
+            Math.round(
+                totalPercentage / resultValues.length
+            );
+    }
+
+    if (talentScore) {
+        talentScore.textContent =
+            calculatedTalentScore;
+    }
+
+    if (talentPerformance) {
+
+        let message = "";
+
+        if (resultValues.length === 0) {
+            message =
+                "Complete assessments to build your score";
+        }
+        else if (calculatedTalentScore >= 80) {
+            message = "Excellent performance";
+        }
+        else if (calculatedTalentScore >= 60) {
+            message = "Good performance";
+        }
+        else if (calculatedTalentScore >= 40) {
+            message = "Keep improving your skills";
+        }
+        else {
+            message = "More practice recommended";
+        }
+
+        talentPerformance.innerHTML = `
+        <i class="ph ph-trend-up"></i>
+        ${message}
+    `;
+    }
     /* =========================================
        MOBILE SIDEBAR
     ========================================= */
