@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Teacher Portal</title>
+
+    <!-- Main Profile CSS -->
+    <link rel="stylesheet" href="../../css/teacher-portal/my-profile.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="teacher-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">TH</div>
+
+            <div>
+                <h2>Talent Hunt</h2>
+                <span>Teacher Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../teacher/teacher-dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-classes.html">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <span>My Classes</span>
+            </a>
+
+            <a href="students.html">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Students</span>
+            </a>
+
+            <a href="schedule.html">
+                <i class="fa-regular fa-clock"></i>
+                <span>Schedule</span>
+            </a>
+
+            <a href="earnings.html">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+                <span>Earnings</span>
+            </a>
+
+            <a href="opportunities.html">
+                <i class="fa-solid fa-star"></i>
+                <span>Opportunities</span>
+            </a>
+
+            <a href="my-profile.html" class="active">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>My Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+                <div class="help-icon">
+                    <i class="fa-solid fa-question"></i>
+                </div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <span>Contact support</span>
+                </div>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- Top Header -->
+
+        <header class="top-header">
+
+            <div>
+                <span class="page-label">TEACHER PORTAL</span>
+                <h1>My Profile</h1>
+            </div>
+
+            <div class="header-actions">
+
+                <div class="profile-mini">
+                    <div class="mini-avatar">T</div>
+
+                    <div>
+                        <strong id="headerTeacherName">
+                            Teacher
+                        </strong>
+
+                        <span>Teacher</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PROFILE HERO ================= -->
+
+        <section class="profile-hero">
+
+            <div class="profile-main">
+
+                <div class="profile-avatar" id="profileAvatar">
+                    T
+                </div>
+
+                <div class="profile-intro">
+
+                    <span class="verified-badge">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Profile Verified
+                    </span>
+
+                    <h2 id="displayName">
+                        Teacher Name
+                    </h2>
+
+                    <p id="displaySubject">
+                        Mathematics Teacher
+                    </p>
+
+                    <div class="profile-meta">
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            India
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span id="displayExperience">3</span> Years Experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="edit-profile-btn" id="editProfileBtn">
+                <i class="fa-solid fa-pen"></i>
+                Edit Profile
+            </button>
+
+        </section>
+
+
+        <!-- ================= PROFILE STATUS ================= -->
+
+        <section class="profile-status">
+
+            <div class="status-item">
+
+                <div class="status-icon green">
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
+
+                <div>
+                    <span>Profile Status</span>
+                    <strong>Active</strong>
+                </div>
+
+            </div>
+
+            <div class="status-item">
+
+                <div class="status-icon blue">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+
+                <div>
+                    <span>Identity</span>
+                    <strong>Verified</strong>
+                </div>
+
+            </div>
+
+            <div class="status-item">
+
+                <div class="status-icon purple">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+
+                <div>
+                    <span>Documents</span>
+                    <strong>Complete</strong>
+                </div>
+
+            </div>
+
+            <div class="status-item">
+
+                <div class="status-icon orange">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div>
+                    <span>Profile Completion</span>
+                    <strong>90%</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTENT GRID ================= -->
+
+        <div class="profile-grid">
+
+
+            <!-- LEFT COLUMN -->
+
+            <div class="profile-column">
+
+
+                <!-- Personal Information -->
+
+                <section class="profile-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                PERSONAL
+                            </span>
+
+                            <h3>Personal Information</h3>
+                        </div>
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div class="info-grid">
+
+                        <div class="info-item">
+                            <span>Full Name</span>
+                            <strong id="infoName">
+                                Teacher Name
+                            </strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span>Email Address</span>
+                            <strong id="infoEmail">
+                                teacher@example.com
+                            </strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span>Phone Number</span>
+                            <strong id="infoPhone">
+                                +91 98765 43210
+                            </strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span>Date of Birth</span>
+                            <strong id="infoDob">
+                                15 June 1998
+                            </strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span>City</span>
+                            <strong id="infoCity">
+                                Varanasi
+                            </strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span>Teaching Mode</span>
+                            <strong id="infoMode">
+                                Online & Offline
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Teaching Information -->
+
+                <section class="profile-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                PROFESSIONAL
+                            </span>
+
+                            <h3>Teaching Information</h3>
+                        </div>
+
+                        <i class="fa-solid fa-chalkboard-user"></i>
+
+                    </div>
+
+                    <div class="info-list">
+
+                        <div class="info-row">
+
+                            <span>
+                                <i class="fa-solid fa-book"></i>
+                                Subjects
+                            </span>
+
+                            <div class="tags">
+                                <span class="tag">Mathematics</span>
+                                <span class="tag">Physics</span>
+                            </div>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span>
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                Classes
+                            </span>
+
+                            <div class="tags">
+                                <span class="tag">Class 9</span>
+                                <span class="tag">Class 10</span>
+                                <span class="tag">Class 11</span>
+                                <span class="tag">Class 12</span>
+                            </div>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span>
+                                <i class="fa-solid fa-briefcase"></i>
+                                Experience
+                            </span>
+
+                            <strong>
+                                <span id="experienceValue">3</span> Years
+                            </strong>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span>
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                                Expected Fee
+                            </span>
+
+                            <strong id="feeValue">
+                                ₹500 / hour
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Qualification -->
+
+                <section class="profile-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                EDUCATION
+                            </span>
+
+                            <h3>Qualification</h3>
+                        </div>
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                    </div>
+
+                    <div class="qualification">
+
+                        <div class="qualification-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <div>
+
+                            <h4 id="qualificationDegree">
+                                M.Sc. Mathematics
+                            </h4>
+
+                            <p id="qualificationCollege">
+                                Banaras Hindu University
+                            </p>
+
+                            <span id="qualificationYear">
+                                2021
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- RIGHT COLUMN -->
+
+            <div class="profile-column">
+
+
+                <!-- Availability -->
+
+                <section class="profile-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                SCHEDULE
+                            </span>
+
+                            <h3>Availability</h3>
+                        </div>
+
+                        <i class="fa-regular fa-clock"></i>
+
+                    </div>
+
+                    <div class="availability-list">
+
+                        <div class="availability-row">
+
+                            <span>Monday - Friday</span>
+
+                            <strong>04:00 PM - 08:00 PM</strong>
+
+                        </div>
+
+                        <div class="availability-row">
+
+                            <span>Saturday</span>
+
+                            <strong>10:00 AM - 06:00 PM</strong>
+
+                        </div>
+
+                        <div class="availability-row">
+
+                            <span>Sunday</span>
+
+                            <strong class="not-available">
+                                Not Available
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Documents -->
+
+                <section class="profile-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                DOCUMENTS
+                            </span>
+
+                            <h3>My Documents</h3>
+                        </div>
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                    </div>
+
+
+                    <div class="document-item">
+
+                        <div class="document-icon pdf">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+
+                        <div class="document-info">
+
+                            <strong>Resume</strong>
+                            <span>PDF • Uploaded</span>
+
+                        </div>
+
+                        <button class="view-document">
+                            View
+                        </button>
+
+                    </div>
+
+
+                    <div class="document-item">
+
+                        <div class="document-icon certificate">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+
+                        <div class="document-info">
+
+                            <strong>Qualification Certificate</strong>
+                            <span>PDF • Verified</span>
+
+                        </div>
+
+                        <button class="view-document">
+                            View
+                        </button>
+
+                    </div>
+
+
+                    <div class="document-item">
+
+                        <div class="document-icon identity">
+                            <i class="fa-solid fa-id-card"></i>
+                        </div>
+
+                        <div class="document-info">
+
+                            <strong>Identity Document</strong>
+                            <span>Verified</span>
+
+                        </div>
+
+                        <button class="view-document">
+                            View
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Account Security -->
+
+                <section class="profile-card security-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                ACCOUNT
+                            </span>
+
+                            <h3>Account & Security</h3>
+                        </div>
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <div class="security-row">
+
+                        <div>
+
+                            <strong>Email Verification</strong>
+
+                            <span>
+                                Your email is verified
+                            </span>
+
+                        </div>
+
+                        <span class="verified-text">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Verified
+                        </span>
+
+                    </div>
+
+                    <div class="security-row">
+
+                        <div>
+
+                            <strong>Identity Verification</strong>
+
+                            <span>
+                                Identity successfully verified
+                            </span>
+
+                        </div>
+
+                        <span class="verified-text">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Verified
+                        </span>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ================= EDIT PROFILE MODAL ================= -->
+
+<div class="modal-overlay" id="profileModal">
+
+    <div class="profile-modal">
+
+        <div class="modal-header">
+
+            <div>
+                <span>PROFILE SETTINGS</span>
+                <h2>Edit Profile</h2>
+            </div>
+
+            <button id="closeModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form id="profileForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter phone number"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="city">
+                        City
+                    </label>
+
+                    <input
+                        type="text"
+                        id="city"
+                        placeholder="Enter city"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Primary Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="e.g. Mathematics"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="experience">
+                        Experience
+                    </label>
+
+                    <input
+                        type="number"
+                        id="experience"
+                        min="0"
+                        placeholder="Years"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="fee">
+                        Expected Fee
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fee"
+                        placeholder="e.g. ₹500 / hour"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="mode">
+                        Teaching Mode
+                    </label>
+
+                    <select id="mode">
+
+                        <option value="Online & Offline">
+                            Online & Offline
+                        </option>
+
+                        <option value="Online Only">
+                            Online Only
+                        </option>
+
+                        <option value="Offline Only">
+                            Offline Only
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="cancelBtn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+                    <i class="fa-solid fa-check"></i>
+                    Save Changes
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="../../js/teacher-portal/my-profile.js"></script>
+
+</body>
+</html>

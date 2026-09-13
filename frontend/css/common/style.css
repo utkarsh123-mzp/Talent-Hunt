@@ -1,0 +1,1225 @@
+/* =========================================================
+   TALENTHUNT LANDING PAGE
+   MAIN CSS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #171717;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #eeeeee;
+    backdrop-filter: blur(12px);
+}
+
+.nav-container {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 21px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    color: #ffffff;
+    background: #4f46e5;
+}
+
+.logo-text span {
+    color: #4f46e5;
+}
+
+
+/* NAV MENU */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-menu > a,
+.dropdown > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 27px 0;
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.nav-menu > a:hover,
+.dropdown > a:hover,
+.nav-menu > a.active {
+    color: #4f46e5;
+}
+
+
+/* =========================================================
+   FOR STUDENTS DROPDOWN
+========================================================= */
+
+.dropdown {
+    position: relative;
+}
+
+
+/* Dropdown arrow */
+
+.dropdown-toggle i {
+    font-size: 13px;
+    transition: transform 0.25s ease;
+}
+
+
+/* Rotate arrow on hover */
+
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+
+/* Dropdown box */
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    width: 255px;
+    padding: 10px;
+    transform: translateX(-50%) translateY(10px);
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+/* Show dropdown */
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* Dropdown heading */
+
+.dropdown-heading {
+    padding: 9px 12px 6px;
+    color: #9ca3af;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+
+/* Dropdown links */
+
+.dropdown-menu > a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 9px;
+
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.dropdown-menu > a:hover {
+    color: #4f46e5;
+    background: #f3f1ff;
+    transform: translateX(3px);
+}
+
+.dropdown-menu > a > i:first-child {
+    width: 18px;
+    font-size: 17px;
+    color: #6366f1;
+}
+
+
+/* Divider */
+
+.dropdown-divider {
+    height: 1px;
+    margin: 8px 5px;
+    background: #eeeeee;
+}
+
+
+/* College student link */
+
+.dropdown-menu .college-link {
+    display: grid;
+    grid-template-columns: 20px 1fr 15px;
+    align-items: center;
+    gap: 8px;
+}
+
+.college-link span {
+    display: flex;
+    flex-direction: column;
+}
+
+.college-link small {
+    margin-top: 2px;
+    color: #9ca3af;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.college-link > i:last-child {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   NAV ACTIONS
+========================================================= */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.theme-btn {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+
+    color: #374151;
+    font-size: 19px;
+
+    transition: 0.25s ease;
+}
+
+.theme-btn:hover {
+    background: #f3f4f6;
+}
+
+.login-btn,
+.signup-btn {
+    padding: 10px 17px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.login-btn {
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.login-btn:hover {
+    color: #4f46e5;
+    border-color: #4f46e5;
+}
+
+.signup-btn {
+    color: #ffffff;
+    background: #4f46e5;
+}
+
+.signup-btn:hover {
+    background: #3730a3;
+    transform: translateY(-1px);
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn {
+    display: none;
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 10px;
+    background: #f3f4f6;
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    padding: 85px 0 70px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 82% 25%,
+            #eef2ff 0,
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #fafaff 100%
+        );
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 14px;
+    margin-bottom: 20px;
+
+    border-radius: 30px;
+    background: #f0edff;
+
+    color: #5b4bc4;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    margin-bottom: 24px;
+
+    font-size: clamp(45px, 6vw, 73px);
+    line-height: 1.04;
+    letter-spacing: -3px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #4169d8;
+}
+
+.hero-content > p {
+    max-width: 600px;
+
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    margin-top: 30px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.primary-btn {
+    padding: 13px 21px;
+
+    border-radius: 10px;
+    color: #ffffff;
+    background: #5145cd;
+
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.18);
+}
+
+.primary-btn:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    color: #374151;
+}
+
+.secondary-btn:hover {
+    color: #4f46e5;
+}
+
+
+/* STATS */
+
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-item strong {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.stat-item span {
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    position: relative;
+    min-height: 520px;
+}
+
+.hero-circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-one {
+    width: 270px;
+    height: 270px;
+
+    top: 9%;
+    left: 22%;
+
+    background: #f2efff;
+}
+
+.circle-two {
+    width: 245px;
+    height: 245px;
+
+    top: 19%;
+    right: 5%;
+
+    background: #edf3ff;
+}
+
+
+/* STUDENT CARDS */
+
+.student-card {
+    position: absolute;
+    z-index: 2;
+
+    width: 140px;
+    height: 175px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+
+    font-size: 55px;
+    color: #6366f1;
+}
+
+.student-one {
+    top: 27%;
+    left: 10%;
+}
+
+.student-two {
+    top: 11%;
+    left: 40%;
+}
+
+.student-three {
+    top: 27%;
+    right: 8%;
+}
+
+
+/* FLOATING ICONS */
+
+.floating-icon {
+    position: absolute;
+    z-index: 4;
+
+    width: 47px;
+    height: 47px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 14px;
+    background: #ffffff;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    font-size: 19px;
+}
+
+.bulb {
+    top: 12%;
+    left: 45%;
+}
+
+.rocket {
+    top: 17%;
+    right: 0;
+}
+
+
+/* JOURNEY CARD */
+
+.journey-card {
+    position: absolute;
+    z-index: 5;
+
+    left: 5%;
+    right: 5%;
+    bottom: 5px;
+
+    padding: 21px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 19px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+.journey-card h3 {
+    margin-bottom: 18px;
+
+    text-align: center;
+    font-size: 13px;
+}
+
+.journey {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.journey-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.journey-step strong {
+    font-size: 9px;
+}
+
+.journey-icon {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+.journey-icon.purple {
+    background: #eeeaff;
+}
+
+.journey-icon.green {
+    background: #e9f8ef;
+}
+
+.journey-icon.orange {
+    background: #fff2df;
+}
+
+.journey-icon.blue {
+    background: #e8f1ff;
+}
+
+
+/* =========================================================
+   AUDIENCE SECTION
+========================================================= */
+
+.audience-section {
+    padding: 90px 0;
+    background: #ffffff;
+}
+
+.section-heading {
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.section-heading > span {
+    color: #7569db;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    margin: 8px auto;
+
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.section-heading p {
+    margin-top: 10px;
+
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* AUDIENCE GRID */
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.audience-card {
+    display: flex;
+    gap: 20px;
+
+    padding: 27px;
+
+    border: 1px solid #e8e8ee;
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    transition: 0.3s ease;
+}
+
+.audience-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+    width: 54px;
+    height: 54px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 15px;
+
+    background: #f0edff;
+    color: #5b4bc4;
+
+    font-size: 23px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 7px;
+}
+
+.card-title h3 {
+    font-size: 17px;
+}
+
+.card-title span {
+    padding: 3px 8px;
+
+    border-radius: 20px;
+
+    background: #f3f4f6;
+    color: #6b7280;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.card-content p {
+    margin-bottom: 13px;
+
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.card-content a {
+    color: #4f46e5;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-section {
+    padding: 75px 0;
+    background: #fafaff;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 14px;
+}
+
+.feature-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: #efedff;
+    color: #5b4bc4;
+}
+
+.feature-item h3 {
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.feature-item p {
+    color: #6b7280;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta-section {
+    padding: 75px 0;
+    background: #ffffff;
+}
+
+.cta-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    padding: 45px 50px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0edff,
+            #eef4ff
+        );
+}
+
+.cta-badge {
+    color: #5b4bc4;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.cta-container h2 {
+    max-width: 600px;
+
+    margin: 9px 0;
+
+    font-size: 33px;
+    line-height: 1.2;
+}
+
+.cta-container h2 span {
+    color: #4169d8;
+}
+
+.cta-container p {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.cta-btn {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 13px 21px;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+    background: #4f46e5;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.cta-btn:hover {
+    background: #3730a3;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    padding: 60px 0 20px;
+
+    border-top: 1px solid #eeeeee;
+
+    background: #fafafa;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.footer-brand p {
+    margin-top: 10px;
+
+    color: #6b7280;
+    font-size: 11px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    gap: 45px;
+}
+
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links h4 {
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.footer-links a {
+    color: #6b7280;
+    font-size: 11px;
+
+    transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #4f46e5;
+}
+
+.footer-bottom {
+    width: min(1180px, 92%);
+
+    margin: 45px auto 0;
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer-bottom p {
+    color: #9ca3af;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+    color: #f9fafb;
+    background: #111827;
+}
+
+body.dark-mode .navbar {
+    background: rgba(17, 24, 39, 0.96);
+    border-color: #263244;
+}
+
+body.dark-mode .nav-menu > a,
+body.dark-mode .dropdown > a,
+body.dark-mode .login-btn {
+    color: #d1d5db;
+}
+
+body.dark-mode .theme-btn {
+    color: #f9fafb;
+}
+
+body.dark-mode .theme-btn:hover {
+    background: #1f2937;
+}
+
+body.dark-mode .dropdown-menu {
+    background: #182131;
+    border-color: #293548;
+}
+
+body.dark-mode .dropdown-menu > a {
+    color: #d1d5db;
+}
+
+body.dark-mode .dropdown-menu > a:hover {
+    background: #252e40;
+}
+
+body.dark-mode .dropdown-divider {
+    background: #303b4e;
+}
+
+body.dark-mode .hero,
+body.dark-mode .audience-section,
+body.dark-mode .cta-section {
+    background: #111827;
+}
+
+body.dark-mode .features-section {
+    background: #0f172a;
+}
+
+body.dark-mode .hero-content > p,
+body.dark-mode .card-content p,
+body.dark-mode .section-heading p,
+body.dark-mode .feature-item p,
+body.dark-mode .cta-container p {
+    color: #9ca3af;
+}
+
+body.dark-mode .student-card,
+body.dark-mode .journey-card,
+body.dark-mode .audience-card {
+    background: #182131;
+    border-color: #293548;
+}
+
+body.dark-mode .floating-icon {
+    background: #182131;
+}
+
+body.dark-mode .footer {
+    background: #0f172a;
+    border-color: #263244;
+}
+
+body.dark-mode .footer-bottom {
+    border-color: #263244;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav-menu {
+        gap: 16px;
+    }
+
+    .nav-menu > a,
+    .dropdown > a {
+        font-size: 12px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* TABLET */
+
+@media (max-width: 850px) {
+
+    .nav-menu,
+    .nav-actions {
+        display: none;
+    }
+
+    .menu-btn {
+        display: grid;
+        place-items: center;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content > p {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        width: 100%;
+        max-width: 650px;
+        margin: auto;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+
+    .nav-container {
+        min-height: 66px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        justify-content: center;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+        text-align: left;
+    }
+
+    .hero-visual {
+        min-height: 430px;
+        transform: scale(0.9);
+        transform-origin: top center;
+    }
+
+    .student-card {
+        width: 105px;
+        height: 140px;
+        font-size: 42px;
+    }
+
+    .journey-card {
+        left: 0;
+        right: 0;
+    }
+
+    .journey {
+        gap: 3px;
+    }
+
+    .journey > span {
+        font-size: 8px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .audience-card {
+        padding: 22px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-container {
+        padding: 30px;
+    }
+
+    .cta-container h2 {
+        font-size: 27px;
+    }
+
+    .footer-links {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+}

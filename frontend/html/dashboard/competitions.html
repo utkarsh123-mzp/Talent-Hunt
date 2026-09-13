@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Competitions | Talent Hunt</title>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Common Dashboard CSS -->
+    <link rel="stylesheet"
+          href="../../css/dashboard/student-dashboard.css">
+
+    <!-- Competition CSS -->
+    <link rel="stylesheet"
+          href="../../css/dashboard/competitions.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <i class="ph ph-star-four"></i>
+            </div>
+
+            <div>
+                <h2>Talent Hunt</h2>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-title">
+                MAIN MENU
+            </div>
+
+
+            <a href="student-dashboard.html"
+               class="nav-link">
+
+                <i class="ph ph-squares-four"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="student-profile.html"
+               class="nav-link">
+
+                <i class="ph ph-user"></i>
+
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a href="assessments.html"
+               class="nav-link">
+
+                <i class="ph ph-clipboard-text"></i>
+
+                <span>Assessments</span>
+
+            </a>
+
+
+            <a href="talent-score.html"
+               class="nav-link">
+
+                <i class="ph ph-chart-line-up"></i>
+
+                <span>Talent Score</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                EXPLORE
+            </div>
+
+
+            <a href="skill-analysis.html"
+               class="nav-link">
+
+                <i class="ph ph-chart-bar"></i>
+
+                <span>Skill Analysis</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                OPPORTUNITIES
+            </div>
+
+
+            <a href="competitions.html"
+               class="nav-link active">
+
+                <i class="ph ph-trophy"></i>
+
+                <span>Competitions</span>
+
+            </a>
+
+
+            <a href="opportunities.html"
+               class="nav-link">
+
+                <i class="ph ph-briefcase"></i>
+
+                <span>Opportunities</span>
+
+            </a>
+
+
+            <a href="achievements.html"
+               class="nav-link">
+
+                <i class="ph ph-medal"></i>
+
+                <span>Achievements</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                ACCOUNT
+            </div>
+
+
+            <a href="settings.html"
+               class="nav-link">
+
+                <i class="ph ph-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button class="logout-btn"
+                    id="logoutBtn">
+
+                <i class="ph ph-sign-out"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button class="menu-btn"
+                    id="menuBtn">
+
+                <i class="ph ph-list"></i>
+
+            </button>
+
+
+            <div class="topbar-title">
+
+                <h1>Competitions</h1>
+
+                <p>
+                    Participate, compete and showcase your skills.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+
+                    <i class="ph ph-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="user-profile">
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+                    <div class="user-info">
+
+                        <strong id="studentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================================
+             PAGE CONTENT
+        ========================================== -->
+
+        <section class="competitions-container">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="page-label">
+                        COMPETITIONS
+                    </span>
+
+                    <h2>
+                        Discover Competitions
+                    </h2>
+
+                    <p>
+                        Test your skills, compete with other
+                        students and earn achievements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 STATS
+            ========================================== -->
+
+            <div class="competition-stats">
+
+
+                <div class="competition-stat-card">
+
+                    <div class="stat-icon">
+                        <i class="ph ph-trophy"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Available
+                        </span>
+
+                        <strong id="availableCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="competition-stat-card">
+
+                    <div class="stat-icon">
+                        <i class="ph ph-calendar-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Upcoming
+                        </span>
+
+                        <strong id="upcomingCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="competition-stat-card">
+
+                    <div class="stat-icon">
+                        <i class="ph ph-check-circle"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Joined
+                        </span>
+
+                        <strong id="joinedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="competition-stat-card">
+
+                    <div class="stat-icon">
+                        <i class="ph ph-medal"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Achievements
+                        </span>
+
+                        <strong id="achievementCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 FILTER BAR
+            ========================================== -->
+
+            <div class="competition-toolbar">
+
+                <div class="search-box">
+
+                    <i class="ph ph-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="competitionSearch"
+                        placeholder="Search competitions..."
+                    >
+
+                </div>
+
+
+                <select id="competitionFilter">
+
+                    <option value="all">
+                        All Competitions
+                    </option>
+
+                    <option value="coding">
+                        Coding
+                    </option>
+
+                    <option value="data">
+                        Data Analytics
+                    </option>
+
+                    <option value="design">
+                        Design
+                    </option>
+
+                    <option value="innovation">
+                        Innovation
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 COMPETITIONS
+            ========================================== -->
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        Available Competitions
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div id="competitionGrid"
+                 class="competition-grid">
+
+                <!-- Cards will be generated by JavaScript -->
+
+            </div>
+
+
+
+            <!-- =========================================
+                 MY COMPETITIONS
+            ========================================== -->
+
+            <section class="my-competitions-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            YOUR ACTIVITY
+                        </span>
+
+                        <h2>
+                            My Competitions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="myCompetitionGrid"
+                     class="my-competition-grid">
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="../../js/dashboard/competitions.js"></script>
+
+</body>
+
+</html>

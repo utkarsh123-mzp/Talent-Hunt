@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Class 10 Assessment | Talent Hunt
+    </title>
+
+    <link rel="stylesheet"
+        href="../../css/assessments/assessment-class-10.css">
+
+    <script
+        src="https://unpkg.com/@phosphor-icons/web">
+    </script>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="ph ph-graduation-cap"></i>
+            </div>
+
+            <div>
+                <h2>
+                    Talent<span>Hunt</span>
+                </h2>
+
+                <p>
+                    High School Assessment
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="exam-title">
+
+            <span>
+                BOARD PREPARATION
+            </span>
+
+            <h3>
+                CLASS 10 ASSESSMENT
+            </h3>
+
+        </div>
+
+
+        <button
+            class="home-btn"
+            id="homeBtn">
+
+            <i class="ph ph-house"></i>
+
+            <span>Home</span>
+
+        </button>
+
+    </header>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="intro">
+
+        <div class="intro-content">
+
+            <div class="badge">
+
+                <i class="ph ph-seal-check"></i>
+
+                BOARD LEVEL PRACTICE
+
+            </div>
+
+
+            <h1>
+                Test your
+                <span>Board Preparation.</span>
+            </h1>
+
+
+            <p>
+                Select a subject and challenge yourself
+                with Class 10 level questions designed
+                for concept clarity and board preparation.
+            </p>
+
+        </div>
+
+
+        <div class="exam-info">
+
+            <div>
+                <strong id="questionCount">
+                    0
+                </strong>
+
+                <span>
+                    Questions
+                </span>
+            </div>
+
+
+            <div>
+                <strong>
+                    06
+                </strong>
+
+                <span>
+                    Subjects
+                </span>
+            </div>
+
+
+            <div>
+                <strong>
+                    20
+                </strong>
+
+                <span>
+                    Min
+                </span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SUBJECT NAVIGATION ================= -->
+
+    <section class="assessment-container">
+
+        <div class="section-heading">
+
+            <span>
+                SELECT SUBJECT
+            </span>
+
+            <h2>
+                Choose Your Assessment
+            </h2>
+
+        </div>
+
+
+        <div class="subject-tabs">
+
+            <button
+                class="subject-tab active"
+                data-subject="mathematics">
+
+                <i class="ph ph-function"></i>
+
+                Mathematics
+
+            </button>
+
+
+            <button
+                class="subject-tab"
+                data-subject="science">
+
+                <i class="ph ph-atom"></i>
+
+                Science
+
+            </button>
+
+
+            <button
+                class="subject-tab"
+                data-subject="english">
+
+                <i class="ph ph-book-open"></i>
+
+                English
+
+            </button>
+
+
+            <button
+                class="subject-tab"
+                data-subject="hindi">
+
+                <i class="ph ph-translate"></i>
+
+                Hindi
+
+            </button>
+
+
+            <button
+                class="subject-tab"
+                data-subject="social">
+
+                <i class="ph ph-globe"></i>
+
+                Social Science
+
+            </button>
+
+
+            <button
+                class="subject-tab"
+                data-subject="computer">
+
+                <i class="ph ph-code"></i>
+
+                Computer
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= ASSESSMENT PANEL ================= -->
+
+        <div class="assessment-panel">
+
+
+            <!-- PANEL HEADER -->
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span id="subjectLabel">
+                        MATHEMATICS
+                    </span>
+
+                    <h2 id="subjectTitle">
+                        Mathematics Assessment
+                    </h2>
+
+                </div>
+
+
+                <div class="progress-info">
+
+                    <span>
+                        Question
+                    </span>
+
+                    <strong>
+
+                        <span id="currentQuestion">
+                            1
+                        </span>
+
+                        /
+                        <span id="totalQuestions">
+                            10
+                        </span>
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS BAR -->
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar">
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION -->
+
+            <div class="question-area">
+
+                <div class="question-number"
+                    id="questionNumber">
+
+                    QUESTION 01
+
+                </div>
+
+
+                <h3 id="questionText">
+                    Loading question...
+                </h3>
+
+
+                <div
+                    class="options"
+                    id="optionsContainer">
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <div class="question-navigation">
+
+                <button
+                    class="previous-btn"
+                    id="previousBtn">
+
+                    <i class="ph ph-arrow-left"></i>
+
+                    Previous
+
+                </button>
+
+
+                <button
+                    class="next-btn"
+                    id="nextBtn">
+
+                    Next
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RESULT MODAL ================= -->
+
+    <div
+        class="result-overlay"
+        id="resultOverlay">
+
+        <div class="result-card">
+
+            <button
+                class="close-result"
+                id="closeResult">
+
+                <i class="ph ph-x"></i>
+
+            </button>
+
+
+            <div class="result-icon">
+
+                <i class="ph ph-trophy"></i>
+
+            </div>
+
+
+            <span>
+                ASSESSMENT COMPLETED
+            </span>
+
+
+            <h2>
+                Great Work!
+            </h2>
+
+
+            <p id="resultSubject">
+                Mathematics
+            </p>
+
+
+            <div class="score-circle">
+
+                <strong id="score">
+                    0
+                </strong>
+
+                <small>
+                    / 10
+                </small>
+
+            </div>
+
+
+            <div class="result-message"
+                id="resultMessage">
+
+                Keep practicing!
+
+            </div>
+
+
+            <div class="result-actions">
+
+                <button
+                    class="retry-btn"
+                    id="retryBtn">
+
+                    <i class="ph ph-arrow-counter-clockwise"></i>
+
+                    Try Again
+
+                </button>
+
+
+                <button
+                    class="back-btn"
+                    id="backBtn">
+
+                    Choose Subject
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div>
+
+            <strong>
+                Talent<span>Hunt</span>
+            </strong>
+
+            <p>
+                Learn • Practice • Assess • Achieve
+            </p>
+
+        </div>
+
+
+        <div>
+            <p>
+                Class 10 • High School Board
+            </p>
+        </div>
+
+    </footer>
+
+
+    <script
+        src="../../js/assessments/assessment-class-10.js">
+    </script>
+
+</body>
+
+</html>

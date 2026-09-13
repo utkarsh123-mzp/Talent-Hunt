@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interviews | Talent Hunt Admin</title>
+
+    <link rel="stylesheet" href="../../css/admin/interviews.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">TH</div>
+
+            <div class="brand-info">
+                <h2>Talent Hunt</h2>
+                <span>Admin Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="teacher-applications.html" class="nav-item">
+                <span class="nav-icon">▣</span>
+                <span>Teacher Applications</span>
+                <span class="nav-count">08</span>
+            </a>
+
+            <a href="verification.html" class="nav-item">
+                <span class="nav-icon">✓</span>
+                <span>Verification</span>
+                <span class="nav-count">05</span>
+            </a>
+
+            <a href="demo-reviews.html" class="nav-item">
+                <span class="nav-icon">▶</span>
+                <span>Demo Reviews</span>
+                <span class="nav-count">04</span>
+            </a>
+
+            <a href="interviews.html" class="nav-item active">
+                <span class="nav-icon">◷</span>
+                <span>Interviews</span>
+            </a>
+
+            <a href="hiring.html" class="nav-item">
+                <span class="nav-icon">★</span>
+                <span>Hiring</span>
+            </a>
+
+            <a href="onboarding.html" class="nav-item">
+                <span class="nav-icon">↗</span>
+                <span>Onboarding</span>
+            </a>
+
+            <a href="teachers.html" class="nav-item">
+                <span class="nav-icon">♟</span>
+                <span>Teachers</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">▤</span>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+                <div class="help-icon">?</div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <span>Contact support</span>
+                </div>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Top Header -->
+        <header class="top-header">
+
+            <div>
+                <span class="page-label">ADMIN PANEL</span>
+                <h1>Interviews</h1>
+            </div>
+
+            <div class="admin-profile">
+                <div class="admin-avatar">AU</div>
+
+                <div class="admin-details">
+                    <strong>Admin</strong>
+                    <span>Administrator</span>
+                </div>
+
+                <span class="profile-arrow">⌄</span>
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE INTRO ================= -->
+        <section class="page-intro">
+
+            <div>
+                <span class="section-label">INTERVIEW MANAGEMENT</span>
+
+                <h2>Manage Interviews</h2>
+
+                <p>
+                    Schedule, review and manage teacher interviews
+                    after successful demo evaluation.
+                </p>
+            </div>
+
+            <button class="primary-btn" id="scheduleInterviewBtn">
+                + Schedule Interview
+            </button>
+
+        </section>
+
+
+        <!-- ================= STAT CARDS ================= -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    ◷
+                </div>
+
+                <div>
+                    <span>Upcoming Interviews</span>
+                    <strong id="upcomingCount">04</strong>
+                    <small>Scheduled interviews</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ✓
+                </div>
+
+                <div>
+                    <span>Completed</span>
+                    <strong id="completedCount">08</strong>
+                    <small>Interviews completed</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    !
+                </div>
+
+                <div>
+                    <span>Pending Review</span>
+                    <strong id="pendingCount">03</strong>
+                    <small>Awaiting decision</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    ★
+                </div>
+
+                <div>
+                    <span>Selected</span>
+                    <strong id="selectedCount">05</strong>
+                    <small>Ready for hiring</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TOOLBAR ================= -->
+        <section class="toolbar">
+
+            <div class="search-box">
+                <span>⌕</span>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search teacher by name, email or subject..."
+                >
+            </div>
+
+
+            <div class="filters">
+
+                <select id="statusFilter">
+                    <option value="all">All Status</option>
+                    <option value="scheduled">Scheduled</option>
+                    <option value="completed">Completed</option>
+                    <option value="pending">Pending Review</option>
+                    <option value="selected">Selected</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+
+
+                <select id="modeFilter">
+                    <option value="all">All Modes</option>
+                    <option value="online">Online</option>
+                    <option value="offline">Offline</option>
+                </select>
+
+
+                <button class="reset-btn" id="resetBtn">
+                    ↻ Reset
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INTERVIEW LIST ================= -->
+        <section class="interview-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h3>All Interviews</h3>
+                    <span id="resultCount">12 interviews found</span>
+                </div>
+
+                <button class="export-btn" id="exportBtn">
+                    ↓ Export
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>TEACHER</th>
+                            <th>SUBJECT</th>
+                            <th>DATE & TIME</th>
+                            <th>MODE</th>
+                            <th>INTERVIEWER</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="interviewTableBody">
+                        <!-- JavaScript will render rows -->
+                    </tbody>
+
+                </table>
+
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">⌕</div>
+                    <h3>No interviews found</h3>
+                    <p>Try changing your search or filter.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= SCHEDULE MODAL ================= -->
+    <div class="modal-overlay" id="interviewModal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="section-label">NEW INTERVIEW</span>
+                    <h2>Schedule Interview</h2>
+                </div>
+
+                <button class="close-btn" id="closeModal">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="interviewForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group full">
+                        <label for="teacherName">Teacher Name</label>
+
+                        <input
+                            type="text"
+                            id="teacherName"
+                            placeholder="Enter teacher name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            placeholder="e.g. Mathematics"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="interviewer">Interviewer</label>
+
+                        <input
+                            type="text"
+                            id="interviewer"
+                            placeholder="Interviewer name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="interviewDate">Date</label>
+
+                        <input
+                            type="date"
+                            id="interviewDate"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="interviewTime">Time</label>
+
+                        <input
+                            type="time"
+                            id="interviewTime"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="interviewMode">Mode</label>
+
+                        <select id="interviewMode" required>
+                            <option value="">Select mode</option>
+                            <option value="online">Online</option>
+                            <option value="offline">Offline</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="cancelModal"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Schedule Interview
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span id="toastMessage">Interview scheduled successfully.</span>
+    </div>
+
+
+    <script src="../../js/admin/interviews.js"></script>
+
+</body>
+</html>

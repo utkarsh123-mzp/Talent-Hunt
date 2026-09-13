@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Classes | Talent Hunt</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/teacher-portal/my-classes.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+            <div class="logo-icon">
+                <i class="ph ph-graduation-cap"></i>
+            </div>
+
+            <div class="logo-text">
+                <h2>Talent Hunt</h2>
+                <span>Teacher Portal</span>
+            </div>
+        </div>
+
+
+        <!-- Teacher Profile -->
+        <div class="teacher-mini-profile">
+            <div class="profile-avatar">
+                TU
+            </div>
+
+            <div>
+                <h4>Teacher User</h4>
+                <span>Verified Teacher</span>
+            </div>
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="../teacher/teacher-dashboard.html" class="nav-item">
+                <i class="ph ph-squares-four"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-classes.html" class="nav-item active">
+                <i class="ph ph-chalkboard-teacher"></i>
+                <span>My Classes</span>
+            </a>
+
+            <a href="students.html" class="nav-item">
+                <i class="ph ph-users-three"></i>
+                <span>Students</span>
+            </a>
+
+            <a href="schedule.html" class="nav-item">
+                <i class="ph ph-calendar-blank"></i>
+                <span>Schedule</span>
+            </a>
+
+
+            <p class="nav-title">MANAGEMENT</p>
+
+            <a href="earnings.html" class="nav-item">
+                <i class="ph ph-wallet"></i>
+                <span>Earnings</span>
+            </a>
+
+            <a href="opportunities.html" class="nav-item">
+                <i class="ph ph-briefcase"></i>
+                <span>Opportunities</span>
+            </a>
+
+            <a href="my-profile.html" class="nav-item">
+                <i class="ph ph-user-circle"></i>
+                <span>My Profile</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <i class="ph ph-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="ph ph-sign-out"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="ph ph-list"></i>
+            </button>
+
+            <div class="page-heading">
+                <h1>My Classes</h1>
+                <p>Manage and track your assigned classes.</p>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="icon-btn" title="Notifications">
+                    <i class="ph ph-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="top-profile">
+                    <div class="profile-avatar small">
+                        TU
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="page-content">
+
+
+            <!-- =========================
+                 SUMMARY CARDS
+            ========================== -->
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <div class="summary-icon blue">
+                        <i class="ph ph-chalkboard-teacher"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Classes</span>
+                        <h2 id="totalClasses">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon green">
+                        <i class="ph ph-play-circle"></i>
+                    </div>
+
+                    <div>
+                        <span>Active Classes</span>
+                        <h2 id="activeClasses">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon orange">
+                        <i class="ph ph-users-three"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Students</span>
+                        <h2 id="totalStudents">0</h2>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon purple">
+                        <i class="ph ph-calendar-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Upcoming</span>
+                        <h2 id="upcomingClasses">0</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 TOOLBAR
+            ========================== -->
+            <div class="classes-toolbar">
+
+                <div class="toolbar-left">
+
+                    <div class="search-box">
+                        <i class="ph ph-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search classes..."
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="toolbar-right">
+
+                    <select id="classTypeFilter">
+                        <option value="all">All Types</option>
+                        <option value="online">Online</option>
+                        <option value="offline">Offline</option>
+                        <option value="one-to-one">One-to-One</option>
+                    </select>
+
+
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="completed">Completed</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CLASSES SECTION
+            ========================== -->
+            <section class="classes-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Assigned Classes</h2>
+                        <p>Classes assigned to you by Talent Hunt.</p>
+                    </div>
+
+                    <span class="result-count" id="resultCount">
+                        0 Classes
+                    </span>
+
+                </div>
+
+
+                <!-- Classes Container -->
+                <div class="classes-grid" id="classesContainer">
+                    <!-- JavaScript will render classes here -->
+                </div>
+
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState">
+
+                    <div class="empty-icon">
+                        <i class="ph ph-chalkboard"></i>
+                    </div>
+
+                    <h3>No classes found</h3>
+
+                    <p>
+                        No classes match your current search or filters.
+                    </p>
+
+                    <button id="clearFiltersBtn">
+                        Clear Filters
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         CLASS DETAILS MODAL
+    ========================== -->
+    <div class="modal-overlay" id="classModal">
+
+        <div class="class-modal">
+
+            <button class="modal-close" id="modalClose">
+                <i class="ph ph-x"></i>
+            </button>
+
+            <div id="modalContent">
+                <!-- JS content -->
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="../../js/teacher-portal/my-classes.js"></script>
+
+</body>
+</html>

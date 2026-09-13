@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Demo Reviews | Talent Hunt Admin</title>
+
+    <link rel="stylesheet" href="../../css/admin/demo-reviews.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-logo">TH</div>
+
+                <div class="brand-info">
+                    <h2>Talent Hunt</h2>
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="admin-dashboard.html" class="nav-item">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="teacher-applications.html" class="nav-item">
+                    <span class="nav-icon">▣</span>
+                    <span>Teacher Applications</span>
+                </a>
+
+                <a href="teachers.html" class="nav-item">
+                    <span class="nav-icon">♟</span>
+                    <span>Teachers</span>
+                </a>
+
+                <a href="verification.html" class="nav-item">
+                    <span class="nav-icon">✓</span>
+                    <span>Verification</span>
+                </a>
+
+                <a href="demo-reviews.html" class="nav-item active">
+                    <span class="nav-icon">★</span>
+                    <span>Demo Reviews</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="help-box">
+                    <div class="help-icon">?</div>
+                    <div>
+                        <strong>Need Help?</strong>
+                        <span>Contact support</span>
+                    </div>
+                </div>
+
+                <button class="logout-btn" id="logoutBtn">
+                    ↪ Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="topbar">
+
+                <div>
+                    <span class="page-label">ADMIN PORTAL</span>
+                    <h1>Demo Reviews</h1>
+                </div>
+
+                <div class="admin-profile">
+                    <div class="notification">♢</div>
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div class="profile-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- Page Intro -->
+            <section class="page-intro">
+
+                <div>
+                    <h2>Teacher Demo Reviews</h2>
+                    <p>
+                        Review submitted demo classes and decide whether
+                        teachers are ready for the next hiring stage.
+                    </p>
+                </div>
+
+                <button class="refresh-btn" id="refreshBtn">
+                    ↻ Refresh
+                </button>
+
+            </section>
+
+
+            <!-- Statistics -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon pending">◷</div>
+                    <div>
+                        <span>Pending Reviews</span>
+                        <strong id="pendingCount">08</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon approved">✓</div>
+                    <div>
+                        <span>Approved</span>
+                        <strong id="approvedCount">24</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon rejected">×</div>
+                    <div>
+                        <span>Rejected</span>
+                        <strong id="rejectedCount">05</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon total">★</div>
+                    <div>
+                        <span>Total Reviews</span>
+                        <strong id="totalCount">37</strong>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Reviews Section -->
+            <section class="reviews-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Demo Submissions</h2>
+                        <p>Evaluate teacher demo performance.</p>
+                    </div>
+
+                    <div class="filters">
+
+                        <div class="search-box">
+                            <span>⌕</span>
+                            <input
+                                type="text"
+                                id="searchInput"
+                                placeholder="Search teacher..."
+                            >
+                        </div>
+
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+
+                        <select id="subjectFilter">
+                            <option value="all">All Subjects</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Science">Science</option>
+                            <option value="English">English</option>
+                            <option value="Computer Science">Computer Science</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Reviews Container -->
+                <div class="reviews-list" id="reviewsList">
+                    <!-- JavaScript will render reviews -->
+                </div>
+
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">⌕</div>
+                    <h3>No reviews found</h3>
+                    <p>Try changing your search or filter.</p>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Review Modal -->
+    <div class="modal-overlay" id="reviewModal">
+
+        <div class="review-modal">
+
+            <button class="modal-close" id="closeModal">
+                ×
+            </button>
+
+            <div class="modal-header">
+
+                <div class="modal-avatar" id="modalAvatar">
+                    T
+                </div>
+
+                <div>
+                    <span class="page-label">DEMO REVIEW</span>
+                    <h2 id="modalTeacherName">Teacher Name</h2>
+                    <p id="modalSubject">Subject</p>
+                </div>
+
+            </div>
+
+
+            <div class="modal-details">
+
+                <div class="detail-item">
+                    <span>Demo Topic</span>
+                    <strong id="modalTopic">-</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Duration</span>
+                    <strong id="modalDuration">-</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Experience</span>
+                    <strong id="modalExperience">-</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Submitted</span>
+                    <strong id="modalDate">-</strong>
+                </div>
+
+            </div>
+
+
+            <div class="rating-section">
+
+                <h3>Evaluation</h3>
+
+                <div class="rating-row">
+                    <span>Teaching Skills</span>
+                    <strong id="teachingRating">-</strong>
+                </div>
+
+                <div class="rating-row">
+                    <span>Communication</span>
+                    <strong id="communicationRating">-</strong>
+                </div>
+
+                <div class="rating-row">
+                    <span>Subject Knowledge</span>
+                    <strong id="knowledgeRating">-</strong>
+                </div>
+
+                <div class="rating-row">
+                    <span>Overall Rating</span>
+                    <strong id="overallRating">-</strong>
+                </div>
+
+            </div>
+
+
+            <div class="feedback-box">
+                <h3>Reviewer Feedback</h3>
+                <p id="modalFeedback">
+                    -
+                </p>
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button class="reject-btn" id="modalRejectBtn">
+                    Reject
+                </button>
+
+                <button class="approve-btn" id="modalApproveBtn">
+                    Approve Demo
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../../js/admin/demo-reviews.js"></script>
+
+</body>
+</html>

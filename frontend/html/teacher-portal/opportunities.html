@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Opportunities | Teacher Portal | Talent Hunt</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="../../css/teacher-portal/opportunities.css">
+</head>
+
+<body>
+
+<!-- ================= TOPBAR ================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div>
+            <h2>Talent Hunt</h2>
+            <span>Teacher Portal</span>
+        </div>
+
+    </div>
+
+
+    <div class="topbar-right">
+
+        <button class="notification-btn" id="notificationBtn">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-dot"></span>
+        </button>
+
+
+        <div class="teacher-profile">
+
+            <div class="profile-avatar">
+                TU
+            </div>
+
+            <div class="teacher-info">
+                <strong>Teacher</strong>
+                <span>Teacher Account</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PORTAL LAYOUT ================= -->
+
+<div class="portal-layout">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            TEACHER MENU
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="../teacher/teacher-dashboard.html" class="nav-item">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a href="my-classes.html" class="nav-item">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <span>My Classes</span>
+            </a>
+
+
+            <a href="students.html" class="nav-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Students</span>
+            </a>
+
+
+            <a href="schedule.html" class="nav-item">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Schedule</span>
+            </a>
+
+
+            <a href="earnings.html" class="nav-item">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Earnings</span>
+            </a>
+
+
+            <a href="opportunities.html" class="nav-item active">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Opportunities</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <i class="fa-regular fa-circle-question"></i>
+                <span>Help & Support</span>
+            </a>
+
+
+            <a href="#" class="nav-item" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <div>
+
+                <div class="breadcrumb">
+
+                    <span>Teacher Portal</span>
+
+                    <i class="fa-solid fa-angle-right"></i>
+
+                    <span>Opportunities</span>
+
+                </div>
+
+
+                <h1>Teaching Opportunities</h1>
+
+                <p>
+                    Discover teaching opportunities that match your skills
+                    and preferences.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+
+                <div>
+                    <span>Available</span>
+                    <h3 id="availableCount">12</h3>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </div>
+
+                <div>
+                    <span>Applied</span>
+                    <h3 id="appliedCount">4</h3>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+                    <span>Under Review</span>
+                    <h3 id="reviewCount">2</h3>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+                    <span>Selected</span>
+                    <h3 id="selectedCount">2</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FILTER SECTION ================= -->
+
+        <section class="filter-section">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search subject, class, location..."
+                >
+
+            </div>
+
+
+            <select id="subjectFilter">
+
+                <option value="all">
+                    All Subjects
+                </option>
+
+                <option value="mathematics">
+                    Mathematics
+                </option>
+
+                <option value="science">
+                    Science
+                </option>
+
+                <option value="english">
+                    English
+                </option>
+
+                <option value="computer">
+                    Computer Science
+                </option>
+
+                <option value="data">
+                    Data Analytics
+                </option>
+
+            </select>
+
+
+            <select id="modeFilter">
+
+                <option value="all">
+                    All Modes
+                </option>
+
+                <option value="online">
+                    Online
+                </option>
+
+                <option value="offline">
+                    Offline
+                </option>
+
+                <option value="one-to-one">
+                    One-to-One
+                </option>
+
+                <option value="home">
+                    Home Centre
+                </option>
+
+            </select>
+
+
+            <select id="classFilter">
+
+                <option value="all">
+                    All Classes
+                </option>
+
+                <option value="5-8">
+                    Class 5–8
+                </option>
+
+                <option value="9-10">
+                    Class 9–10
+                </option>
+
+                <option value="college">
+                    College
+                </option>
+
+            </select>
+
+
+            <button class="reset-btn" id="resetFilters">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset
+            </button>
+
+        </section>
+
+
+        <!-- ================= CONTENT HEADER ================= -->
+
+        <section class="content-header">
+
+            <div>
+
+                <h2>Recommended Opportunities</h2>
+
+                <p>
+                    Opportunities based on your teaching profile.
+                </p>
+
+            </div>
+
+
+            <select id="sortFilter">
+
+                <option value="recent">
+                    Most Recent
+                </option>
+
+                <option value="fee-high">
+                    Highest Fee
+                </option>
+
+                <option value="fee-low">
+                    Lowest Fee
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- ================= OPPORTUNITIES ================= -->
+
+        <section class="opportunities-grid" id="opportunitiesGrid">
+
+
+            <!-- OPPORTUNITY 1 -->
+
+            <article
+                class="opportunity-card"
+                data-subject="mathematics"
+                data-mode="one-to-one"
+                data-class="9-10"
+                data-title="Mathematics Teacher"
+                data-location="Lucknow"
+                data-fee="12000"
+            >
+
+                <div class="card-top">
+
+                    <div class="company-icon">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+
+                    <span class="new-badge">
+                        New
+                    </span>
+
+                </div>
+
+
+                <h3>Mathematics Teacher</h3>
+
+                <p class="organization">
+                    School Student Program
+                </p>
+
+
+                <div class="opportunity-tags">
+
+                    <span>
+                        <i class="fa-solid fa-book"></i>
+                        Mathematics
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Class 9–10
+                    </span>
+
+                </div>
+
+
+                <div class="opportunity-details">
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Lucknow</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-video"></i>
+                        <span>One-to-One</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Evening</span>
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <div class="fee">
+
+                        <span>Expected Fee</span>
+
+                        <strong>
+                            ₹12,000<span>/month</span>
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="view-btn"
+                        data-id="1"
+                    >
+                        View Details
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- OPPORTUNITY 2 -->
+
+            <article
+                class="opportunity-card"
+                data-subject="computer"
+                data-mode="online"
+                data-class="college"
+                data-title="Full Stack Development Mentor"
+                data-location="Online"
+                data-fee="18000"
+            >
+
+                <div class="card-top">
+
+                    <div class="company-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                    <span class="new-badge">
+                        New
+                    </span>
+
+                </div>
+
+
+                <h3>Full Stack Development Mentor</h3>
+
+                <p class="organization">
+                    College Skill Program
+                </p>
+
+
+                <div class="opportunity-tags">
+
+                    <span>
+                        <i class="fa-solid fa-code"></i>
+                        Computer Science
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        College
+                    </span>
+
+                </div>
+
+
+                <div class="opportunity-details">
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Online</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-video"></i>
+                        <span>Online</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Flexible</span>
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <div class="fee">
+
+                        <span>Expected Fee</span>
+
+                        <strong>
+                            ₹18,000<span>/month</span>
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="view-btn"
+                        data-id="2"
+                    >
+                        View Details
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- OPPORTUNITY 3 -->
+
+            <article
+                class="opportunity-card"
+                data-subject="science"
+                data-mode="home"
+                data-class="5-8"
+                data-title="Science Teacher"
+                data-location="Kanpur"
+                data-fee="10000"
+            >
+
+                <div class="card-top">
+
+                    <div class="company-icon">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+
+                </div>
+
+
+                <h3>Science Teacher</h3>
+
+                <p class="organization">
+                    Home Centre Program
+                </p>
+
+
+                <div class="opportunity-tags">
+
+                    <span>
+                        <i class="fa-solid fa-flask"></i>
+                        Science
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Class 5–8
+                    </span>
+
+                </div>
+
+
+                <div class="opportunity-details">
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Kanpur</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home Centre</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Morning</span>
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <div class="fee">
+
+                        <span>Expected Fee</span>
+
+                        <strong>
+                            ₹10,000<span>/month</span>
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="view-btn"
+                        data-id="3"
+                    >
+                        View Details
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- OPPORTUNITY 4 -->
+
+            <article
+                class="opportunity-card"
+                data-subject="english"
+                data-mode="one-to-one"
+                data-class="9-10"
+                data-title="English Communication Teacher"
+                data-location="Varanasi"
+                data-fee="9000"
+            >
+
+                <div class="card-top">
+
+                    <div class="company-icon">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+
+                </div>
+
+
+                <h3>English Communication Teacher</h3>
+
+                <p class="organization">
+                    Student Development Program
+                </p>
+
+
+                <div class="opportunity-tags">
+
+                    <span>
+                        <i class="fa-solid fa-language"></i>
+                        English
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Class 9–10
+                    </span>
+
+                </div>
+
+
+                <div class="opportunity-details">
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Varanasi</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-user"></i>
+                        <span>One-to-One</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Evening</span>
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <div class="fee">
+
+                        <span>Expected Fee</span>
+
+                        <strong>
+                            ₹9,000<span>/month</span>
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="view-btn"
+                        data-id="4"
+                    >
+                        View Details
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- OPPORTUNITY 5 -->
+
+            <article
+                class="opportunity-card"
+                data-subject="data"
+                data-mode="online"
+                data-class="college"
+                data-title="Data Analytics Mentor"
+                data-location="Online"
+                data-fee="20000"
+            >
+
+                <div class="card-top">
+
+                    <div class="company-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <span class="featured-badge">
+                        Featured
+                    </span>
+
+                </div>
+
+
+                <h3>Data Analytics Mentor</h3>
+
+                <p class="organization">
+                    College Career Program
+                </p>
+
+
+                <div class="opportunity-tags">
+
+                    <span>
+                        <i class="fa-solid fa-chart-column"></i>
+                        Data Analytics
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        College
+                    </span>
+
+                </div>
+
+
+                <div class="opportunity-details">
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Online</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-video"></i>
+                        <span>Online</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Flexible</span>
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <div class="fee">
+
+                        <span>Expected Fee</span>
+
+                        <strong>
+                            ₹20,000<span>/month</span>
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="view-btn"
+                        data-id="5"
+                    >
+                        View Details
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- OPPORTUNITY 6 -->
+
+            <article
+                class="opportunity-card"
+                data-subject="mathematics"
+                data-mode="offline"
+                data-class="college"
+                data-title="Quantitative Aptitude Mentor"
+                data-location="Prayagraj"
+                data-fee="15000"
+            >
+
+                <div class="card-top">
+
+                    <div class="company-icon">
+                        <i class="fa-solid fa-square-root-variable"></i>
+                    </div>
+
+                </div>
+
+
+                <h3>Quantitative Aptitude Mentor</h3>
+
+                <p class="organization">
+                    College Placement Program
+                </p>
+
+
+                <div class="opportunity-tags">
+
+                    <span>
+                        <i class="fa-solid fa-calculator"></i>
+                        Mathematics
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        College
+                    </span>
+
+                </div>
+
+
+                <div class="opportunity-details">
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Prayagraj</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-building"></i>
+                        <span>Offline</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Weekend</span>
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <div class="fee">
+
+                        <span>Expected Fee</span>
+
+                        <strong>
+                            ₹15,000<span>/month</span>
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="view-btn"
+                        data-id="6"
+                    >
+                        View Details
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- NO RESULTS -->
+
+        <div class="no-results" id="noResults">
+
+            <div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <h3>No opportunities found</h3>
+
+            <p>
+                Try changing your search or filters.
+            </p>
+
+        </div>
+
+
+        <!-- ================= MY APPLICATIONS ================= -->
+
+        <section class="applications-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>My Applications</h2>
+
+                    <p>
+                        Track the opportunities you have applied for.
+                    </p>
+
+                </div>
+
+                <button id="applicationsBtn">
+                    View Applications
+                </button>
+
+            </div>
+
+
+            <div class="application-list">
+
+
+                <div class="application-item">
+
+                    <div class="application-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+
+                    <div class="application-info">
+
+                        <strong>
+                            Full Stack Development Mentor
+                        </strong>
+
+                        <span>
+                            Applied on 03 Sep 2026
+                        </span>
+
+                    </div>
+
+
+                    <span class="application-status review">
+                        Under Review
+                    </span>
+
+                </div>
+
+
+                <div class="application-item">
+
+                    <div class="application-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+
+                    <div class="application-info">
+
+                        <strong>
+                            Data Analytics Mentor
+                        </strong>
+
+                        <span>
+                            Applied on 29 Aug 2026
+                        </span>
+
+                    </div>
+
+
+                    <span class="application-status selected">
+                        Selected
+                    </span>
+
+                </div>
+
+
+                <div class="application-item">
+
+                    <div class="application-icon">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+
+
+                    <div class="application-info">
+
+                        <strong>
+                            Science Teacher
+                        </strong>
+
+                        <span>
+                            Applied on 25 Aug 2026
+                        </span>
+
+                    </div>
+
+
+                    <span class="application-status interview">
+                        Interview
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= OPPORTUNITY MODAL ================= -->
+
+<div class="modal-overlay" id="opportunityModal">
+
+    <div class="opportunity-modal">
+
+        <button
+            class="modal-close"
+            id="closeOpportunity"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+        <div class="modal-heading">
+
+            <div class="modal-icon" id="modalIcon">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+
+            <div>
+
+                <span class="modal-label">
+                    Teaching Opportunity
+                </span>
+
+                <h2 id="modalTitle">
+                    Opportunity
+                </h2>
+
+                <p id="modalOrganization">
+                    Talent Hunt
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-tags">
+
+            <span id="modalSubject">
+                Subject
+            </span>
+
+            <span id="modalClass">
+                Class
+            </span>
+
+            <span id="modalMode">
+                Mode
+            </span>
+
+        </div>
+
+
+        <div class="modal-details-grid">
+
+            <div>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+                    <span>Location</span>
+                    <strong id="modalLocation">
+                        -
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <div>
+                    <span>Schedule</span>
+                    <strong id="modalSchedule">
+                        -
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-clock"></i>
+
+                <div>
+                    <span>Duration</span>
+                    <strong id="modalDuration">
+                        3–6 Months
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <div>
+                    <span>Expected Fee</span>
+                    <strong id="modalFee">
+                        -
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-description-section">
+
+            <h3>About this opportunity</h3>
+
+            <p id="modalDescription">
+                This opportunity is designed for teachers who want
+                to help students improve their academic and practical
+                skills.
+            </p>
+
+        </div>
+
+
+        <div class="requirements">
+
+            <h3>Requirements</h3>
+
+            <ul>
+
+                <li>
+                    Relevant subject qualification
+                </li>
+
+                <li>
+                    Good communication and teaching skills
+                </li>
+
+                <li>
+                    Previous teaching experience preferred
+                </li>
+
+                <li>
+                    Ability to conduct regular classes
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                class="secondary-modal-btn"
+                id="saveOpportunity"
+            >
+                <i class="fa-regular fa-bookmark"></i>
+                Save
+            </button>
+
+
+            <button
+                class="apply-btn"
+                id="applyBtn"
+            >
+                <i class="fa-solid fa-paper-plane"></i>
+                Apply Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SUCCESS MODAL ================= -->
+
+<div class="success-overlay" id="successModal">
+
+    <div class="success-modal">
+
+        <div class="success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+        <h2>Application Submitted</h2>
+
+        <p>
+            Your application has been submitted successfully.
+            The Talent Hunt team will review your profile and
+            contact you regarding the next step.
+        </p>
+
+        <button id="successClose">
+            Done
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="../../js/teacher-portal/opportunities.js"></script>
+
+</body>
+</html>

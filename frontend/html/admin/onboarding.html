@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Onboarding | Talent Hunt Admin</title>
+
+    <link rel="stylesheet" href="../../css/admin/onboarding.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">TH</div>
+
+            <div class="brand-info">
+                <h2>Talent Hunt</h2>
+                <span>Admin Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="teacher-applications.html" class="nav-item">
+                <span class="nav-icon">▣</span>
+                <span>Teacher Applications</span>
+                <span class="nav-badge">08</span>
+            </a>
+
+            <a href="verification.html" class="nav-item">
+                <span class="nav-icon">✓</span>
+                <span>Verification</span>
+                <span class="nav-badge">05</span>
+            </a>
+
+            <a href="demo-reviews.html" class="nav-item">
+                <span class="nav-icon">▶</span>
+                <span>Demo Reviews</span>
+                <span class="nav-badge">04</span>
+            </a>
+
+            <a href="interviews.html" class="nav-item">
+                <span class="nav-icon">◷</span>
+                <span>Interviews</span>
+            </a>
+
+            <a href="hiring.html" class="nav-item">
+                <span class="nav-icon">★</span>
+                <span>Hiring</span>
+            </a>
+
+            <a href="onboarding.html" class="nav-item active">
+                <span class="nav-icon">↗</span>
+                <span>Onboarding</span>
+            </a>
+
+            <a href="teachers.html" class="nav-item">
+                <span class="nav-icon">♟</span>
+                <span>Teachers</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">▤</span>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+                <div class="help-icon">?</div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <span>Contact support</span>
+                </div>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div>
+                <span class="page-label">ADMIN PANEL</span>
+                <h1>Onboarding</h1>
+            </div>
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">AU</div>
+
+                <div class="admin-details">
+                    <strong>Admin</strong>
+                    <span>Administrator</span>
+                </div>
+
+                <button class="profile-arrow" id="profileBtn">⌄</button>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Intro -->
+        <section class="page-intro">
+
+            <div>
+                <span class="section-label">TEACHER ONBOARDING</span>
+
+                <h2>Manage Onboarding</h2>
+
+                <p>
+                    Complete onboarding and manage newly hired teachers
+                    on the Talent Hunt platform.
+                </p>
+            </div>
+
+            <button class="primary-btn" id="addTeacherBtn">
+                + Add Teacher
+            </button>
+
+        </section>
+
+
+        <!-- ================= STATS ================= -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">▣</div>
+
+                <div>
+                    <span>Total Onboarding</span>
+                    <strong id="totalOnboarding">08</strong>
+                    <small>All selected teachers</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">✓</div>
+
+                <div>
+                    <span>Completed</span>
+                    <strong id="completedCount">05</strong>
+                    <small>Successfully onboarded</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">◷</div>
+
+                <div>
+                    <span>In Progress</span>
+                    <strong id="progressCount">02</strong>
+                    <small>Currently onboarding</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon red">!</div>
+
+                <div>
+                    <span>Pending</span>
+                    <strong id="pendingCount">01</strong>
+                    <small>Action required</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FILTER AREA ================= -->
+        <section class="filter-section">
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search teacher by name, email or subject"
+                >
+
+            </div>
+
+            <select id="statusFilter">
+                <option value="all">All Status</option>
+                <option value="completed">Completed</option>
+                <option value="progress">In Progress</option>
+                <option value="pending">Pending</option>
+            </select>
+
+            <button class="reset-btn" id="resetBtn">
+                ↻ Reset
+            </button>
+
+        </section>
+
+
+        <!-- ================= TABLE ================= -->
+        <section class="onboarding-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h3>Onboarding Teachers</h3>
+                    <span id="resultCount">8 teachers found</span>
+                </div>
+
+                <button class="export-btn" id="exportBtn">
+                    ↓ Export
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="selectAll">
+                            </th>
+
+                            <th>TEACHER</th>
+                            <th>SUBJECT</th>
+                            <th>JOINING DATE</th>
+                            <th>PROGRESS</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="onboardingTable">
+
+                        <!-- Javascript will render rows -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= MODAL ================= -->
+<div class="modal-overlay" id="detailsModal">
+
+    <div class="modal">
+
+        <button class="modal-close" id="modalClose">×</button>
+
+        <span class="section-label">TEACHER ONBOARDING</span>
+
+        <h2 id="modalTeacherName">Teacher Name</h2>
+
+        <div class="modal-info">
+
+            <div>
+                <span>Email</span>
+                <strong id="modalEmail">-</strong>
+            </div>
+
+            <div>
+                <span>Subject</span>
+                <strong id="modalSubject">-</strong>
+            </div>
+
+            <div>
+                <span>Joining Date</span>
+                <strong id="modalJoining">-</strong>
+            </div>
+
+            <div>
+                <span>Status</span>
+                <strong id="modalStatus">-</strong>
+            </div>
+
+        </div>
+
+        <div class="modal-progress">
+
+            <div class="progress-heading">
+                <span>Onboarding Progress</span>
+                <strong id="modalProgress">0%</strong>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="modalProgressBar"></div>
+            </div>
+
+        </div>
+
+        <button class="primary-btn full-btn" id="completeBtn">
+            Mark as Completed
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="../../js/admin/onboarding.js"></script>
+
+</body>
+</html>

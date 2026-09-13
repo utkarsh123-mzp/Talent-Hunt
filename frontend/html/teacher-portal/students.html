@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Students | Teacher Portal | Talent Hunt</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Students CSS -->
+    <link rel="stylesheet" href="../../css/teacher-portal/students.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         TOP NAVBAR
+    =============================== -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div>
+                <h2>Talent Hunt</h2>
+                <span>Teacher Portal</span>
+            </div>
+        </div>
+
+        <div class="topbar-right">
+
+            <button class="notification-btn" id="notificationBtn">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="teacher-mini-profile">
+                <div class="profile-avatar">TU</div>
+
+                <div class="teacher-info">
+                    <strong>Teacher</strong>
+                    <span>Teacher Account</span>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         MAIN LAYOUT
+    =============================== -->
+    <div class="portal-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+                <span>TEACHER MENU</span>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="../teacher/teacher-dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="my-classes.html" class="nav-item">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <span>My Classes</span>
+                </a>
+
+                <a href="students.html" class="nav-item active">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <span>Students</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="nav-item">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <span>Help & Support</span>
+                </a>
+
+                <a href="#" class="nav-item logout-link" id="logoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==============================
+             MAIN CONTENT
+        =============================== -->
+        <main class="main-content">
+
+            <!-- Page Header -->
+            <section class="page-header">
+
+                <div>
+                    <div class="breadcrumb">
+                        <span>Teacher Portal</span>
+                        <i class="fa-solid fa-angle-right"></i>
+                        <span>Students</span>
+                    </div>
+
+                    <h1>My Students</h1>
+
+                    <p>
+                        View and manage students assigned to your classes.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- ==============================
+                 STUDENT SUMMARY
+            =============================== -->
+            <section class="summary-grid">
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Students</span>
+                        <h3 id="totalStudents">24</h3>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Active Students</span>
+                        <h3 id="activeStudents">21</h3>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Avg. Progress</span>
+                        <h3 id="averageProgress">78%</h3>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+
+                    <div>
+                        <span>New Students</span>
+                        <h3 id="newStudents">3</h3>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- ==============================
+                 FILTER SECTION
+            =============================== -->
+            <section class="student-controls">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="studentSearch"
+                        placeholder="Search students by name..."
+                    >
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <select id="classFilter">
+                        <option value="all">All Classes</option>
+                        <option value="Python">Python</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Data Analytics">Data Analytics</option>
+                        <option value="SQL">SQL</option>
+                    </select>
+
+
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================
+                 STUDENTS SECTION
+            =============================== -->
+            <section class="students-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Students</h2>
+                        <p id="studentCount">
+                            Showing 6 students
+                        </p>
+                    </div>
+
+                    <button class="view-toggle active" id="gridViewBtn">
+                        <i class="fa-solid fa-grip"></i>
+                    </button>
+
+                    <button class="view-toggle" id="listViewBtn">
+                        <i class="fa-solid fa-list"></i>
+                    </button>
+
+                </div>
+
+
+                <!-- Student Container -->
+                <div class="students-grid" id="studentsContainer">
+
+                    <!-- Student Card 1 -->
+                    <article
+                        class="student-card"
+                        data-name="Rahul Sharma"
+                        data-class="Python"
+                        data-status="active"
+                    >
+
+                        <div class="student-card-top">
+
+                            <div class="student-avatar">
+                                RS
+                            </div>
+
+                            <span class="status active">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="student-details">
+
+                            <h3>Rahul Sharma</h3>
+
+                            <p>
+                                <i class="fa-solid fa-envelope"></i>
+                                rahul@example.com
+                            </p>
+
+                            <p>
+                                <i class="fa-solid fa-book"></i>
+                                Python
+                            </p>
+
+                        </div>
+
+                        <div class="student-progress">
+
+                            <div class="progress-header">
+                                <span>Course Progress</span>
+                                <strong>85%</strong>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width: 85%;"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="student-footer">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Joined 12 Aug 2026
+                            </span>
+
+                            <button
+                                class="view-student"
+                                data-student="Rahul Sharma"
+                            >
+                                View
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Student Card 2 -->
+                    <article
+                        class="student-card"
+                        data-name="Priya Singh"
+                        data-class="Web Development"
+                        data-status="active"
+                    >
+
+                        <div class="student-card-top">
+
+                            <div class="student-avatar">
+                                PS
+                            </div>
+
+                            <span class="status active">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="student-details">
+
+                            <h3>Priya Singh</h3>
+
+                            <p>
+                                <i class="fa-solid fa-envelope"></i>
+                                priya@example.com
+                            </p>
+
+                            <p>
+                                <i class="fa-solid fa-book"></i>
+                                Web Development
+                            </p>
+
+                        </div>
+
+                        <div class="student-progress">
+
+                            <div class="progress-header">
+                                <span>Course Progress</span>
+                                <strong>72%</strong>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width: 72%;"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="student-footer">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Joined 18 Aug 2026
+                            </span>
+
+                            <button
+                                class="view-student"
+                                data-student="Priya Singh"
+                            >
+                                View
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Student Card 3 -->
+                    <article
+                        class="student-card"
+                        data-name="Aman Verma"
+                        data-class="Data Analytics"
+                        data-status="active"
+                    >
+
+                        <div class="student-card-top">
+
+                            <div class="student-avatar">
+                                AV
+                            </div>
+
+                            <span class="status active">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="student-details">
+
+                            <h3>Aman Verma</h3>
+
+                            <p>
+                                <i class="fa-solid fa-envelope"></i>
+                                aman@example.com
+                            </p>
+
+                            <p>
+                                <i class="fa-solid fa-book"></i>
+                                Data Analytics
+                            </p>
+
+                        </div>
+
+                        <div class="student-progress">
+
+                            <div class="progress-header">
+                                <span>Course Progress</span>
+                                <strong>91%</strong>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width: 91%;"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="student-footer">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Joined 20 Aug 2026
+                            </span>
+
+                            <button
+                                class="view-student"
+                                data-student="Aman Verma"
+                            >
+                                View
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Student Card 4 -->
+                    <article
+                        class="student-card"
+                        data-name="Neha Gupta"
+                        data-class="SQL"
+                        data-status="active"
+                    >
+
+                        <div class="student-card-top">
+
+                            <div class="student-avatar">
+                                NG
+                            </div>
+
+                            <span class="status active">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="student-details">
+
+                            <h3>Neha Gupta</h3>
+
+                            <p>
+                                <i class="fa-solid fa-envelope"></i>
+                                neha@example.com
+                            </p>
+
+                            <p>
+                                <i class="fa-solid fa-book"></i>
+                                SQL
+                            </p>
+
+                        </div>
+
+                        <div class="student-progress">
+
+                            <div class="progress-header">
+                                <span>Course Progress</span>
+                                <strong>64%</strong>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width: 64%;"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="student-footer">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Joined 22 Aug 2026
+                            </span>
+
+                            <button
+                                class="view-student"
+                                data-student="Neha Gupta"
+                            >
+                                View
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Student Card 5 -->
+                    <article
+                        class="student-card"
+                        data-name="Arjun Yadav"
+                        data-class="Python"
+                        data-status="active"
+                    >
+
+                        <div class="student-card-top">
+
+                            <div class="student-avatar">
+                                AY
+                            </div>
+
+                            <span class="status active">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="student-details">
+
+                            <h3>Arjun Yadav</h3>
+
+                            <p>
+                                <i class="fa-solid fa-envelope"></i>
+                                arjun@example.com
+                            </p>
+
+                            <p>
+                                <i class="fa-solid fa-book"></i>
+                                Python
+                            </p>
+
+                        </div>
+
+                        <div class="student-progress">
+
+                            <div class="progress-header">
+                                <span>Course Progress</span>
+                                <strong>80%</strong>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width: 80%;"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="student-footer">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Joined 25 Aug 2026
+                            </span>
+
+                            <button
+                                class="view-student"
+                                data-student="Arjun Yadav"
+                            >
+                                View
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Student Card 6 -->
+                    <article
+                        class="student-card"
+                        data-name="Sneha Mishra"
+                        data-class="Web Development"
+                        data-status="inactive"
+                    >
+
+                        <div class="student-card-top">
+
+                            <div class="student-avatar">
+                                SM
+                            </div>
+
+                            <span class="status inactive">
+                                Inactive
+                            </span>
+
+                        </div>
+
+                        <div class="student-details">
+
+                            <h3>Sneha Mishra</h3>
+
+                            <p>
+                                <i class="fa-solid fa-envelope"></i>
+                                sneha@example.com
+                            </p>
+
+                            <p>
+                                <i class="fa-solid fa-book"></i>
+                                Web Development
+                            </p>
+
+                        </div>
+
+                        <div class="student-progress">
+
+                            <div class="progress-header">
+                                <span>Course Progress</span>
+                                <strong>48%</strong>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width: 48%;"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="student-footer">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Joined 28 Aug 2026
+                            </span>
+
+                            <button
+                                class="view-student"
+                                data-student="Sneha Mishra"
+                            >
+                                View
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState">
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-user-slash"></i>
+                    </div>
+
+                    <h3>No Students Found</h3>
+
+                    <p>
+                        Try changing your search or filter.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ==============================
+         STUDENT MODAL
+    =============================== -->
+    <div class="modal-overlay" id="studentModal">
+
+        <div class="student-modal">
+
+            <button class="modal-close" id="modalClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-profile">
+
+                <div class="modal-avatar" id="modalAvatar">
+                    RS
+                </div>
+
+                <div>
+                    <h2 id="modalStudentName">
+                        Rahul Sharma
+                    </h2>
+
+                    <span id="modalStudentStatus" class="status active">
+                        Active
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="modal-info-grid">
+
+                <div class="modal-info">
+                    <span>Email</span>
+                    <strong id="modalEmail">
+                        student@example.com
+                    </strong>
+                </div>
+
+                <div class="modal-info">
+                    <span>Course</span>
+                    <strong id="modalCourse">
+                        Python
+                    </strong>
+                </div>
+
+                <div class="modal-info">
+                    <span>Progress</span>
+                    <strong id="modalProgress">
+                        85%
+                    </strong>
+                </div>
+
+                <div class="modal-info">
+                    <span>Attendance</span>
+                    <strong>92%</strong>
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button class="primary-btn" id="messageStudentBtn">
+                    <i class="fa-regular fa-message"></i>
+                    Message Student
+                </button>
+
+                <button class="secondary-btn" id="closeStudentBtn">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="../../js/teacher-portal/students.js"></script>
+
+</body>
+</html>

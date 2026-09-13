@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Teacher Onboarding | Talent Hunt</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../../css/teacher/onboarding.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="top-navbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            TH
+        </div>
+
+        <div class="brand-content">
+
+            <h2>
+                Talent Hunt
+            </h2>
+
+            <span>
+                Teacher Onboarding
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-actions">
+
+        <a
+            href="teacher-profile.html"
+            class="nav-link"
+        >
+            My Profile
+        </a>
+
+        <a
+            href="hiring.html"
+            class="nav-link"
+        >
+            Hiring Status
+        </a>
+
+        <button
+            class="logout-btn"
+            id="logoutBtn"
+        >
+            Logout
+        </button>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="page-container">
+
+
+    <!-- =====================================
+         WELCOME HEADER
+    ====================================== -->
+
+    <section class="welcome-section">
+
+        <div class="welcome-content">
+
+            <span class="eyebrow">
+                WELCOME TO TALENT HUNT
+            </span>
+
+            <h1>
+                Welcome to the Teaching Team 🎉
+            </h1>
+
+            <p>
+                Congratulations! Your application has been
+                selected. Complete the onboarding steps below
+                to start your teaching journey.
+            </p>
+
+        </div>
+
+
+        <div class="selected-badge">
+
+            <span class="badge-icon">
+                ✓
+            </span>
+
+            <div>
+
+                <strong>
+                    Application Selected
+                </strong>
+
+                <span>
+                    Ready for onboarding
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ONBOARDING PROGRESS
+    ====================================== -->
+
+    <section class="progress-card">
+
+        <div class="progress-header">
+
+            <div>
+
+                <h3>
+                    Onboarding Progress
+                </h3>
+
+                <p>
+                    Complete all required steps.
+                </p>
+
+            </div>
+
+            <strong id="progressPercent">
+                0%
+            </strong>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <div
+                class="progress-fill"
+                id="progressFill"
+            ></div>
+
+        </div>
+
+
+        <div class="progress-steps">
+
+            <span class="progress-step active">
+                1. Verification
+            </span>
+
+            <span class="progress-step">
+                2. Teaching Setup
+            </span>
+
+            <span class="progress-step">
+                3. Agreement
+            </span>
+
+            <span class="progress-step">
+                4. Complete
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ONBOARDING FORM
+    ====================================== -->
+
+    <form
+        id="onboardingForm"
+        class="onboarding-form"
+    >
+
+
+        <!-- =================================
+             STEP 1
+        ================================== -->
+
+        <section
+            class="onboarding-card"
+            id="step1"
+        >
+
+            <div class="card-heading">
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <div>
+
+                    <span>
+                        STEP 1
+                    </span>
+
+                    <h2>
+                        Verify Your Information
+                    </h2>
+
+                    <p>
+                        Confirm that your basic information
+                        is correct.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email address"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter phone number"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="teacherId">
+                        Teacher Application ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="teacherId"
+                        value="TH-2026-00124"
+                        readonly
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             STEP 2
+        ================================== -->
+
+        <section
+            class="onboarding-card"
+            id="step2"
+        >
+
+            <div class="card-heading">
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <div>
+
+                    <span>
+                        STEP 2
+                    </span>
+
+                    <h2>
+                        Teaching Setup
+                    </h2>
+
+                    <p>
+                        Tell us how and where you prefer to teach.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="teachingMode">
+                        Teaching Mode
+                    </label>
+
+                    <select id="teachingMode" required>
+
+                        <option value="">
+                            Select teaching mode
+                        </option>
+
+                        <option value="online">
+                            Online
+                        </option>
+
+                        <option value="offline">
+                            Offline / Home Centre
+                        </option>
+
+                        <option value="both">
+                            Online + Offline
+                        </option>
+
+                        <option value="one-to-one">
+                            One-to-One Coaching
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Primary Subject
+                    </label>
+
+                    <select id="subject" required>
+
+                        <option value="">
+                            Select subject
+                        </option>
+
+                        <option>
+                            Mathematics
+                        </option>
+
+                        <option>
+                            Science
+                        </option>
+
+                        <option>
+                            English
+                        </option>
+
+                        <option>
+                            Computer Science
+                        </option>
+
+                        <option>
+                            Social Science
+                        </option>
+
+                        <option>
+                            Physics
+                        </option>
+
+                        <option>
+                            Chemistry
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="classes">
+                        Classes You Want to Teach
+                    </label>
+
+                    <select id="classes" required>
+
+                        <option value="">
+                            Select range
+                        </option>
+
+                        <option>
+                            Class 5 - 8
+                        </option>
+
+                        <option>
+                            Class 5 - 10
+                        </option>
+
+                        <option>
+                            Class 9 - 10
+                        </option>
+
+                        <option>
+                            Class 11 - 12
+                        </option>
+
+                        <option>
+                            College Students
+                        </option>
+
+                        <option>
+                            School + College
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="availability">
+                        Availability
+                    </label>
+
+                    <select id="availability" required>
+
+                        <option value="">
+                            Select availability
+                        </option>
+
+                        <option>
+                            Weekdays
+                        </option>
+
+                        <option>
+                            Weekends
+                        </option>
+
+                        <option>
+                            Morning
+                        </option>
+
+                        <option>
+                            Evening
+                        </option>
+
+                        <option>
+                            Flexible
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label for="preferredHours">
+                        Preferred Teaching Hours
+                    </label>
+
+                    <input
+                        type="text"
+                        id="preferredHours"
+                        placeholder="Example: 5 PM - 9 PM"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             STEP 3
+        ================================== -->
+
+        <section
+            class="onboarding-card"
+            id="step3"
+        >
+
+            <div class="card-heading">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <div>
+
+                    <span>
+                        STEP 3
+                    </span>
+
+                    <h2>
+                        Documents & Agreement
+                    </h2>
+
+                    <p>
+                        Confirm your documents and accept
+                        the teaching agreement.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="document-list">
+
+
+                <div class="document-row">
+
+                    <div class="document-left">
+
+                        <div class="document-icon">
+                            🪪
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Identity Verification
+                            </strong>
+
+                            <span>
+                                Identity document submitted
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+
+                <div class="document-row">
+
+                    <div class="document-left">
+
+                        <div class="document-icon">
+                            📄
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Resume / CV
+                            </strong>
+
+                            <span>
+                                Resume submitted during application
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+
+                <div class="document-row">
+
+                    <div class="document-left">
+
+                        <div class="document-icon">
+                            🎓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Qualification Certificates
+                            </strong>
+
+                            <span>
+                                Submitted certificates
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="agreement-box">
+
+                <label class="checkbox-wrapper">
+
+                    <input
+                        type="checkbox"
+                        id="agreement"
+                        required
+                    >
+
+                    <span class="custom-checkbox"></span>
+
+                    <span class="agreement-text">
+
+                        I confirm that the information and documents
+                        provided by me are accurate. I agree to follow
+                        the teaching guidelines, professional standards
+                        and terms of Talent Hunt.
+
+                    </span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             FINAL CONFIRMATION
+        ================================== -->
+
+        <section class="completion-card">
+
+            <div class="completion-icon">
+                🚀
+            </div>
+
+            <div class="completion-content">
+
+                <span class="eyebrow">
+                    FINAL STEP
+                </span>
+
+                <h2>
+                    Ready to Start Teaching?
+                </h2>
+
+                <p>
+                    Submit your onboarding details to activate
+                    your teacher account.
+                </p>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="complete-btn"
+                id="completeBtn"
+            >
+
+                Complete Onboarding
+
+            </button>
+
+        </section>
+
+    </form>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 Talent Hunt. Teacher Portal.
+    </p>
+
+    <span>
+        Secure • Private • Professional
+    </span>
+
+</footer>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script
+    src="../../js/teacher/onboarding.js"
+></script>
+
+</body>
+
+</html>

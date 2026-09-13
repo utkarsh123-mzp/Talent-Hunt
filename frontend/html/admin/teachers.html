@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teachers | Talent Hunt Admin</title>
+
+    <!-- Main Admin CSS -->
+    <link rel="stylesheet" href="../../css/admin/admin-dashboard.css">
+
+    <!-- Teachers CSS -->
+    <link rel="stylesheet" href="../../css/admin/teachers.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="admin-sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-logo">TH</div>
+
+            <div class="brand-text">
+                <h2>Talent Hunt</h2>
+                <span>Admin Panel</span>
+            </div>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="teacher-applications.html" class="nav-item">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Teacher Applications</span>
+                <span class="nav-badge">08</span>
+            </a>
+
+            <a href="teachers.html" class="nav-item active">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <span>Teachers</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Students</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-building"></i>
+                <span>Colleges</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-school"></i>
+                <span>Schools</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-help">
+                <i class="fa-solid fa-circle-question"></i>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <span>Contact support</span>
+                </div>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="admin-main">
+
+        <!-- TOP HEADER -->
+
+        <header class="admin-header">
+
+            <div class="header-left">
+
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <span class="page-label">ADMIN PANEL</span>
+                    <h1>Teachers</h1>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button class="header-icon" title="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        AU
+                    </div>
+
+                    <div class="admin-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE CONTENT ================= -->
+
+        <section class="teachers-page">
+
+            <!-- PAGE INTRO -->
+
+            <div class="page-intro">
+
+                <div>
+                    <span class="section-label">TEACHER MANAGEMENT</span>
+
+                    <h2>Manage Teachers</h2>
+
+                    <p>
+                        View, manage and monitor all registered teachers
+                        on the Talent Hunt platform.
+                    </p>
+                </div>
+
+                <button class="add-teacher-btn" id="addTeacherBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Teacher
+                </button>
+
+            </div>
+
+
+            <!-- ================= STAT CARDS ================= -->
+
+            <div class="teacher-stats">
+
+                <div class="teacher-stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Teachers</span>
+                        <h3 id="totalTeachers">24</h3>
+                        <small>Registered teachers</small>
+                    </div>
+
+                </div>
+
+
+                <div class="teacher-stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Active Teachers</span>
+                        <h3 id="activeTeachers">20</h3>
+                        <small>Currently active</small>
+                    </div>
+
+                </div>
+
+
+                <div class="teacher-stat-card">
+
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <span>On Leave</span>
+                        <h3 id="leaveTeachers">02</h3>
+                        <small>Currently unavailable</small>
+                    </div>
+
+                </div>
+
+
+                <div class="teacher-stat-card">
+
+                    <div class="stat-icon red">
+                        <i class="fa-solid fa-user-slash"></i>
+                    </div>
+
+                    <div>
+                        <span>Suspended</span>
+                        <h3 id="suspendedTeachers">02</h3>
+                        <small>Account restricted</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TOOLBAR ================= -->
+
+            <div class="teachers-toolbar">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="teacherSearch"
+                        placeholder="Search teacher by name, email or subject..."
+                    >
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <select id="subjectFilter">
+
+                        <option value="all">All Subjects</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Science">Science</option>
+                        <option value="English">English</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Physics">Physics</option>
+
+                    </select>
+
+
+                    <select id="statusFilter">
+
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="leave">On Leave</option>
+                        <option value="suspended">Suspended</option>
+
+                    </select>
+
+
+                    <button class="filter-reset" id="resetFilters">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Reset
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TEACHERS TABLE ================= -->
+
+            <div class="teachers-card">
+
+                <div class="table-header">
+
+                    <div>
+                        <h3>All Teachers</h3>
+                        <span id="teacherCount">24 teachers found</span>
+                    </div>
+
+                    <button class="export-btn" id="exportBtn">
+                        <i class="fa-solid fa-download"></i>
+                        Export
+                    </button>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="teachers-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>
+                                    <input type="checkbox" id="selectAll">
+                                </th>
+
+                                <th>Teacher</th>
+                                <th>Subject</th>
+                                <th>Experience</th>
+                                <th>Students</th>
+                                <th>Rating</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="teachersTableBody">
+
+                            <!-- Javascript will render teachers here -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+
+                <div class="pagination">
+
+                    <span id="paginationInfo">
+                        Showing 1–8 of 24 teachers
+                    </span>
+
+                    <div class="pagination-buttons">
+
+                        <button id="prevPage" disabled>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <button class="page-number active">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-number">3</button>
+
+                        <button id="nextPage">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= TEACHER DETAILS MODAL ================= -->
+
+    <div class="modal-overlay" id="teacherModal">
+
+        <div class="teacher-modal">
+
+            <button class="modal-close" id="closeModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <div class="modal-profile">
+
+                <div class="modal-avatar" id="modalAvatar">
+                    AS
+                </div>
+
+                <div>
+                    <span class="section-label">TEACHER PROFILE</span>
+                    <h2 id="modalName">Ananya Sharma</h2>
+                    <p id="modalSubject">Mathematics Teacher</p>
+                </div>
+
+            </div>
+
+
+            <div class="modal-details">
+
+                <div class="detail-item">
+                    <span>Email</span>
+                    <strong id="modalEmail">
+                        ananya@example.com
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Experience</span>
+                    <strong id="modalExperience">
+                        5 Years
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Students</span>
+                    <strong id="modalStudents">
+                        120
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Rating</span>
+                    <strong id="modalRating">
+                        4.8 / 5
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button class="modal-action-btn secondary" id="modalCloseBtn">
+                    Close
+                </button>
+
+                <button class="modal-action-btn primary" id="modalStatusBtn">
+                    Change Status
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= CONFIRM MODAL ================= -->
+
+    <div class="confirm-overlay" id="confirmModal">
+
+        <div class="confirm-box">
+
+            <div class="confirm-icon">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+
+            <h3 id="confirmTitle">Suspend Teacher?</h3>
+
+            <p id="confirmMessage">
+                Are you sure you want to change this teacher's status?
+            </p>
+
+            <div class="confirm-actions">
+
+                <button class="cancel-btn" id="cancelConfirm">
+                    Cancel
+                </button>
+
+                <button class="confirm-btn" id="confirmAction">
+                    Confirm
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div class="toast" id="toast">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Action completed successfully.
+        </span>
+
+    </div>
+
+
+    <script src="../../js/admin/teachers.js"></script>
+
+</body>
+
+</html>

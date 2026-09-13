@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Achievements | Talent Hunt</title>
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet"
+          href="../../css/dashboard/student-dashboard.css">
+
+    <link rel="stylesheet"
+          href="../../css/dashboard/achievements.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <i class="ph ph-star-four"></i>
+            </div>
+
+            <div>
+                <h2>Talent Hunt</h2>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-title">
+                MAIN MENU
+            </div>
+
+            <a href="student-dashboard.html"
+               class="nav-link">
+
+                <i class="ph ph-squares-four"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="student-profile.html"
+               class="nav-link">
+
+                <i class="ph ph-user"></i>
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a href="assessments.html"
+               class="nav-link">
+
+                <i class="ph ph-clipboard-text"></i>
+                <span>Assessments</span>
+
+            </a>
+
+
+            <a href="talent-score.html"
+               class="nav-link">
+
+                <i class="ph ph-chart-line-up"></i>
+                <span>Talent Score</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                EXPLORE
+            </div>
+
+
+            <a href="skill-analysis.html"
+               class="nav-link">
+
+                <i class="ph ph-chart-bar"></i>
+                <span>Skill Analysis</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                OPPORTUNITIES
+            </div>
+
+
+            <a href="competitions.html"
+               class="nav-link">
+
+                <i class="ph ph-trophy"></i>
+                <span>Competitions</span>
+
+            </a>
+
+
+            <a href="opportunities.html"
+               class="nav-link">
+
+                <i class="ph ph-briefcase"></i>
+                <span>Opportunities</span>
+
+            </a>
+
+
+            <a href="achievements.html"
+               class="nav-link active">
+
+                <i class="ph ph-medal"></i>
+                <span>Achievements</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                ACCOUNT
+            </div>
+
+
+            <a href="settings.html"
+               class="nav-link">
+
+                <i class="ph ph-gear"></i>
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button class="logout-btn"
+                    id="logoutBtn">
+
+                <i class="ph ph-sign-out"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button class="menu-btn"
+                    id="menuBtn">
+
+                <i class="ph ph-list"></i>
+
+            </button>
+
+
+            <div class="topbar-title">
+
+                <h1>Achievements</h1>
+
+                <p>
+                    Celebrate your skills, milestones and accomplishments.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+
+                    <i class="ph ph-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="user-profile">
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <strong id="studentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ACHIEVEMENTS -->
+
+        <section class="achievements-container">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="page-heading">
+
+                <span class="page-label">
+                    YOUR ACHIEVEMENTS
+                </span>
+
+                <h2>
+                    Showcase Your Accomplishments
+                </h2>
+
+                <p>
+                    Track your achievements, certificates,
+                    badges and competition milestones.
+                </p>
+
+            </div>
+
+
+
+            <!-- STATS -->
+
+            <div class="achievement-stats">
+
+
+                <div class="achievement-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="ph ph-medal"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Achievements
+                        </span>
+
+                        <strong id="totalAchievements">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="achievement-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="ph ph-trophy"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Competition Wins
+                        </span>
+
+                        <strong id="competitionWins">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="achievement-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="ph ph-certificate"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Certificates
+                        </span>
+
+                        <strong id="certificateCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="achievement-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="ph ph-seal"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Badges
+                        </span>
+
+                        <strong id="badgeCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- SEARCH + FILTER -->
+
+            <div class="achievement-toolbar">
+
+
+                <div class="search-box">
+
+                    <i class="ph ph-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="achievementSearch"
+                        placeholder="Search achievements..."
+                    >
+
+                </div>
+
+
+                <select id="achievementFilter">
+
+                    <option value="all">
+                        All Achievements
+                    </option>
+
+                    <option value="competition">
+                        Competitions
+                    </option>
+
+                    <option value="certificate">
+                        Certificates
+                    </option>
+
+                    <option value="badge">
+                        Badges
+                    </option>
+
+                    <option value="assessment">
+                        Assessments
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- RECENT -->
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        RECENT
+                    </span>
+
+                    <h2>
+                        Recent Achievements
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div id="recentAchievements"
+                 class="achievement-grid">
+
+                <!-- JavaScript -->
+
+            </div>
+
+
+
+            <!-- ALL -->
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        ALL ACHIEVEMENTS
+                    </span>
+
+                    <h2>
+                        Your Achievements
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div id="achievementGrid"
+                 class="achievement-grid">
+
+                <!-- JavaScript -->
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="../../js/dashboard/achievements.js"></script>
+
+</body>
+
+</html>

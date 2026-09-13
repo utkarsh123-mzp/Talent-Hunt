@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Interview | Talent Hunt</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Interview CSS -->
+    <link rel="stylesheet" href="../../css/teacher/interview.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         TOP NAVBAR
+    ========================================== -->
+    <header class="top-navbar">
+
+        <div class="brand">
+            <div class="brand-icon">TH</div>
+
+            <div>
+                <h2>Talent Hunt</h2>
+                <span>Teacher Hiring</span>
+            </div>
+        </div>
+
+        <div class="nav-actions">
+
+            <a href="teacher-profile.html" class="nav-link">
+                My Profile
+            </a>
+
+            <button class="logout-btn" id="logoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN CONTAINER
+    ========================================== -->
+    <main class="page-container">
+
+        <!-- =====================================
+             PAGE HEADER
+        ====================================== -->
+        <section class="page-heading">
+
+            <div>
+                <span class="eyebrow">HIRING PROCESS</span>
+
+                <h1>
+                    Teacher Interview
+                </h1>
+
+                <p>
+                    Your application has reached the interview stage.
+                    Check your interview status, schedule and instructions
+                    from this page.
+                </p>
+            </div>
+
+            <div class="application-status" id="applicationStatus">
+                <span class="status-dot"></span>
+                <span id="statusText">Interview Pending</span>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             APPLICATION PROGRESS
+        ====================================== -->
+        <section class="progress-card">
+
+            <div class="progress-header">
+
+                <div>
+                    <h3>Application Progress</h3>
+                    <p>
+                        Track your teacher hiring journey.
+                    </p>
+                </div>
+
+                <span class="progress-percent" id="progressPercent">
+                    75%
+                </span>
+
+            </div>
+
+
+            <div class="progress-line">
+
+                <div class="progress-step completed">
+                    <div class="step-circle">✓</div>
+                    <span>Registration</span>
+                </div>
+
+                <div class="progress-step completed">
+                    <div class="step-circle">✓</div>
+                    <span>Profile</span>
+                </div>
+
+                <div class="progress-step completed">
+                    <div class="step-circle">✓</div>
+                    <span>Demo Class</span>
+                </div>
+
+                <div class="progress-step active">
+                    <div class="step-circle">4</div>
+                    <span>Interview</span>
+                </div>
+
+                <div class="progress-step">
+                    <div class="step-circle">5</div>
+                    <span>Hiring</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             INTERVIEW STATUS
+        ====================================== -->
+        <section class="interview-grid">
+
+            <!-- LEFT -->
+            <div class="interview-card main-interview-card">
+
+                <div class="card-top">
+
+                    <div class="card-icon">
+                        🎤
+                    </div>
+
+                    <div>
+                        <span class="card-label">
+                            CURRENT STAGE
+                        </span>
+
+                        <h2>
+                            Interview
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="interview-status-box">
+
+                    <div class="status-symbol">
+                        ⏳
+                    </div>
+
+                    <div>
+                        <h3 id="interviewTitle">
+                            Interview Not Scheduled
+                        </h3>
+
+                        <p id="interviewMessage">
+                            Your demo class has been received successfully.
+                            The Talent Hunt team will review your application
+                            and schedule your interview.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="interview-info">
+
+                    <div class="info-item">
+
+                        <span>Interview Type</span>
+
+                        <strong id="interviewType">
+                            Online Interview
+                        </strong>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span>Date</span>
+
+                        <strong id="interviewDate">
+                            To be announced
+                        </strong>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span>Time</span>
+
+                        <strong id="interviewTime">
+                            To be announced
+                        </strong>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <span>Mode</span>
+
+                        <strong id="interviewMode">
+                            Video Call
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    id="joinInterviewBtn"
+                    disabled
+                >
+                    Join Interview
+                </button>
+
+            </div>
+
+
+            <!-- RIGHT -->
+            <div class="interview-card application-card">
+
+                <div class="card-heading">
+
+                    <div class="small-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <h3>Application Summary</h3>
+                        <p>Your submitted information</p>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-list">
+
+                    <div class="summary-row">
+                        <span>Application ID</span>
+                        <strong id="applicationId">
+                            TH-2026-00124
+                        </strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Subject</span>
+                        <strong id="subject">
+                            Mathematics
+                        </strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Teaching Level</span>
+                        <strong id="teachingLevel">
+                            Class 5 - 10
+                        </strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Experience</span>
+                        <strong id="experience">
+                            3+ Years
+                        </strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Demo Status</span>
+
+                        <strong class="verified">
+                            ✓ Submitted
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             INTERVIEW INSTRUCTIONS
+        ====================================== -->
+        <section class="instructions-section">
+
+            <div class="section-title">
+
+                <span class="eyebrow">
+                    BEFORE YOUR INTERVIEW
+                </span>
+
+                <h2>
+                    Interview Guidelines
+                </h2>
+
+                <p>
+                    Please keep these points in mind before attending
+                    your interview.
+                </p>
+
+            </div>
+
+
+            <div class="instruction-grid">
+
+                <div class="instruction-card">
+
+                    <div class="instruction-number">
+                        01
+                    </div>
+
+                    <div>
+                        <h3>Be Prepared</h3>
+
+                        <p>
+                            Keep your educational documents,
+                            certificates and resume ready.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="instruction-card">
+
+                    <div class="instruction-number">
+                        02
+                    </div>
+
+                    <div>
+                        <h3>Know Your Subject</h3>
+
+                        <p>
+                            Be prepared to explain your teaching
+                            approach and subject knowledge.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="instruction-card">
+
+                    <div class="instruction-number">
+                        03
+                    </div>
+
+                    <div>
+                        <h3>Teaching Approach</h3>
+
+                        <p>
+                            You may be asked how you teach students
+                            of different learning levels.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="instruction-card">
+
+                    <div class="instruction-number">
+                        04
+                    </div>
+
+                    <div>
+                        <h3>Professional Setup</h3>
+
+                        <p>
+                            For an online interview, ensure a stable
+                            internet connection and quiet environment.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             INTERVIEW PROCESS
+        ====================================== -->
+        <section class="process-section">
+
+            <div class="section-title">
+
+                <span class="eyebrow">
+                    WHAT HAPPENS NEXT?
+                </span>
+
+                <h2>
+                    After Your Interview
+                </h2>
+
+            </div>
+
+
+            <div class="next-process">
+
+                <div class="next-item">
+
+                    <div class="next-icon">
+                        📝
+                    </div>
+
+                    <div>
+                        <h3>Interview Evaluation</h3>
+
+                        <p>
+                            Our team evaluates your communication,
+                            subject knowledge and teaching ability.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="next-arrow">
+                    →
+                </div>
+
+
+                <div class="next-item">
+
+                    <div class="next-icon">
+                        🔍
+                    </div>
+
+                    <div>
+                        <h3>Application Review</h3>
+
+                        <p>
+                            Your complete application is reviewed
+                            by the hiring team.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="next-arrow">
+                    →
+                </div>
+
+
+                <div class="next-item">
+
+                    <div class="next-icon">
+                        🎯
+                    </div>
+
+                    <div>
+                        <h3>Hiring Decision</h3>
+
+                        <p>
+                            If selected, you will receive your
+                            hiring and teaching opportunity details.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             PRIVACY NOTICE
+        ====================================== -->
+        <section class="privacy-notice">
+
+            <div class="privacy-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <h3>Your Application is Private</h3>
+
+                <p>
+                    Your application, documents, demo class and
+                    interview information are visible only to you
+                    and authorized Talent Hunt administrators.
+                    Other teachers cannot view your application.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer class="footer">
+
+        <p>
+            © 2026 Talent Hunt. Teacher Hiring Portal.
+        </p>
+
+        <span>
+            Secure • Private • Professional
+        </span>
+
+    </footer>
+
+
+    <!-- Interview JavaScript -->
+    <script src="../../js/teacher/interview.js"></script>
+
+</body>
+</html>

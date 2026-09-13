@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Class 6 Assessment | TalentHunt</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/assessments/assessment-class-6.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="assessment-header">
+
+        <div class="header-left">
+
+            <a href="../school-students/class-6.html" class="back-btn">
+
+                <i class="ph ph-arrow-left"></i>
+                <span>Back</span>
+
+            </a>
+
+            <div class="page-title">
+
+                <div class="title-icon">
+                    <i class="ph ph-clipboard-text"></i>
+                </div>
+
+                <div>
+                    <h1>Class 6 Assessment</h1>
+                    <p>Test your knowledge and improve your skills</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <!-- Timer -->
+            <div class="timer-box" id="timerBox">
+
+                <i class="ph ph-clock"></i>
+
+                <div>
+                    <span>Time Remaining</span>
+                    <strong id="timer">15:00</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Exit -->
+            <button class="exit-btn" id="exitBtn">
+
+                <i class="ph ph-x"></i>
+
+                <span>Exit</span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN CONTAINER
+    ========================================== -->
+
+    <main class="assessment-container">
+
+
+        <!-- =====================================
+             SUBJECT SELECTION SCREEN
+        ====================================== -->
+
+        <section class="subject-screen" id="subjectScreen">
+
+
+            <!-- Page Intro -->
+
+            <div class="assessment-intro">
+
+                <span class="intro-badge">
+
+                    <i class="ph ph-graduation-cap"></i>
+
+                    Class 6
+
+                </span>
+
+
+                <h2>
+                    Choose Your Assessment
+                </h2>
+
+
+                <p>
+                    Select a subject below to start your assessment.
+                    You can complete all subject assessments one by one.
+                </p>
+
+            </div>
+
+
+
+            <!-- Overall Progress -->
+
+            <div class="overall-progress-card">
+
+                <div class="progress-header">
+
+                    <div>
+
+                        <h3>Assessment Progress</h3>
+
+                        <p>
+                            Complete all subject assessments
+                        </p>
+
+                    </div>
+
+
+                    <div class="progress-count">
+
+                        <strong id="completedCount">0</strong>
+
+                        <span>/ 6 Completed</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="overall-progress">
+
+                    <div class="overall-progress-fill" id="overallProgress">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 SUBJECT CARDS
+            ================================== -->
+
+            <div class="subjects-grid">
+
+
+                <!-- Mathematics -->
+
+                <div class="subject-card" data-subject="mathematics" id="subject-mathematics">
+
+                    <div class="subject-icon mathematics-icon">
+
+                        <i class="ph ph-calculator"></i>
+
+                    </div>
+
+
+                    <div class="subject-content">
+
+                        <h3>Mathematics</h3>
+
+                        <p>
+                            Test your mathematical skills
+                        </p>
+
+                        <div class="subject-meta">
+
+                            <span>
+                                <i class="ph ph-list"></i>
+                                10 Questions
+                            </span>
+
+                            <span>
+                                <i class="ph ph-clock"></i>
+                                15 Min
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="start-subject-btn" data-subject="mathematics">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="completed-badge">
+
+                        <i class="ph ph-check-circle"></i>
+
+                        Completed
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Science -->
+
+                <div class="subject-card" data-subject="science" id="subject-science">
+
+                    <div class="subject-icon science-icon">
+
+                        <i class="ph ph-flask"></i>
+
+                    </div>
+
+
+                    <div class="subject-content">
+
+                        <h3>Science</h3>
+
+                        <p>
+                            Explore your scientific knowledge
+                        </p>
+
+                        <div class="subject-meta">
+
+                            <span>
+                                <i class="ph ph-list"></i>
+                                10 Questions
+                            </span>
+
+                            <span>
+                                <i class="ph ph-clock"></i>
+                                15 Min
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="start-subject-btn" data-subject="science">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="completed-badge">
+
+                        <i class="ph ph-check-circle"></i>
+
+                        Completed
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- English -->
+
+                <div class="subject-card" data-subject="english" id="subject-english">
+
+                    <div class="subject-icon english-icon">
+
+                        <i class="ph ph-book-open-text"></i>
+
+                    </div>
+
+
+                    <div class="subject-content">
+
+                        <h3>English</h3>
+
+                        <p>
+                            Improve your English skills
+                        </p>
+
+                        <div class="subject-meta">
+
+                            <span>
+                                <i class="ph ph-list"></i>
+                                10 Questions
+                            </span>
+
+                            <span>
+                                <i class="ph ph-clock"></i>
+                                15 Min
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="start-subject-btn" data-subject="english">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="completed-badge">
+
+                        <i class="ph ph-check-circle"></i>
+
+                        Completed
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Hindi -->
+
+                <div class="subject-card" data-subject="hindi" id="subject-hindi">
+
+                    <div class="subject-icon hindi-icon">
+
+                        <i class="ph ph-translate"></i>
+
+                    </div>
+
+
+                    <div class="subject-content">
+
+                        <h3>Hindi</h3>
+
+                        <p>
+                            Test your Hindi language skills
+                        </p>
+
+                        <div class="subject-meta">
+
+                            <span>
+                                <i class="ph ph-list"></i>
+                                10 Questions
+                            </span>
+
+                            <span>
+                                <i class="ph ph-clock"></i>
+                                15 Min
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="start-subject-btn" data-subject="hindi">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="completed-badge">
+
+                        <i class="ph ph-check-circle"></i>
+
+                        Completed
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Social Science -->
+
+                <div class="subject-card" data-subject="social-science" id="subject-social-science">
+
+                    <div class="subject-icon social-icon">
+
+                        <i class="ph ph-globe"></i>
+
+                    </div>
+
+
+                    <div class="subject-content">
+
+                        <h3>Social Science</h3>
+
+                        <p>
+                            Explore history, geography and society
+                        </p>
+
+                        <div class="subject-meta">
+
+                            <span>
+                                <i class="ph ph-list"></i>
+                                10 Questions
+                            </span>
+
+                            <span>
+                                <i class="ph ph-clock"></i>
+                                15 Min
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="start-subject-btn" data-subject="social-science">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="completed-badge">
+
+                        <i class="ph ph-check-circle"></i>
+
+                        Completed
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Computer -->
+
+                <div class="subject-card" data-subject="computer" id="subject-computer">
+
+                    <div class="subject-icon computer-icon">
+
+                        <i class="ph ph-monitor"></i>
+
+                    </div>
+
+
+                    <div class="subject-content">
+
+                        <h3>Computer</h3>
+
+                        <p>
+                            Check your computer knowledge
+                        </p>
+
+                        <div class="subject-meta">
+
+                            <span>
+                                <i class="ph ph-list"></i>
+                                10 Questions
+                            </span>
+
+                            <span>
+                                <i class="ph ph-clock"></i>
+                                15 Min
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="start-subject-btn" data-subject="computer">
+
+                        Start Assessment
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="completed-badge">
+
+                        <i class="ph ph-check-circle"></i>
+
+                        Completed
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             ASSESSMENT SCREEN
+        ========================================== -->
+
+        <section class="quiz-screen hidden" id="quizScreen">
+
+
+            <!-- Quiz Header -->
+
+            <div class="quiz-header">
+
+
+                <div class="quiz-subject-info">
+
+                    <button class="back-subject-btn" id="backSubjectBtn">
+
+                        <i class="ph ph-arrow-left"></i>
+
+                    </button>
+
+
+                    <div>
+
+                        <span id="quizSubjectLabel">
+                            Mathematics
+                        </span>
+
+                        <h2>
+                            Class 6 Assessment
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="question-counter">
+
+                    Question
+
+                    <strong id="currentQuestion">
+                        1
+                    </strong>
+
+                    of
+
+                    <strong id="totalQuestions">
+                        10
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Quiz Progress -->
+
+            <div class="quiz-progress">
+
+                <div class="quiz-progress-fill" id="quizProgress">
+                </div>
+
+            </div>
+
+
+
+            <!-- Question Card -->
+
+            <div class="question-card">
+
+
+                <div class="question-top">
+
+                    <span class="question-label">
+                        Question
+                        <span id="questionNumber">
+                            1
+                        </span>
+                    </span>
+
+
+                    <span class="marks-label">
+
+                        1 Mark
+
+                    </span>
+
+                </div>
+
+
+                <h2 class="question-text" id="questionText">
+
+                    Question will appear here
+
+                </h2>
+
+
+                <!-- Options -->
+
+                <div class="options-container" id="optionsContainer">
+
+                    <!-- JavaScript will add options -->
+
+                </div>
+
+
+                <!-- Question Actions -->
+
+                <div class="question-actions">
+
+
+                    <button class="previous-btn" id="previousBtn">
+
+                        <i class="ph ph-arrow-left"></i>
+
+                        Previous
+
+                    </button>
+
+
+                    <button class="next-btn" id="nextBtn">
+
+                        Next
+
+                        <i class="ph ph-arrow-right"></i>
+
+                    </button>
+
+
+                    <button class="submit-btn hidden" id="submitBtn">
+
+                        Submit Assessment
+
+                        <i class="ph ph-check"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Question Navigator -->
+
+            <div class="question-navigator">
+
+
+                <div class="navigator-header">
+
+                    <div>
+
+                        <h3>Question Navigator</h3>
+
+                        <p>
+                            Click on a question to jump directly
+                        </p>
+
+                    </div>
+
+
+                    <div class="navigator-legend">
+
+                        <span>
+                            <i class="legend-current"></i>
+                            Current
+                        </span>
+
+                        <span>
+                            <i class="legend-answered"></i>
+                            Answered
+                        </span>
+
+                        <span>
+                            <i class="legend-unanswered"></i>
+                            Unanswered
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="question-buttons" id="questionButtons">
+
+                    <!-- JavaScript will create buttons -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             RESULT SCREEN
+        ========================================== -->
+
+        <section class="result-screen hidden" id="resultScreen">
+
+
+            <div class="result-card">
+
+
+                <!-- Result Icon -->
+
+                <div class="result-icon">
+
+                    <i class="ph ph-trophy"></i>
+
+                </div>
+
+
+                <span class="result-label">
+                    Assessment Completed
+                </span>
+
+
+                <h2 id="resultSubject">
+                    Mathematics
+                </h2>
+
+
+                <p id="resultMessage">
+                    Great job! Here is your assessment result.
+                </p>
+
+
+
+                <!-- Score -->
+
+                <div class="score-circle">
+
+                    <div>
+
+                        <strong id="score">
+                            0
+                        </strong>
+
+                        <span>
+                            / 10
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Result Statistics -->
+
+                <div class="result-statistics">
+
+
+                    <div class="result-stat correct">
+
+                        <i class="ph ph-check-circle"></i>
+
+                        <strong id="correctAnswers">
+                            0
+                        </strong>
+
+                        <span>
+                            Correct
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-stat wrong">
+
+                        <i class="ph ph-x-circle"></i>
+
+                        <strong id="wrongAnswers">
+                            0
+                        </strong>
+
+                        <span>
+                            Wrong
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-stat percentage">
+
+                        <i class="ph ph-chart-line-up"></i>
+
+                        <strong id="percentage">
+                            0%
+                        </strong>
+
+                        <span>
+                            Percentage
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Result Actions -->
+
+                <div class="result-actions">
+
+
+                    <button class="retry-btn" id="retryBtn">
+
+                        <i class="ph ph-arrow-clockwise"></i>
+
+                        Retry Assessment
+
+                    </button>
+
+
+                    <button class="subjects-btn" id="subjectsBtn">
+
+                        <i class="ph ph-list"></i>
+
+                        Other Subjects
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Overall Result -->
+
+            <div class="overall-result-card">
+
+
+                <div class="overall-result-header">
+
+                    <div>
+
+                        <h3>
+                            Class 6 Assessment Progress
+                        </h3>
+
+                        <p>
+                            Your subject-wise assessment progress
+                        </p>
+
+                    </div>
+
+
+                    <div class="overall-score">
+
+                        <strong id="overallScore">
+                            0%
+                        </strong>
+
+                        <span>
+                            Overall
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="subject-result-list" id="subjectResultList">
+
+                    <!-- JavaScript will add subject results -->
+
+                </div>
+
+
+                <a href="../school-students/class-6.html" class="back-btn">
+                    <i class="ph ph-arrow-left"></i>
+                    Back to Class 6
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         EXIT CONFIRMATION MODAL
+    ========================================== -->
+
+    <div class="modal-overlay hidden" id="exitModal">
+
+
+        <div class="modal-box">
+
+
+            <div class="modal-warning-icon">
+
+                <i class="ph ph-warning"></i>
+
+            </div>
+
+
+            <h2>
+                Exit Assessment?
+            </h2>
+
+
+            <p>
+                Your current assessment progress will be lost.
+                Are you sure you want to exit?
+            </p>
+
+
+            <div class="modal-actions">
+
+
+                <button class="cancel-modal-btn" id="cancelExit">
+
+                    Continue Assessment
+
+                </button>
+
+
+                <button class="confirm-exit-btn" id="confirmExit">
+
+                    Exit Assessment
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../../js/assessments/assessment-class-6.js"></script>
+
+</body>
+
+</html>

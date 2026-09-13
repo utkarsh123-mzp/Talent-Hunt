@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Placement Readiness | TalentHunt</title>
+
+    <link rel="stylesheet" href="../../css/college/placement-readiness.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+                <div class="brand-logo">T</div>
+
+                <div>
+                    <h2>TalentHunt</h2>
+                    <span>College Portal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-label">MAIN</p>
+
+                <a href="college-dashboard.html" class="nav-link">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <p class="nav-label">SELECTION PREPARATION</p>
+
+                <a href="assessments.html" class="nav-link">
+                    <span class="nav-icon">✓</span>
+                    <span>Assessments</span>
+                </a>
+
+                <a href="recruiter-questions.html" class="nav-link">
+                    <span class="nav-icon">?</span>
+                    <span>Recruiter Questions</span>
+                </a>
+
+                <a href="resume-analyzer.html" class="nav-link">
+                    <span class="nav-icon">▤</span>
+                    <span>Resume Analyzer</span>
+                </a>
+
+                <a href="mock-interview.html" class="nav-link">
+                    <span class="nav-icon">◉</span>
+                    <span>Mock Interview</span>
+                </a>
+
+                <p class="nav-label">PROGRESS</p>
+
+                <a href="skill-gap.html" class="nav-link">
+                    <span class="nav-icon">◫</span>
+                    <span>Skill Gap</span>
+                </a>
+
+                <a href="placement-readiness.html" class="nav-link active">
+                    <span class="nav-icon">★</span>
+                    <span>Placement Readiness</span>
+                </a>
+
+                <p class="nav-label">ACCOUNT</p>
+
+                <a href="profile.html" class="nav-link">
+                    <span class="nav-icon">◯</span>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="help-box">
+
+                    <span class="help-icon">?</span>
+
+                    <div>
+                        <strong>Need Help?</strong>
+                        <p>Improve your placement skills</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <button class="menu-btn" id="menuBtn">
+                    ☰
+                </button>
+
+                <div class="page-heading">
+
+                    <span>COLLEGE PORTAL</span>
+
+                    <h1>Placement Readiness</h1>
+
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button
+                        class="notification-btn"
+                        id="notificationBtn">
+                        ♢
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <a href="profile.html" class="user-profile">
+
+                        <div class="avatar">
+                            U
+                        </div>
+
+                        <div class="user-info">
+                            <strong>Student</strong>
+                            <span>College Student</span>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+
+            <!-- PAGE -->
+
+            <div class="content">
+
+                <!-- HERO -->
+
+                <section class="hero-section">
+
+                    <div class="hero-content">
+
+                        <span class="eyebrow">
+                            PLACEMENT READINESS CHECK
+                        </span>
+
+                        <h2>
+                            Are You Placement Ready?
+                        </h2>
+
+                        <p>
+                            Get a complete overview of your preparation
+                            across technical skills, coding, aptitude,
+                            resume and interview performance.
+                        </p>
+
+                    </div>
+
+                    <div class="hero-icon">
+                        🎯
+                    </div>
+
+                </section>
+
+
+                <!-- TARGET ROLE -->
+
+                <section class="target-card">
+
+                    <div class="target-info">
+
+                        <span class="card-label">
+                            TARGET ROLE
+                        </span>
+
+                        <h3>
+                            Evaluate Your Placement Preparation
+                        </h3>
+
+                        <p>
+                            Choose the role you are preparing for and
+                            check your current readiness.
+                        </p>
+
+                    </div>
+
+                    <div class="target-selector">
+
+                        <label for="targetRole">
+                            Target Role
+                        </label>
+
+                        <select id="targetRole">
+
+                            <option value="software-developer">
+                                Software Developer
+                            </option>
+
+                            <option value="frontend-developer">
+                                Frontend Developer
+                            </option>
+
+                            <option value="backend-developer">
+                                Backend Developer
+                            </option>
+
+                            <option value="data-analyst">
+                                Data Analyst
+                            </option>
+
+                            <option value="full-stack">
+                                Full Stack Developer
+                            </option>
+
+                            <option value="python-developer">
+                                Python Developer
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </section>
+
+
+                <!-- READINESS OVERVIEW -->
+
+                <section class="readiness-grid">
+
+                    <!-- SCORE -->
+
+                    <div class="readiness-score-card">
+
+                        <div class="score-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    OVERALL READINESS
+                                </span>
+
+                                <h3>
+                                    Placement Score
+                                </h3>
+
+                            </div>
+
+                            <span
+                                class="readiness-badge"
+                                id="readinessBadge">
+                                Almost Ready
+                            </span>
+
+                        </div>
+
+
+                        <div class="score-area">
+
+                            <div class="score-ring">
+
+                                <div class="score-ring-inner">
+
+                                    <strong id="readinessScore">
+                                        76
+                                    </strong>
+
+                                    <span>/100</span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="score-message">
+
+                                <strong id="scoreTitle">
+                                    You are almost placement ready
+                                </strong>
+
+                                <p id="scoreDescription">
+                                    Strengthen your weaker areas and
+                                    continue interview practice before
+                                    applying.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="score-scale">
+
+                            <span>Needs Work</span>
+                            <span>Placement Ready</span>
+
+                        </div>
+
+                        <div class="scale-bar">
+                            <span
+                                id="scoreBar"
+                                style="width:76%;">
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- READINESS STATUS -->
+
+                    <div class="status-card">
+
+                        <span class="card-label">
+                            CURRENT STATUS
+                        </span>
+
+                        <h3>
+                            Preparation Overview
+                        </h3>
+
+                        <div class="status-list">
+
+                            <div class="status-row">
+
+                                <span class="status-icon success">
+                                    ✓
+                                </span>
+
+                                <div>
+                                    <strong>
+                                        Strong Foundation
+                                    </strong>
+
+                                    <small>
+                                        Core technical concepts
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="status-row">
+
+                                <span class="status-icon warning">
+                                    !
+                                </span>
+
+                                <div>
+                                    <strong>
+                                        Needs Practice
+                                    </strong>
+
+                                    <small>
+                                        Coding & aptitude speed
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="status-row">
+
+                                <span class="status-icon danger">
+                                    !
+                                </span>
+
+                                <div>
+                                    <strong>
+                                        Priority Gap
+                                    </strong>
+
+                                    <small>
+                                        Technical interview preparation
+                                    </small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- CATEGORY SCORES -->
+
+                <section class="section-block">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                READINESS BREAKDOWN
+                            </span>
+
+                            <h2>
+                                Your Placement Preparation
+                            </h2>
+
+                        </div>
+
+                        <span class="updated-text">
+                            Based on your recent activity
+                        </span>
+
+                    </div>
+
+
+                    <div class="category-grid">
+
+                        <div class="category-card">
+
+                            <div class="category-top">
+
+                                <div class="category-icon">
+                                    💻
+                                </div>
+
+                                <strong>
+                                    78%
+                                </strong>
+
+                            </div>
+
+                            <h3>
+                                Technical Skills
+                            </h3>
+
+                            <p>
+                                Programming, DBMS, OS and core CS
+                                fundamentals.
+                            </p>
+
+                            <div class="category-progress">
+                                <span style="width:78%;"></span>
+                            </div>
+
+                            <small>
+                                Good
+                            </small>
+
+                        </div>
+
+
+                        <div class="category-card">
+
+                            <div class="category-top">
+
+                                <div class="category-icon">
+                                    👨‍💻
+                                </div>
+
+                                <strong>
+                                    72%
+                                </strong>
+
+                            </div>
+
+                            <h3>
+                                Coding
+                            </h3>
+
+                            <p>
+                                Problem solving, DSA and coding
+                                assessment performance.
+                            </p>
+
+                            <div class="category-progress">
+                                <span style="width:72%;"></span>
+                            </div>
+
+                            <small>
+                                Good
+                            </small>
+
+                        </div>
+
+
+                        <div class="category-card">
+
+                            <div class="category-top">
+
+                                <div class="category-icon">
+                                    🧠
+                                </div>
+
+                                <strong>
+                                    68%
+                                </strong>
+
+                            </div>
+
+                            <h3>
+                                Aptitude & Reasoning
+                            </h3>
+
+                            <p>
+                                Quantitative aptitude, reasoning and
+                                verbal ability.
+                            </p>
+
+                            <div class="category-progress">
+                                <span style="width:68%;"></span>
+                            </div>
+
+                            <small>
+                                Needs Practice
+                            </small>
+
+                        </div>
+
+
+                        <div class="category-card">
+
+                            <div class="category-top">
+
+                                <div class="category-icon">
+                                    📄
+                                </div>
+
+                                <strong>
+                                    82%
+                                </strong>
+
+                            </div>
+
+                            <h3>
+                                Resume
+                            </h3>
+
+                            <p>
+                                Resume quality, projects, skills and
+                                ATS readiness.
+                            </p>
+
+                            <div class="category-progress">
+                                <span style="width:82%;"></span>
+                            </div>
+
+                            <small>
+                                Strong
+                            </small>
+
+                        </div>
+
+
+                        <div class="category-card">
+
+                            <div class="category-top">
+
+                                <div class="category-icon">
+                                    🎤
+                                </div>
+
+                                <strong>
+                                    70%
+                                </strong>
+
+                            </div>
+
+                            <h3>
+                                Interview
+                            </h3>
+
+                            <p>
+                                Technical and HR interview preparation.
+                            </p>
+
+                            <div class="category-progress">
+                                <span style="width:70%;"></span>
+                            </div>
+
+                            <small>
+                                Good
+                            </small>
+
+                        </div>
+
+
+                        <div class="category-card">
+
+                            <div class="category-top">
+
+                                <div class="category-icon">
+                                    🗣
+                                </div>
+
+                                <strong>
+                                    63%
+                                </strong>
+
+                            </div>
+
+                            <h3>
+                                Communication
+                            </h3>
+
+                            <p>
+                                Speaking confidence and explanation
+                                skills.
+                            </p>
+
+                            <div class="category-progress">
+                                <span style="width:63%;"></span>
+                            </div>
+
+                            <small>
+                                Needs Practice
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- CHECKLIST -->
+
+                <section class="checklist-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                RECRUITER CHECKLIST
+                            </span>
+
+                            <h2>
+                                Are You Ready For These?
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="checklist-grid">
+
+                        <label class="check-item">
+
+                            <input
+                                type="checkbox"
+                                checked>
+
+                            <span class="custom-check">
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Explain your projects
+                                </strong>
+
+                                <small>
+                                    Can you explain your project
+                                    clearly in 2–3 minutes?
+                                </small>
+                            </div>
+
+                        </label>
+
+
+                        <label class="check-item">
+
+                            <input
+                                type="checkbox"
+                                checked>
+
+                            <span class="custom-check">
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Solve coding problems
+                                </strong>
+
+                                <small>
+                                    Can you solve common DSA problems
+                                    within the given time?
+                                </small>
+                            </div>
+
+                        </label>
+
+
+                        <label class="check-item">
+
+                            <input
+                                type="checkbox">
+
+                            <span class="custom-check">
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Handle technical questions
+                                </strong>
+
+                                <small>
+                                    Can you confidently answer CS
+                                    fundamentals?
+                                </small>
+                            </div>
+
+                        </label>
+
+
+                        <label class="check-item">
+
+                            <input
+                                type="checkbox">
+
+                            <span class="custom-check">
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Answer HR questions
+                                </strong>
+
+                                <small>
+                                    Can you confidently answer common
+                                    HR questions?
+                                </small>
+                            </div>
+
+                        </label>
+
+
+                        <label class="check-item">
+
+                            <input
+                                type="checkbox"
+                                checked>
+
+                            <span class="custom-check">
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Resume is ready
+                                </strong>
+
+                                <small>
+                                    Is your resume updated and
+                                    recruiter-friendly?
+                                </small>
+                            </div>
+
+                        </label>
+
+
+                        <label class="check-item">
+
+                            <input
+                                type="checkbox">
+
+                            <span class="custom-check">
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Communication confidence
+                                </strong>
+
+                                <small>
+                                    Can you clearly communicate your
+                                    thoughts during interviews?
+                                </small>
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+                <!-- PRIORITIES -->
+
+                <section class="priority-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                FINAL PREPARATION
+                            </span>
+
+                            <h2>
+                                Your Top Priorities
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="priority-grid">
+
+                        <div class="priority-card high">
+
+                            <div class="priority-number">
+                                01
+                            </div>
+
+                            <div>
+
+                                <span class="priority-tag">
+                                    HIGH PRIORITY
+                                </span>
+
+                                <h3>
+                                    Improve DSA & Coding
+                                </h3>
+
+                                <p>
+                                    Practice arrays, strings, linked
+                                    lists, trees and common interview
+                                    patterns.
+                                </p>
+
+                                <a href="assessments.html">
+                                    Start Practice →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="priority-card medium">
+
+                            <div class="priority-number">
+                                02
+                            </div>
+
+                            <div>
+
+                                <span class="priority-tag">
+                                    MEDIUM PRIORITY
+                                </span>
+
+                                <h3>
+                                    Improve Communication
+                                </h3>
+
+                                <p>
+                                    Practice project explanations,
+                                    HR answers and technical
+                                    communication.
+                                </p>
+
+                                <a href="mock-interview.html">
+                                    Practice Interview →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="priority-card normal">
+
+                            <div class="priority-number">
+                                03
+                            </div>
+
+                            <div>
+
+                                <span class="priority-tag">
+                                    RECOMMENDED
+                                </span>
+
+                                <h3>
+                                    Keep Resume Updated
+                                </h3>
+
+                                <p>
+                                    Continue adding measurable
+                                    achievements and relevant skills.
+                                </p>
+
+                                <a href="resume-analyzer.html">
+                                    Analyze Resume →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ACTION -->
+
+                <section class="action-card">
+
+                    <div>
+
+                        <span class="card-label">
+                            READY FOR THE NEXT STEP?
+                        </span>
+
+                        <h2>
+                            Keep improving until you are placement ready.
+                        </h2>
+
+                        <p>
+                            Recalculate your readiness after completing
+                            more assessments and practice sessions.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="primary-btn"
+                        id="recalculateBtn">
+
+                        Recalculate Readiness →
+
+                    </button>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- NOTIFICATION -->
+
+    <div
+        class="notification-panel"
+        id="notificationPanel">
+
+        <div class="notification-header">
+
+            <strong>
+                Notifications
+            </strong>
+
+            <button id="closeNotification">
+                ×
+            </button>
+
+        </div>
+
+        <div class="notification-body">
+
+            <div class="notification-item">
+
+                <span>!</span>
+
+                <div>
+                    <strong>
+                        Placement Gap
+                    </strong>
+
+                    <p>
+                        Technical interview preparation needs
+                        more practice.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="notification-item">
+
+                <span>★</span>
+
+                <div>
+                    <strong>
+                        Resume Score
+                    </strong>
+
+                    <p>
+                        Your resume is currently in a strong range.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../../js/college/placement-readiness.js"></script>
+
+</body>
+
+</html>

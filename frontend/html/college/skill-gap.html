@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skill Gap | TalentHunt</title>
+
+    <link rel="stylesheet" href="../../css/college/skill-gap.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">T</div>
+
+            <div>
+                <h2>TalentHunt</h2>
+                <span>College Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-label">MAIN</p>
+
+            <a href="college-dashboard.html" class="nav-link">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <p class="nav-label">SELECTION PREPARATION</p>
+
+            <a href="assessments.html" class="nav-link">
+                <span class="nav-icon">✓</span>
+                <span>Assessments</span>
+            </a>
+
+            <a href="recruiter-questions.html" class="nav-link">
+                <span class="nav-icon">?</span>
+                <span>Recruiter Questions</span>
+            </a>
+
+            <a href="resume-analyzer.html" class="nav-link">
+                <span class="nav-icon">▤</span>
+                <span>Resume Analyzer</span>
+            </a>
+
+            <a href="mock-interview.html" class="nav-link">
+                <span class="nav-icon">◉</span>
+                <span>Mock Interview</span>
+            </a>
+
+
+            <p class="nav-label">PROGRESS</p>
+
+            <a href="skill-gap.html" class="nav-link active">
+                <span class="nav-icon">◫</span>
+                <span>Skill Gap</span>
+            </a>
+
+            <a href="placement-readiness.html" class="nav-link">
+                <span class="nav-icon">★</span>
+                <span>Placement Readiness</span>
+            </a>
+
+
+            <p class="nav-label">ACCOUNT</p>
+
+            <a href="profile.html" class="nav-link">
+                <span class="nav-icon">◯</span>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+
+                <span class="help-icon">?</span>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <p>Improve your placement skills</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="topbar">
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open menu">
+                ☰
+            </button>
+
+
+            <div class="page-heading">
+
+                <span>COLLEGE PORTAL</span>
+
+                <h1>Skill Gap Analyzer</h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    class="notification-btn"
+                    id="notificationBtn">
+
+                    ♢
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <a
+                    href="profile.html"
+                    class="user-profile">
+
+                    <div class="avatar">
+                        U
+                    </div>
+
+                    <div class="user-info">
+
+                        <strong>Student</strong>
+
+                        <span>College Student</span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <div class="content">
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <section class="hero-section">
+
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        PLACEMENT PREPARATION
+                    </span>
+
+                    <h2>
+                        Identify Your Skill Gaps
+                    </h2>
+
+                    <p>
+                        Understand where you stand today and
+                        discover which skills you should improve
+                        for your target role.
+                    </p>
+
+                </div>
+
+
+                <div class="hero-icon">
+                    📊
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 TARGET ROLE
+            ================================================== -->
+
+            <section class="role-card">
+
+                <div class="role-info">
+
+                    <span class="card-label">
+                        TARGET ROLE
+                    </span>
+
+                    <h3>
+                        Analyze Your Readiness
+                    </h3>
+
+                    <p>
+                        Select a role to compare your current
+                        skills with the skills commonly required
+                        for that role.
+                    </p>
+
+                </div>
+
+
+                <div class="role-selector">
+
+                    <label for="targetRole">
+                        Target Role
+                    </label>
+
+                    <select id="targetRole">
+
+                        <option value="software-developer">
+                            Software Developer
+                        </option>
+
+                        <option value="frontend-developer">
+                            Frontend Developer
+                        </option>
+
+                        <option value="backend-developer">
+                            Backend Developer
+                        </option>
+
+                        <option value="data-analyst">
+                            Data Analyst
+                        </option>
+
+                        <option value="full-stack">
+                            Full Stack Developer
+                        </option>
+
+                        <option value="python-developer">
+                            Python Developer
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 OVERVIEW
+            ================================================== -->
+
+            <section class="overview-grid">
+
+
+                <!-- OVERALL SCORE -->
+
+                <div class="score-card">
+
+                    <div class="score-heading">
+
+                        <div>
+
+                            <span class="card-label">
+                                OVERALL SKILL SCORE
+                            </span>
+
+                            <h3>
+                                Your Current Level
+                            </h3>
+
+                        </div>
+
+                        <span class="score-status">
+                            Good
+                        </span>
+
+                    </div>
+
+
+                    <div class="score-content">
+
+                        <div class="score-circle">
+
+                            <strong id="overallScore">
+                                72
+                            </strong>
+
+                            <span>
+                                /100
+                            </span>
+
+                        </div>
+
+
+                        <div class="score-text">
+
+                            <strong id="scoreTitle">
+                                Good Foundation
+                            </strong>
+
+                            <p id="scoreDescription">
+                                You have a solid foundation but
+                                still have some important areas
+                                to improve before placement.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="score-progress">
+
+                        <div class="progress-track">
+
+                            <span
+                                id="overallProgress"
+                                style="width: 72%;">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SKILL SUMMARY -->
+
+                <div class="summary-card">
+
+                    <span class="card-label">
+                        SKILL SUMMARY
+                    </span>
+
+                    <h3>
+                        Your Skill Distribution
+                    </h3>
+
+
+                    <div class="summary-items">
+
+                        <div class="summary-item">
+
+                            <span class="summary-dot strong"></span>
+
+                            <div>
+                                <span>Strong Skills</span>
+                                <strong id="strongCount">4</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span class="summary-dot medium"></span>
+
+                            <div>
+                                <span>Needs Practice</span>
+                                <strong id="mediumCount">4</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span class="summary-dot weak"></span>
+
+                            <div>
+                                <span>Critical Gaps</span>
+                                <strong id="weakCount">2</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SKILL ANALYSIS
+            ================================================== -->
+
+            <section class="section-block">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            SKILL ANALYSIS
+                        </span>
+
+                        <h2>
+                            Technical & Core Skills
+                        </h2>
+
+                    </div>
+
+                    <span class="updated-text">
+                        Based on your assessments
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="skills-grid"
+                    id="skillsGrid">
+
+                    <!-- JavaScript will render skills -->
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 OTHER SKILLS
+            ================================================== -->
+
+            <section class="section-block">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            SUPPORTING SKILLS
+                        </span>
+
+                        <h2>
+                            Aptitude, Communication & More
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="support-grid">
+
+
+                    <div class="support-card">
+
+                        <div class="support-header">
+
+                            <div class="support-icon">
+                                🧠
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Aptitude
+                                </span>
+
+                                <strong>
+                                    68%
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mini-progress">
+
+                            <span style="width: 68%;"></span>
+
+                        </div>
+
+                        <p>
+                            Practice quantitative aptitude and
+                            speed-based questions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="support-card">
+
+                        <div class="support-header">
+
+                            <div class="support-icon">
+                                🔍
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Reasoning
+                                </span>
+
+                                <strong>
+                                    74%
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mini-progress">
+
+                            <span style="width: 74%;"></span>
+
+                        </div>
+
+                        <p>
+                            Your logical reasoning is progressing
+                            well. Improve speed and accuracy.
+                        </p>
+
+                    </div>
+
+
+                    <div class="support-card">
+
+                        <div class="support-header">
+
+                            <div class="support-icon">
+                                🗣
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Communication
+                                </span>
+
+                                <strong>
+                                    61%
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mini-progress">
+
+                            <span style="width: 61%;"></span>
+
+                        </div>
+
+                        <p>
+                            Focus on clear explanations and
+                            interview communication.
+                        </p>
+
+                    </div>
+
+
+                    <div class="support-card">
+
+                        <div class="support-header">
+
+                            <div class="support-icon">
+                                📄
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Resume
+                                </span>
+
+                                <strong>
+                                    82%
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mini-progress">
+
+                            <span style="width: 82%;"></span>
+
+                        </div>
+
+                        <p>
+                            Your resume is strong. Add measurable
+                            project achievements where possible.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PRIORITY AREAS
+            ================================================== -->
+
+            <section class="priority-section">
+
+
+                <div class="priority-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            YOUR PRIORITIES
+                        </span>
+
+                        <h2>
+                            Skills You Should Improve First
+                        </h2>
+
+                    </div>
+
+                    <span class="priority-count">
+                        3 priorities
+                    </span>
+
+                </div>
+
+
+                <div class="priority-list">
+
+
+                    <div class="priority-item">
+
+                        <div class="priority-number">
+                            01
+                        </div>
+
+                        <div class="priority-main">
+
+                            <div class="priority-title">
+
+                                <h3>
+                                    Data Structures & Algorithms
+                                </h3>
+
+                                <span class="critical">
+                                    High Priority
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Important for technical interviews.
+                                Focus on arrays, strings, linked
+                                lists, trees and problem solving.
+                            </p>
+
+                            <div class="priority-progress">
+
+                                <span style="width: 52%;"></span>
+
+                            </div>
+
+                        </div>
+
+                        <strong>
+                            52%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="priority-item">
+
+                        <div class="priority-number">
+                            02
+                        </div>
+
+                        <div class="priority-main">
+
+                            <div class="priority-title">
+
+                                <h3>
+                                    SQL & Database
+                                </h3>
+
+                                <span class="medium-priority">
+                                    Medium Priority
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Improve joins, subqueries, aggregation,
+                                normalization and query optimization.
+                            </p>
+
+                            <div class="priority-progress">
+
+                                <span style="width: 64%;"></span>
+
+                            </div>
+
+                        </div>
+
+                        <strong>
+                            64%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="priority-item">
+
+                        <div class="priority-number">
+                            03
+                        </div>
+
+                        <div class="priority-main">
+
+                            <div class="priority-title">
+
+                                <h3>
+                                    Communication
+                                </h3>
+
+                                <span class="medium-priority">
+                                    Medium Priority
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Practice explaining projects,
+                                technical concepts and HR answers.
+                            </p>
+
+                            <div class="priority-progress">
+
+                                <span style="width: 61%;"></span>
+
+                            </div>
+
+                        </div>
+
+                        <strong>
+                            61%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ACTION
+            ================================================== -->
+
+            <section class="action-card">
+
+                <div>
+
+                    <span class="card-label">
+                        NEXT STEP
+                    </span>
+
+                    <h2>
+                        Ready to close your skill gaps?
+                    </h2>
+
+                    <p>
+                        Practice your weak areas and retake
+                        assessments to improve your readiness score.
+                    </p>
+
+                </div>
+
+
+                <div class="action-buttons">
+
+                    <a
+                        href="assessments.html"
+                        class="outline-btn">
+
+                        Take Assessment
+
+                    </a>
+
+
+                    <button
+                        class="primary-btn"
+                        id="reassessBtn">
+
+                        Re-analyze Skills →
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     NOTIFICATION PANEL
+========================================================= -->
+
+<div
+    class="notification-panel"
+    id="notificationPanel">
+
+    <div class="notification-header">
+
+        <strong>
+            Notifications
+        </strong>
+
+        <button id="closeNotification">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="notification-body">
+
+        <div class="notification-item">
+
+            <span>!</span>
+
+            <div>
+
+                <strong>
+                    Skill Gap Found
+                </strong>
+
+                <p>
+                    DSA needs more practice for your target role.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <span>★</span>
+
+            <div>
+
+                <strong>
+                    Keep Improving
+                </strong>
+
+                <p>
+                    Your resume score is currently strong.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../../js/college/skill-gap.js"></script>
+
+</body>
+</html>

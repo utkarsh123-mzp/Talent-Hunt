@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Applications | Talent Hunt Admin</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/admin/teacher-applications.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         SIDEBAR
+    =============================== -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">TH</div>
+
+            <div class="brand-text">
+                <h2>Talent Hunt</h2>
+                <span>Admin Panel</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html" class="nav-item">
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="teacher-applications.html" class="nav-item active">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Teacher Applications</span>
+                <span class="nav-badge">12</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <span>Teachers</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Students</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-building-columns"></i>
+                <span>Colleges</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Hiring</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <span class="page-label">ADMINISTRATION</span>
+                    <h1>Teacher Applications</h1>
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="icon-btn" title="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="admin-profile">
+
+                    <div class="admin-avatar">
+                        A
+                    </div>
+
+                    <div class="admin-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==============================
+             PAGE BODY
+        =============================== -->
+        <section class="page-body">
+
+            <!-- PAGE INTRO -->
+            <div class="page-intro">
+
+                <div>
+                    <h2>Teacher Applications</h2>
+                    <p>
+                        Review and manage teacher applications submitted through
+                        the Talent Hunt hiring process.
+                    </p>
+                </div>
+
+                <button class="export-btn" id="exportBtn">
+                    <i class="fa-solid fa-download"></i>
+                    Export
+                </button>
+
+            </div>
+
+
+            <!-- ==============================
+                 APPLICATION STATS
+            =============================== -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon total">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Applications</span>
+                        <h3 id="totalApplications">24</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon pending">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <span>Pending Review</span>
+                        <h3 id="pendingApplications">12</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon approved">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Approved</span>
+                        <h3 id="approvedApplications">08</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon rejected">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+
+                    <div>
+                        <span>Rejected</span>
+                        <h3 id="rejectedApplications">04</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 FILTER SECTION
+            =============================== -->
+            <div class="filter-card">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search teacher, subject or application ID..."
+                    >
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="approved">Approved</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+
+                    <select id="subjectFilter">
+                        <option value="all">All Subjects</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="English">English</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 APPLICATION TABLE
+            =============================== -->
+            <div class="applications-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Recent Applications</h3>
+                        <p>Review teacher applications and take action.</p>
+                    </div>
+
+                    <span class="results-count" id="resultsCount">
+                        6 Applications
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Teacher</th>
+                                <th>Application ID</th>
+                                <th>Subject</th>
+                                <th>Experience</th>
+                                <th>Applied On</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="applicationsTable">
+
+                            <!-- JS DATA WILL LOAD HERE -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+                <div class="empty-state" id="emptyState">
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-file-circle-xmark"></i>
+                    </div>
+
+                    <h3>No Applications Found</h3>
+
+                    <p>
+                        No teacher applications match your current search or filters.
+                    </p>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+                <div class="pagination">
+
+                    <button class="page-btn disabled" id="prevPage">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <button class="page-number active">1</button>
+                    <button class="page-number">2</button>
+                    <button class="page-number">3</button>
+
+                    <button class="page-btn" id="nextPage">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         APPLICATION DETAILS MODAL
+    =============================== -->
+    <div class="modal-overlay" id="applicationModal">
+
+        <div class="application-modal">
+
+            <button class="close-modal" id="closeModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-header">
+
+                <div class="modal-avatar" id="modalAvatar">
+                    R
+                </div>
+
+                <div>
+                    <span>Teacher Application</span>
+                    <h2 id="modalTeacherName">Rahul Sharma</h2>
+                    <p id="modalApplicationId">Application #TH-2026-001</p>
+                </div>
+
+            </div>
+
+
+            <div class="modal-status" id="modalStatus">
+                <span class="status-dot"></span>
+                Pending Review
+            </div>
+
+
+            <div class="details-grid">
+
+                <div class="detail-item">
+                    <span>Email</span>
+                    <strong id="modalEmail">rahul@example.com</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Phone</span>
+                    <strong id="modalPhone">+91 98765 43210</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Subject</span>
+                    <strong id="modalSubject">Mathematics</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Experience</span>
+                    <strong id="modalExperience">5 Years</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Qualification</span>
+                    <strong id="modalQualification">M.Sc Mathematics</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Applied On</span>
+                    <strong id="modalDate">08 Sep 2026</strong>
+                </div>
+
+            </div>
+
+
+            <div class="profile-summary">
+
+                <h3>About Teacher</h3>
+
+                <p id="modalAbout">
+                    Experienced mathematics teacher with strong classroom
+                    management and student mentoring skills.
+                </p>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button class="reject-btn" id="modalRejectBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                    Reject
+                </button>
+
+                <button class="approve-btn" id="modalApproveBtn">
+                    <i class="fa-solid fa-check"></i>
+                    Approve
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div>
+            <strong id="toastTitle">Success</strong>
+            <p id="toastMessage">Application updated successfully.</p>
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="../../js/admin/teacher-applications.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Class 8 | Talent Hunt</title>
+
+    <link rel="stylesheet" href="../../css/school-students/class-8.css">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="ph ph-graduation-cap"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>Talent<span>Hunt</span></h2>
+                <p>School Student Portal</p>
+            </div>
+        </div>
+
+        <div class="topbar-right">
+
+            <div class="class-badge">
+                Class 8
+            </div>
+
+            <button class="notification-btn" id="notificationBtn">
+                <i class="ph ph-bell"></i>
+            </button>
+
+            <button class="profile-btn" id="profileBtn">
+                <i class="ph ph-user-circle"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="class-container">
+
+        <!-- HERO -->
+
+        <section class="hero-section">
+
+            <div class="hero-content">
+
+                <span class="welcome-text">
+                    WELCOME TO TALENT HUNT
+                </span>
+
+                <h1>
+                    Explore. Learn. <span>Grow.</span>
+                </h1>
+
+                <p>
+                    Welcome to Class 8 learning portal.
+                    Strengthen your concepts, explore new topics
+                    and test your knowledge through assessments.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="primary-btn"
+                        id="assessmentBtn">
+
+                        <i class="ph ph-clipboard-text"></i>
+
+                        Take Assessment
+
+                    </button>
+
+                    <button
+                        class="secondary-btn"
+                        id="exploreBtn">
+
+                        <i class="ph ph-books"></i>
+
+                        Explore Subjects
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-illustration">
+
+                <div class="illustration-circle">
+
+                    <i class="ph ph-student"></i>
+
+                </div>
+
+                <div class="floating-card card-one">
+                    <i class="ph ph-lightbulb"></i>
+                    <span>Learn</span>
+                </div>
+
+                <div class="floating-card card-two">
+                    <i class="ph ph-brain"></i>
+                    <span>Think</span>
+                </div>
+
+                <div class="floating-card card-three">
+                    <i class="ph ph-trophy"></i>
+                    <span>Achieve</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SUBJECTS ================= -->
+
+        <section class="subjects-section" id="subjects">
+
+            <div class="section-heading">
+
+                <div>
+                    <span>CLASS 8</span>
+
+                    <h2>
+                        Your Subjects
+                    </h2>
+
+                    <p>
+                        Choose a subject and start learning.
+                    </p>
+                </div>
+
+                <div class="search-box">
+
+                    <i class="ph ph-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="subjectSearch"
+                        placeholder="Search subject...">
+
+                </div>
+
+            </div>
+
+
+            <div class="subjects-grid" id="subjectsGrid">
+
+                <!-- Mathematics -->
+
+                <div
+                    class="subject-card"
+                    data-subject="Mathematics">
+
+                    <div class="subject-icon mathematics">
+                        <i class="ph ph-calculator"></i>
+                    </div>
+
+                    <div class="subject-content">
+
+                        <h3>Mathematics</h3>
+
+                        <p>
+                            Numbers, algebra, geometry,
+                            equations and problem solving.
+                        </p>
+
+                    </div>
+
+                    <i class="ph ph-arrow-up-right card-arrow"></i>
+
+                </div>
+
+
+                <!-- Science -->
+
+                <div
+                    class="subject-card"
+                    data-subject="Science">
+
+                    <div class="subject-icon science">
+                        <i class="ph ph-flask"></i>
+                    </div>
+
+                    <div class="subject-content">
+
+                        <h3>Science</h3>
+
+                        <p>
+                            Explore physics, chemistry,
+                            biology and scientific concepts.
+                        </p>
+
+                    </div>
+
+                    <i class="ph ph-arrow-up-right card-arrow"></i>
+
+                </div>
+
+
+                <!-- English -->
+
+                <div
+                    class="subject-card"
+                    data-subject="English">
+
+                    <div class="subject-icon english">
+                        <i class="ph ph-book-open-text"></i>
+                    </div>
+
+                    <div class="subject-content">
+
+                        <h3>English</h3>
+
+                        <p>
+                            Grammar, vocabulary,
+                            comprehension and communication.
+                        </p>
+
+                    </div>
+
+                    <i class="ph ph-arrow-up-right card-arrow"></i>
+
+                </div>
+
+
+                <!-- Hindi -->
+
+                <div
+                    class="subject-card"
+                    data-subject="Hindi">
+
+                    <div class="subject-icon hindi">
+                        <i class="ph ph-translate"></i>
+                    </div>
+
+                    <div class="subject-content">
+
+                        <h3>Hindi</h3>
+
+                        <p>
+                            व्याकरण, साहित्य, शब्द ज्ञान
+                            और भाषा कौशल।
+                        </p>
+
+                    </div>
+
+                    <i class="ph ph-arrow-up-right card-arrow"></i>
+
+                </div>
+
+
+                <!-- Social Science -->
+
+                <div
+                    class="subject-card"
+                    data-subject="Social Science">
+
+                    <div class="subject-icon social">
+                        <i class="ph ph-globe-hemisphere-west"></i>
+                    </div>
+
+                    <div class="subject-content">
+
+                        <h3>Social Science</h3>
+
+                        <p>
+                            History, geography, civics
+                            and society around us.
+                        </p>
+
+                    </div>
+
+                    <i class="ph ph-arrow-up-right card-arrow"></i>
+
+                </div>
+
+
+                <!-- Computer -->
+
+                <div
+                    class="subject-card"
+                    data-subject="Computer">
+
+                    <div class="subject-icon computer">
+                        <i class="ph ph-monitor"></i>
+                    </div>
+
+                    <div class="subject-content">
+
+                        <h3>Computer</h3>
+
+                        <p>
+                            Computer fundamentals,
+                            internet and digital technology.
+                        </p>
+
+                    </div>
+
+                    <i class="ph ph-arrow-up-right card-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ASSESSMENT CTA ================= -->
+
+        <section class="assessment-banner">
+
+            <div class="assessment-banner-icon">
+                <i class="ph ph-target"></i>
+            </div>
+
+            <div class="assessment-banner-content">
+
+                <span>
+                    TEST YOUR KNOWLEDGE
+                </span>
+
+                <h2>
+                    Ready for your Class 8 Assessment?
+                </h2>
+
+                <p>
+                    Attempt subject-wise questions and
+                    discover your learning progress.
+                </p>
+
+            </div>
+
+            <button
+                class="assessment-start-btn"
+                id="assessmentBannerBtn">
+
+                Start Assessment
+
+                <i class="ph ph-arrow-right"></i>
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Talent Hunt. Learn. Discover. Achieve.
+        </p>
+
+        <span>
+            Class 8
+        </span>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../../js/school-students/class-8.js"></script>
+
+</body>
+
+</html>

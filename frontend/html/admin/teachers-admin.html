@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teachers | Talent Hunt Admin</title>
+
+    <link rel="stylesheet" href="../../css/admin/teachers-admin.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">TH</div>
+
+            <div class="brand-info">
+                <h2>Talent Hunt</h2>
+                <span>Admin Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="teacher-applications.html" class="nav-item">
+                <span class="nav-icon">▣</span>
+                <span>Teacher Applications</span>
+                <span class="nav-badge">08</span>
+            </a>
+
+            <a href="verification.html" class="nav-item">
+                <span class="nav-icon">✓</span>
+                <span>Verification</span>
+                <span class="nav-badge">05</span>
+            </a>
+
+            <a href="demo-reviews.html" class="nav-item">
+                <span class="nav-icon">▶</span>
+                <span>Demo Reviews</span>
+                <span class="nav-badge">04</span>
+            </a>
+
+            <a href="interviews.html" class="nav-item">
+                <span class="nav-icon">◷</span>
+                <span>Interviews</span>
+            </a>
+
+            <a href="hiring.html" class="nav-item">
+                <span class="nav-icon">★</span>
+                <span>Hiring</span>
+            </a>
+
+            <a href="onboarding.html" class="nav-item">
+                <span class="nav-icon">↗</span>
+                <span>Onboarding</span>
+            </a>
+
+            <a href="teachers.html" class="nav-item active">
+                <span class="nav-icon">♟</span>
+                <span>Teachers</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">▤</span>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box" id="helpBox">
+                <div class="help-icon">?</div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <span>Contact support</span>
+                </div>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div>
+                <span class="page-label">ADMIN PANEL</span>
+                <h1>Teachers</h1>
+            </div>
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">AU</div>
+
+                <div class="admin-details">
+                    <strong>Admin</strong>
+                    <span>Administrator</span>
+                </div>
+
+                <button class="profile-arrow" id="profileBtn">
+                    ⌄
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Introduction -->
+        <section class="page-intro">
+
+            <div>
+                <span class="section-label">
+                    TEACHER MANAGEMENT
+                </span>
+
+                <h2>Manage Teachers</h2>
+
+                <p>
+                    View and manage teachers who have successfully
+                    completed the hiring and onboarding process.
+                </p>
+            </div>
+
+            <button class="primary-btn" id="addTeacherBtn">
+                + Add Teacher
+            </button>
+
+        </section>
+
+
+        <!-- ================= STATS ================= -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    ♟
+                </div>
+
+                <div>
+                    <span>Total Teachers</span>
+                    <strong id="totalTeachers">08</strong>
+                    <small>Registered teachers</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ✓
+                </div>
+
+                <div>
+                    <span>Active Teachers</span>
+                    <strong id="activeTeachers">06</strong>
+                    <small>Currently teaching</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    ◷
+                </div>
+
+                <div>
+                    <span>On Leave</span>
+                    <strong id="leaveTeachers">01</strong>
+                    <small>Temporarily unavailable</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon red">
+                    !
+                </div>
+
+                <div>
+                    <span>Inactive</span>
+                    <strong id="inactiveTeachers">01</strong>
+                    <small>Currently inactive</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FILTER ================= -->
+        <section class="filter-section">
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by teacher name, email or subject"
+                >
+
+            </div>
+
+
+            <select id="subjectFilter">
+
+                <option value="all">
+                    All Subjects
+                </option>
+
+                <option value="Mathematics">
+                    Mathematics
+                </option>
+
+                <option value="Physics">
+                    Physics
+                </option>
+
+                <option value="Chemistry">
+                    Chemistry
+                </option>
+
+                <option value="Computer Science">
+                    Computer Science
+                </option>
+
+                <option value="English">
+                    English
+                </option>
+
+                <option value="Biology">
+                    Biology
+                </option>
+
+            </select>
+
+
+            <select id="statusFilter">
+
+                <option value="all">
+                    All Status
+                </option>
+
+                <option value="active">
+                    Active
+                </option>
+
+                <option value="leave">
+                    On Leave
+                </option>
+
+                <option value="inactive">
+                    Inactive
+                </option>
+
+            </select>
+
+
+            <button class="reset-btn" id="resetBtn">
+                ↻ Reset
+            </button>
+
+        </section>
+
+
+        <!-- ================= TEACHER TABLE ================= -->
+        <section class="teachers-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h3>Teacher Directory</h3>
+                    <span id="resultCount">
+                        8 teachers found
+                    </span>
+                </div>
+
+                <button class="export-btn" id="exportBtn">
+                    ↓ Export
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                <input
+                                    type="checkbox"
+                                    id="selectAll"
+                                >
+                            </th>
+
+                            <th>TEACHER</th>
+
+                            <th>SUBJECT</th>
+
+                            <th>CLASSES</th>
+
+                            <th>EXPERIENCE</th>
+
+                            <th>STATUS</th>
+
+                            <th>ACTIONS</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="teachersTable">
+
+                        <!-- JavaScript will render teachers -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= TEACHER PROFILE MODAL ================= -->
+
+<div class="modal-overlay" id="profileModal">
+
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-profile">
+
+            <div
+                class="large-avatar"
+                id="modalAvatar"
+            >
+                AS
+            </div>
+
+            <div>
+
+                <span class="section-label">
+                    TEACHER PROFILE
+                </span>
+
+                <h2 id="modalName">
+                    Teacher Name
+                </h2>
+
+                <p id="modalEmail">
+                    teacher@email.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-status">
+
+            <span>Status</span>
+
+            <strong id="modalStatus">
+                Active
+            </strong>
+
+        </div>
+
+
+        <div class="profile-grid">
+
+            <div class="profile-item">
+
+                <span>Subject</span>
+
+                <strong id="modalSubject">
+                    Mathematics
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <span>Classes</span>
+
+                <strong id="modalClasses">
+                    Class 9 - 12
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <span>Experience</span>
+
+                <strong id="modalExperience">
+                    5 Years
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <span>Joining Date</span>
+
+                <strong id="modalJoining">
+                    12 Sep 2026
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <span>Qualification</span>
+
+                <strong id="modalQualification">
+                    M.Sc Mathematics
+                </strong>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <span>Teaching Mode</span>
+
+                <strong id="modalMode">
+                    Online / Offline
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="secondary-btn"
+                id="toggleStatusBtn"
+            >
+                Change Status
+            </button>
+
+            <button
+                class="primary-btn"
+                id="viewProfileBtn"
+            >
+                View Full Profile
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../../js/admin/teachers-admin.js"></script>
+
+</body>
+</html>

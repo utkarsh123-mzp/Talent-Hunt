@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Class 9 Assessment | Talent Hunt</title>
+
+    <link rel="stylesheet"
+        href="../../css/assessments/assessment-class-9.css">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="ph ph-graduation-cap"></i>
+            </div>
+
+            <div>
+                <h2>Talent<span>Hunt</span></h2>
+                <p>Student Assessment Portal</p>
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <span class="class-badge">
+                Class 9
+            </span>
+
+            <button id="homeBtn" class="icon-btn">
+                <i class="ph ph-house"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <!-- INTRO -->
+
+        <section class="assessment-intro">
+
+            <span class="eyebrow">
+                CLASS 9 ASSESSMENT
+            </span>
+
+            <h1>
+                Test Your <span>Knowledge</span>
+            </h1>
+
+            <p>
+                Choose a subject and test your understanding
+                through Class 9 level questions.
+            </p>
+
+        </section>
+
+
+        <!-- ================= SUBJECT SELECTOR ================= -->
+
+        <section class="subject-selector">
+
+            <button class="subject-tab active"
+                data-subject="Mathematics">
+                <i class="ph ph-calculator"></i>
+                Mathematics
+            </button>
+
+            <button class="subject-tab"
+                data-subject="Science">
+                <i class="ph ph-flask"></i>
+                Science
+            </button>
+
+            <button class="subject-tab"
+                data-subject="English">
+                <i class="ph ph-book-open-text"></i>
+                English
+            </button>
+
+            <button class="subject-tab"
+                data-subject="Hindi">
+                <i class="ph ph-translate"></i>
+                Hindi
+            </button>
+
+            <button class="subject-tab"
+                data-subject="Social Science">
+                <i class="ph ph-globe"></i>
+                Social Science
+            </button>
+
+            <button class="subject-tab"
+                data-subject="Computer">
+                <i class="ph ph-monitor"></i>
+                Computer
+            </button>
+
+        </section>
+
+
+        <!-- ================= PROGRESS ================= -->
+
+        <section class="progress-section">
+
+            <div class="progress-info">
+
+                <span id="questionCounter">
+                    Question 1 of 5
+                </span>
+
+                <span id="progressPercent">
+                    20%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill"
+                    class="progress-fill">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUIZ ================= -->
+
+        <section class="quiz-container">
+
+            <div class="quiz-header">
+
+                <div>
+
+                    <span class="quiz-label">
+                        CURRENT ASSESSMENT
+                    </span>
+
+                    <h2 id="subjectTitle">
+                        Mathematics
+                    </h2>
+
+                </div>
+
+                <div class="question-number"
+                    id="questionNumber">
+                    01
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION -->
+
+            <div class="question-area">
+
+                <h3 id="questionText">
+                    Loading question...
+                </h3>
+
+                <div id="optionsContainer"
+                    class="options-container">
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <div class="quiz-navigation">
+
+                <button
+                    id="previousBtn"
+                    class="secondary-btn">
+
+                    <i class="ph ph-arrow-left"></i>
+
+                    Previous
+
+                </button>
+
+                <button
+                    id="nextBtn"
+                    class="primary-btn">
+
+                    Next
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESULT ================= -->
+
+        <section
+            id="resultSection"
+            class="result-section hidden">
+
+            <div class="result-icon">
+
+                <i class="ph ph-trophy"></i>
+
+            </div>
+
+            <span class="eyebrow">
+                ASSESSMENT COMPLETED
+            </span>
+
+            <h2>
+                Great Job!
+            </h2>
+
+            <p>
+                You have completed the
+                <strong id="resultSubject">
+                    Mathematics
+                </strong>
+                assessment.
+            </p>
+
+
+            <div class="score-card">
+
+                <div>
+
+                    <span>
+                        Your Score
+                    </span>
+
+                    <strong id="scoreText">
+                        0 / 5
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Percentage
+                    </span>
+
+                    <strong id="percentageText">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-actions">
+
+                <button
+                    id="retryBtn"
+                    class="primary-btn">
+
+                    <i class="ph ph-arrow-counter-clockwise"></i>
+
+                    Try Again
+
+                </button>
+
+                <button
+                    id="backSubjectsBtn"
+                    class="secondary-btn">
+
+                    Choose Subject
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div>
+
+            <h3>
+                Talent<span>Hunt</span>
+            </h3>
+
+            <p>
+                Learn • Practice • Achieve
+            </p>
+
+        </div>
+
+        <p>
+            Class 9 Assessment © 2026
+        </p>
+
+    </footer>
+
+
+    <script src="../../js/assessments/assessment-class-9.js"></script>
+
+</body>
+
+</html>

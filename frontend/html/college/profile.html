@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | TalentHunt</title>
+
+    <link rel="stylesheet" href="../../css/college/profile.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+                <div class="brand-logo">T</div>
+
+                <div>
+                    <h2>TalentHunt</h2>
+                    <span>College Portal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-label">MAIN</p>
+
+                <a href="college-dashboard.html" class="nav-link">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <p class="nav-label">SELECTION PREPARATION</p>
+
+                <a href="assessments.html" class="nav-link">
+                    <span class="nav-icon">✓</span>
+                    <span>Assessments</span>
+                </a>
+
+                <a href="recruiter-questions.html" class="nav-link">
+                    <span class="nav-icon">?</span>
+                    <span>Recruiter Questions</span>
+                </a>
+
+                <a href="resume-analyzer.html" class="nav-link">
+                    <span class="nav-icon">▤</span>
+                    <span>Resume Analyzer</span>
+                </a>
+
+                <a href="mock-interview.html" class="nav-link">
+                    <span class="nav-icon">◉</span>
+                    <span>Mock Interview</span>
+                </a>
+
+                <p class="nav-label">PROGRESS</p>
+
+                <a href="skill-gap.html" class="nav-link">
+                    <span class="nav-icon">◫</span>
+                    <span>Skill Gap</span>
+                </a>
+
+                <a href="placement-readiness.html" class="nav-link">
+                    <span class="nav-icon">★</span>
+                    <span>Placement Readiness</span>
+                </a>
+
+                <p class="nav-label">ACCOUNT</p>
+
+                <a href="profile.html" class="nav-link active">
+                    <span class="nav-icon">◯</span>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="help-box">
+
+                    <span class="help-icon">?</span>
+
+                    <div>
+                        <strong>Need Help?</strong>
+                        <p>Improve your placement skills</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <button class="menu-btn" id="menuBtn">
+                    ☰
+                </button>
+
+                <div class="page-heading">
+
+                    <span>COLLEGE PORTAL</span>
+
+                    <h1>My Profile</h1>
+
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button
+                        class="notification-btn"
+                        id="notificationBtn">
+
+                        ♢
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+                    <div class="avatar top-avatar">
+                        U
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= CONTENT ================= -->
+
+            <div class="content">
+
+                <!-- PROFILE HEADER -->
+
+                <section class="profile-header">
+
+                    <div class="profile-main">
+
+                        <div class="profile-avatar">
+                            U
+
+                            <button
+                                class="avatar-edit"
+                                id="avatarEdit"
+                                title="Change profile photo">
+
+                                ✎
+
+                            </button>
+
+                        </div>
+
+                        <div class="profile-identity">
+
+                            <span class="profile-role">
+                                COLLEGE STUDENT
+                            </span>
+
+                            <h2 id="profileName">
+                                Utkarsh Upadhyay
+                            </h2>
+
+                            <p id="profileEmail">
+                                student@example.com
+                            </p>
+
+                            <div class="profile-tags">
+
+                                <span>
+                                    B.Tech CSE
+                                </span>
+
+                                <span>
+                                    Final Year
+                                </span>
+
+                                <span>
+                                    Open to Opportunities
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="completion-box">
+
+                        <div class="completion-top">
+
+                            <span>
+                                Profile Completion
+                            </span>
+
+                            <strong id="completionPercentage">
+                                82%
+                            </strong>
+
+                        </div>
+
+                        <div class="completion-bar">
+
+                            <span
+                                id="completionBar"
+                                style="width:82%;">
+                            </span>
+
+                        </div>
+
+                        <small>
+                            Complete your profile to improve
+                            recruiter visibility.
+                        </small>
+
+                    </div>
+
+                </section>
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="section-label">
+                                PERSONAL INFORMATION
+                            </span>
+
+                            <h2>
+                                Basic Details
+                            </h2>
+                        </div>
+
+                        <button
+                            class="edit-btn"
+                            data-section="personal">
+
+                            ✎ Edit
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                value="Utkarsh Upadhyay"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                value="student@example.com"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                value="+91 00000 00000"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="location">
+                                Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="location"
+                                value="India"
+                                disabled>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- EDUCATION -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                EDUCATION
+                            </span>
+
+                            <h2>
+                                Academic Details
+                            </h2>
+
+                        </div>
+
+                        <button
+                            class="edit-btn"
+                            data-section="education">
+
+                            ✎ Edit
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="college">
+                                College / University
+                            </label>
+
+                            <input
+                                type="text"
+                                id="college"
+                                value="Kashi Institute Of Technology"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="degree">
+                                Degree
+                            </label>
+
+                            <input
+                                type="text"
+                                id="degree"
+                                value="B.Tech"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="branch">
+                                Branch
+                            </label>
+
+                            <input
+                                type="text"
+                                id="branch"
+                                value="Computer Science Engineering"
+                                disabled>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="graduation">
+                                Graduation Year
+                            </label>
+
+                            <select
+                                id="graduation"
+                                disabled>
+
+                                <option value="2027" selected>
+                                    2027
+                                </option>
+
+                                <option value="2028">
+                                    2028
+                                </option>
+
+                                <option value="2029">
+                                    2029
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- CAREER PREFERENCES -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                CAREER
+                            </span>
+
+                            <h2>
+                                Career Preferences
+                            </h2>
+
+                        </div>
+
+                        <button
+                            class="edit-btn"
+                            data-section="career">
+
+                            ✎ Edit
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="targetRole">
+                                Target Job Role
+                            </label>
+
+                            <select
+                                id="targetRole"
+                                disabled>
+
+                                <option selected>
+                                    Software Developer
+                                </option>
+
+                                <option>
+                                    Frontend Developer
+                                </option>
+
+                                <option>
+                                    Backend Developer
+                                </option>
+
+                                <option>
+                                    Full Stack Developer
+                                </option>
+
+                                <option>
+                                    Python Developer
+                                </option>
+
+                                <option>
+                                    Data Analyst
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="workPreference">
+                                Work Preference
+                            </label>
+
+                            <select
+                                id="workPreference"
+                                disabled>
+
+                                <option selected>
+                                    On-site / Hybrid
+                                </option>
+
+                                <option>
+                                    Remote
+                                </option>
+
+                                <option>
+                                    Hybrid
+                                </option>
+
+                                <option>
+                                    On-site
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="careerGoal">
+                                Career Goal
+                            </label>
+
+                            <textarea
+                                id="careerGoal"
+                                disabled>Looking for a software development opportunity where I can apply my programming and problem-solving skills.</textarea>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SKILLS -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                TECHNICAL PROFILE
+                            </span>
+
+                            <h2>
+                                Skills
+                            </h2>
+
+                        </div>
+
+                        <button
+                            class="edit-btn"
+                            id="editSkills">
+
+                            ✎ Edit
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="skills-container">
+
+                        <div class="skill-item">
+                            <span>Python</span>
+                            <button class="remove-skill">×</button>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>HTML</span>
+                            <button class="remove-skill">×</button>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>CSS</span>
+                            <button class="remove-skill">×</button>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>JavaScript</span>
+                            <button class="remove-skill">×</button>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>SQL</span>
+                            <button class="remove-skill">×</button>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>DBMS</span>
+                            <button class="remove-skill">×</button>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>Power BI</span>
+                            <button class="remove-skill">×</button>
+                        </div>
+
+                        <div class="skill-item">
+                            <span>Git & GitHub</span>
+                            <button class="remove-skill">×</button>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="add-skill-box"
+                        id="addSkillBox">
+
+                        <input
+                            type="text"
+                            id="skillInput"
+                            placeholder="Enter a skill...">
+
+                        <button id="addSkillBtn">
+                            + Add Skill
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- PROJECTS -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                PROJECTS
+                            </span>
+
+                            <h2>
+                                Featured Projects
+                            </h2>
+
+                        </div>
+
+                        <button
+                            class="outline-btn"
+                            id="addProjectBtn">
+
+                            + Add Project
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="projects-container"
+                        id="projectsContainer">
+
+                        <article class="project-card">
+
+                            <div class="project-icon">
+                                💻
+                            </div>
+
+                            <div class="project-content">
+
+                                <h3>
+                                    Portfolio Website
+                                </h3>
+
+                                <p>
+                                    Personal portfolio website built
+                                    using HTML, CSS and JavaScript.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+
+                            </div>
+
+                            <button class="project-delete">
+                                ×
+                            </button>
+
+                        </article>
+
+
+                        <article class="project-card">
+
+                            <div class="project-icon">
+                                🎵
+                            </div>
+
+                            <div class="project-content">
+
+                                <h3>
+                                    Spotify Clone
+                                </h3>
+
+                                <p>
+                                    Music streaming interface with
+                                    playlist and player functionality.
+                                </p>
+
+                                <div class="project-tags">
+                                    <span>React</span>
+                                    <span>JavaScript</span>
+                                    <span>CSS</span>
+                                </div>
+
+                            </div>
+
+                            <button class="project-delete">
+                                ×
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- LINKS -->
+
+                <section class="profile-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                PROFESSIONAL LINKS
+                            </span>
+
+                            <h2>
+                                Online Presence
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="github">
+                                GitHub
+                            </label>
+
+                            <input
+                                type="url"
+                                id="github"
+                                placeholder="https://github.com/username">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="linkedin">
+                                LinkedIn
+                            </label>
+
+                            <input
+                                type="url"
+                                id="linkedin"
+                                placeholder="https://linkedin.com/in/username">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="portfolio">
+                                Portfolio
+                            </label>
+
+                            <input
+                                type="url"
+                                id="portfolio"
+                                placeholder="https://yourportfolio.com">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="resumeLink">
+                                Resume
+                            </label>
+
+                            <input
+                                type="text"
+                                id="resumeLink"
+                                value="Resume Analyzer"
+                                disabled>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SAVE -->
+
+                <div class="save-area">
+
+                    <button
+                        class="secondary-btn"
+                        id="resetBtn">
+
+                        Reset
+
+                    </button>
+
+                    <button
+                        class="primary-btn"
+                        id="saveBtn">
+
+                        Save Profile
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= NOTIFICATION ================= -->
+
+    <div
+        class="notification-panel"
+        id="notificationPanel">
+
+        <div class="notification-header">
+
+            <strong>
+                Notifications
+            </strong>
+
+            <button id="closeNotification">
+                ×
+            </button>
+
+        </div>
+
+        <div class="notification-body">
+
+            <div class="notification-item">
+
+                <span>!</span>
+
+                <div>
+
+                    <strong>
+                        Complete Profile
+                    </strong>
+
+                    <p>
+                        Add your professional links to reach
+                        100% profile completion.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="notification-item">
+
+                <span>★</span>
+
+                <div>
+
+                    <strong>
+                        Placement Preparation
+                    </strong>
+
+                    <p>
+                        Continue your assessments to improve
+                        your placement score.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        class="toast"
+        id="toast">
+    </div>
+
+
+    <script src="../../js/college/profile.js"></script>
+
+</body>
+
+</html>

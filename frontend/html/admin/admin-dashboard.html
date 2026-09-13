@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Talent Hunt</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="../../css/admin/admin-dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">TH</div>
+
+            <div class="brand-text">
+                <h2>Talent Hunt</h2>
+                <span>Admin Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html" class="nav-item active">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="applications">
+                <span class="nav-icon">▣</span>
+                <span>Teacher Applications</span>
+                <span class="nav-badge">08</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="verification">
+                <span class="nav-icon">✓</span>
+                <span>Verification</span>
+                <span class="nav-badge">05</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="demo">
+                <span class="nav-icon">▶</span>
+                <span>Demo Reviews</span>
+                <span class="nav-badge">04</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="interviews">
+                <span class="nav-icon">◷</span>
+                <span>Interviews</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="hiring">
+                <span class="nav-icon">★</span>
+                <span>Hiring</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="onboarding">
+                <span class="nav-icon">↗</span>
+                <span>Onboarding</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="teachers">
+                <span class="nav-icon">♟</span>
+                <span>Teachers</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="reports">
+                <span class="nav-icon">▤</span>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="help-box">
+                <span class="help-icon">?</span>
+                <div>
+                    <strong>Need Help?</strong>
+                    <small>Contact support</small>
+                </div>
+            </a>
+
+            <button class="logout-btn" id="logoutBtn">
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="menu-btn" id="menuBtn">
+                    ☰
+                </button>
+
+                <div>
+                    <span class="page-label">ADMIN PORTAL</span>
+                    <h1>Dashboard</h1>
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="notification-btn" id="notificationBtn">
+                    ♢
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="admin-profile">
+                    <div class="admin-avatar">A</div>
+
+                    <div class="admin-info">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                    <span class="profile-arrow">⌄</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section class="dashboard-content">
+
+            <!-- Welcome -->
+
+            <div class="welcome-card">
+
+                <div>
+                    <span class="welcome-label">ADMIN PORTAL</span>
+
+                    <h2>
+                        Welcome back, Admin
+                    </h2>
+
+                    <p>
+                        Manage teacher applications, verification,
+                        interviews and hiring from one place.
+                    </p>
+                </div>
+
+                <div class="welcome-icon">
+                    TH
+                </div>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon application-icon">
+                        ▣
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Total Applications</span>
+                        <strong>24</strong>
+                        <small>All teacher applications</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon pending-icon">
+                        ◷
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Pending Verification</span>
+                        <strong>08</strong>
+                        <small>Waiting for review</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon demo-icon">
+                        ▶
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Demo Reviews</span>
+                        <strong>05</strong>
+                        <small>Pending demo evaluation</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon interview-icon">
+                        ◷
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Interviews</span>
+                        <strong>04</strong>
+                        <small>Upcoming interviews</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon selected-icon">
+                        ★
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Selected Teachers</span>
+                        <strong>07</strong>
+                        <small>Successfully selected</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon active-icon">
+                        ♟
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Active Teachers</span>
+                        <strong>12</strong>
+                        <small>Currently onboarded</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= MAIN GRID ================= -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- Recent Applications -->
+
+                <div class="dashboard-card applications-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                TEACHER MANAGEMENT
+                            </span>
+
+                            <h3>Recent Applications</h3>
+                        </div>
+
+                        <button
+                            class="view-all-btn"
+                            data-section="applications"
+                        >
+                            View All →
+                        </button>
+
+                    </div>
+
+
+                    <div class="application-list">
+
+                        <!-- Application 1 -->
+
+                        <div class="application-row">
+
+                            <div class="teacher-avatar">
+                                RS
+                            </div>
+
+                            <div class="teacher-details">
+                                <strong>Rahul Sharma</strong>
+                                <span>Mathematics • Class 9–12</span>
+                            </div>
+
+                            <div class="application-status pending">
+                                Pending
+                            </div>
+
+                            <button class="row-action">
+                                →
+                            </button>
+
+                        </div>
+
+
+                        <!-- Application 2 -->
+
+                        <div class="application-row">
+
+                            <div class="teacher-avatar">
+                                AP
+                            </div>
+
+                            <div class="teacher-details">
+                                <strong>Anjali Patel</strong>
+                                <span>Physics • Class 11–12</span>
+                            </div>
+
+                            <div class="application-status review">
+                                Review
+                            </div>
+
+                            <button class="row-action">
+                                →
+                            </button>
+
+                        </div>
+
+
+                        <!-- Application 3 -->
+
+                        <div class="application-row">
+
+                            <div class="teacher-avatar">
+                                VK
+                            </div>
+
+                            <div class="teacher-details">
+                                <strong>Vikas Kumar</strong>
+                                <span>Computer Science • College</span>
+                            </div>
+
+                            <div class="application-status verified">
+                                Verified
+                            </div>
+
+                            <button class="row-action">
+                                →
+                            </button>
+
+                        </div>
+
+
+                        <!-- Application 4 -->
+
+                        <div class="application-row">
+
+                            <div class="teacher-avatar">
+                                NS
+                            </div>
+
+                            <div class="teacher-details">
+                                <strong>Neha Singh</strong>
+                                <span>English • Class 6–10</span>
+                            </div>
+
+                            <div class="application-status demo">
+                                Demo
+                            </div>
+
+                            <button class="row-action">
+                                →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hiring Pipeline -->
+
+                <div class="dashboard-card pipeline-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="section-label">
+                                HIRING PROCESS
+                            </span>
+
+                            <h3>Hiring Pipeline</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline">
+
+                        <div class="pipeline-item">
+                            <div class="pipeline-number">24</div>
+
+                            <div>
+                                <strong>Applications</strong>
+                                <span>Total received</span>
+                            </div>
+                        </div>
+
+
+                        <div class="pipeline-line"></div>
+
+
+                        <div class="pipeline-item">
+                            <div class="pipeline-number">16</div>
+
+                            <div>
+                                <strong>Verified</strong>
+                                <span>Identity approved</span>
+                            </div>
+                        </div>
+
+
+                        <div class="pipeline-line"></div>
+
+
+                        <div class="pipeline-item">
+                            <div class="pipeline-number">09</div>
+
+                            <div>
+                                <strong>Demo Approved</strong>
+                                <span>Ready for interview</span>
+                            </div>
+                        </div>
+
+
+                        <div class="pipeline-line"></div>
+
+
+                        <div class="pipeline-item">
+                            <div class="pipeline-number">07</div>
+
+                            <div>
+                                <strong>Selected</strong>
+                                <span>Ready for onboarding</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= QUICK ACTIONS ================= -->
+
+            <section class="quick-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            ADMIN ACTIONS
+                        </span>
+
+                        <h3>Quick Actions</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-grid">
+
+                    <button
+                        class="quick-card"
+                        data-section="applications"
+                    >
+                        <div class="quick-icon">▣</div>
+
+                        <div>
+                            <strong>Review Applications</strong>
+                            <span>Check new teacher applications</span>
+                        </div>
+
+                        <b>→</b>
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        data-section="verification"
+                    >
+                        <div class="quick-icon">✓</div>
+
+                        <div>
+                            <strong>Verify Teachers</strong>
+                            <span>Review identity documents</span>
+                        </div>
+
+                        <b>→</b>
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        data-section="demo"
+                    >
+                        <div class="quick-icon">▶</div>
+
+                        <div>
+                            <strong>Review Demo Classes</strong>
+                            <span>Evaluate submitted demos</span>
+                        </div>
+
+                        <b>→</b>
+                    </button>
+
+
+                    <button
+                        class="quick-card"
+                        data-section="interviews"
+                    >
+                        <div class="quick-icon">◷</div>
+
+                        <div>
+                            <strong>Manage Interviews</strong>
+                            <span>Schedule upcoming interviews</span>
+                        </div>
+
+                        <b>→</b>
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span id="toastMessage">Action completed</span>
+    </div>
+
+
+    <!-- Admin JS -->
+    <script src="../../js/admin/admin-dashboard.js"></script>
+
+</body>
+</html>

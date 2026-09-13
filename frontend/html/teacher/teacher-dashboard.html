@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Teacher Dashboard | Talent Hunt</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/teacher/teacher-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="logo-area">
+
+        <div class="logo-icon">
+            TH
+        </div>
+
+        <div>
+
+            <h2>
+                Talent Hunt
+            </h2>
+
+            <span>
+                Teacher Portal
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a
+            href="#"
+            class="nav-item active"
+            data-section="dashboard"
+        >
+            <span class="nav-icon">⌂</span>
+            Dashboard
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+            data-section="classes"
+        >
+            <span class="nav-icon">▣</span>
+            My Classes
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+            data-section="students"
+        >
+            <span class="nav-icon">♙</span>
+            Students
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+            data-section="schedule"
+        >
+            <span class="nav-icon">◷</span>
+            Schedule
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+            data-section="earnings"
+        >
+            <span class="nav-icon">₹</span>
+            Earnings
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+            data-section="opportunities"
+        >
+            <span class="nav-icon">✦</span>
+            Opportunities
+        </a>
+
+
+        <a
+            href="#"
+            class="nav-item"
+            data-section="profile"
+        >
+            <span class="nav-icon">◎</span>
+            My Profile
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <div class="help-box">
+
+            <div class="help-icon">
+                ?
+            </div>
+
+            <div>
+
+                <strong>
+                    Need Help?
+                </strong>
+
+                <span>
+                    Contact support
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="logout-btn"
+            id="logoutBtn"
+        >
+
+            <span>
+                ↪
+            </span>
+
+            Logout
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================
+     MAIN AREA
+========================================= -->
+
+<div class="main-wrapper">
+
+
+    <!-- =====================================
+         TOPBAR
+    ====================================== -->
+
+    <header class="topbar">
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+        >
+            ☰
+        </button>
+
+
+        <div class="page-title">
+
+            <span>
+                TEACHER PORTAL
+            </span>
+
+            <h1>
+                Dashboard
+            </h1>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <button
+                class="notification-btn"
+                id="notificationBtn"
+            >
+
+                🔔
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+            <div class="teacher-mini-profile">
+
+                <div class="avatar">
+                    TU
+                </div>
+
+                <div class="teacher-mini-info">
+
+                    <strong>
+                        Teacher
+                    </strong>
+
+                    <span>
+                        Verified Teacher
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         CONTENT
+    ====================================== -->
+
+    <main class="dashboard-content">
+
+
+        <!-- =================================
+             WELCOME
+        ================================== -->
+
+        <section class="welcome-banner">
+
+            <div>
+
+                <span class="welcome-label">
+                    GOOD EVENING
+                </span>
+
+                <h2>
+                    Welcome back, Teacher 👋
+                </h2>
+
+                <p>
+                    Here's what's happening with your
+                    teaching activities today.
+                </p>
+
+            </div>
+
+
+            <div class="verified-status">
+
+                <span class="verified-check">
+                    ✓
+                </span>
+
+                <div>
+
+                    <strong>
+                        Account Verified
+                    </strong>
+
+                    <span>
+                        Ready for teaching
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             STAT CARDS
+        ================================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon purple">
+                        ▣
+                    </div>
+
+                    <span class="stat-trend">
+                        +2
+                    </span>
+
+                </div>
+
+                <span class="stat-label">
+                    Active Classes
+                </span>
+
+                <h3>
+                    04
+                </h3>
+
+                <p>
+                    Currently assigned
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon blue">
+                        ♙
+                    </div>
+
+                    <span class="stat-trend">
+                        +8
+                    </span>
+
+                </div>
+
+                <span class="stat-label">
+                    Students
+                </span>
+
+                <h3>
+                    28
+                </h3>
+
+                <p>
+                    Total students
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon green">
+                        ₹
+                    </div>
+
+                    <span class="stat-trend">
+                        +12%
+                    </span>
+
+                </div>
+
+                <span class="stat-label">
+                    This Month
+                </span>
+
+                <h3>
+                    ₹18,500
+                </h3>
+
+                <p>
+                    Estimated earnings
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon orange">
+                        ★
+                    </div>
+
+                    <span class="stat-trend">
+                        +0.2
+                    </span>
+
+                </div>
+
+                <span class="stat-label">
+                    Rating
+                </span>
+
+                <h3>
+                    4.8
+                </h3>
+
+                <p>
+                    From 24 reviews
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             TWO COLUMN AREA
+        ================================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- =============================
+                 UPCOMING CLASSES
+            ============================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            TEACHING
+                        </span>
+
+                        <h2>
+                            Upcoming Classes
+                        </h2>
+
+                    </div>
+
+                    <button
+                        class="view-all"
+                        data-action="schedule"
+                    >
+                        View Schedule →
+                    </button>
+
+                </div>
+
+
+                <div class="class-list">
+
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+
+                            <strong>
+                                05:00
+                            </strong>
+
+                            <span>
+                                PM
+                            </span>
+
+                        </div>
+
+
+                        <div class="class-info">
+
+                            <strong>
+                                Mathematics
+                            </strong>
+
+                            <span>
+                                Class 10 • Group A
+                            </span>
+
+                            <small>
+                                12 Students
+                            </small>
+
+                        </div>
+
+
+                        <span class="class-status online">
+                            Online
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+
+                            <strong>
+                                06:30
+                            </strong>
+
+                            <span>
+                                PM
+                            </span>
+
+                        </div>
+
+
+                        <div class="class-info">
+
+                            <strong>
+                                Mathematics
+                            </strong>
+
+                            <span>
+                                Class 9 • Group B
+                            </span>
+
+                            <small>
+                                8 Students
+                            </small>
+
+                        </div>
+
+
+                        <span class="class-status offline">
+                            Centre
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="class-item">
+
+                        <div class="class-time">
+
+                            <strong>
+                                08:00
+                            </strong>
+
+                            <span>
+                                PM
+                            </span>
+
+                        </div>
+
+
+                        <div class="class-info">
+
+                            <strong>
+                                One-to-One Session
+                            </strong>
+
+                            <span>
+                                College Student
+                            </span>
+
+                            <small>
+                                Individual Class
+                            </small>
+
+                        </div>
+
+
+                        <span class="class-status online">
+                            Online
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================
+                 PROFILE COMPLETION
+            ============================== -->
+
+            <div class="dashboard-card profile-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            PROFILE
+                        </span>
+
+                        <h2>
+                            Profile Completion
+                        </h2>
+
+                    </div>
+
+                    <strong class="completion-number">
+                        92%
+                    </strong>
+
+                </div>
+
+
+                <div class="completion-circle">
+
+                    <div class="circle-inner">
+
+                        <strong>
+                            92%
+                        </strong>
+
+                        <span>
+                            Complete
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p class="profile-message">
+                    Your profile is almost complete.
+                    Add your teaching preferences to
+                    improve your visibility.
+                </p>
+
+
+                <button
+                    class="primary-btn"
+                    id="completeProfileBtn"
+                >
+                    Complete Profile
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             LOWER GRID
+        ================================== -->
+
+        <section class="lower-grid">
+
+
+            <!-- =============================
+                 OPPORTUNITIES
+            ============================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            OPPORTUNITIES
+                        </span>
+
+                        <h2>
+                            Recommended for You
+                        </h2>
+
+                    </div>
+
+                    <button
+                        class="view-all"
+                        data-action="opportunities"
+                    >
+                        View All →
+                    </button>
+
+                </div>
+
+
+                <div class="opportunity-list">
+
+
+                    <div class="opportunity-item">
+
+                        <div class="opportunity-icon">
+                            📚
+                        </div>
+
+                        <div class="opportunity-info">
+
+                            <strong>
+                                Class 8 Science Teacher
+                            </strong>
+
+                            <span>
+                                Online • 3 days/week
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="apply-btn"
+                            data-opportunity="Class 8 Science Teacher"
+                        >
+                            Apply
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="opportunity-item">
+
+                        <div class="opportunity-icon">
+                            🎓
+                        </div>
+
+                        <div class="opportunity-info">
+
+                            <strong>
+                                College Mathematics
+                            </strong>
+
+                            <span>
+                                One-to-One • Flexible
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="apply-btn"
+                            data-opportunity="College Mathematics"
+                        >
+                            Apply
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="opportunity-item">
+
+                        <div class="opportunity-icon">
+                            💻
+                        </div>
+
+                        <div class="opportunity-info">
+
+                            <strong>
+                                Computer Basics
+                            </strong>
+
+                            <span>
+                                Offline Centre • Weekend
+                            </span>
+
+                        </div>
+
+                        <button
+                            class="apply-btn"
+                            data-opportunity="Computer Basics"
+                        >
+                            Apply
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================
+                 NOTIFICATIONS
+            ============================== -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            UPDATES
+                        </span>
+
+                        <h2>
+                            Notifications
+                        </h2>
+
+                    </div>
+
+                    <button
+                        class="view-all"
+                        id="markReadBtn"
+                    >
+                        Mark Read
+                    </button>
+
+                </div>
+
+
+                <div class="notification-list">
+
+
+                    <div class="notification-item unread">
+
+                        <div class="notification-dot-icon">
+                            !
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                New student request
+                            </strong>
+
+                            <span>
+                                A new Class 10 student
+                                requested a demo class.
+                            </span>
+
+                            <small>
+                                15 minutes ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="notification-item">
+
+                        <div class="notification-dot-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Class completed
+                            </strong>
+
+                            <span>
+                                Mathematics Class 9
+                                was completed successfully.
+                            </span>
+
+                            <small>
+                                2 hours ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="notification-item">
+
+                        <div class="notification-dot-icon">
+                            ₹
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Payment update
+                            </strong>
+
+                            <span>
+                                Your previous session payment
+                                has been processed.
+                            </span>
+
+                            <small>
+                                Yesterday
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             QUICK ACTIONS
+        ================================== -->
+
+        <section class="quick-section">
+
+            <div class="section-title">
+
+                <span>
+                    QUICK ACTIONS
+                </span>
+
+                <h2>
+                    Manage Your Teaching
+                </h2>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+
+                <button
+                    class="quick-card"
+                    data-action="classes"
+                >
+
+                    <span class="quick-icon">
+                        ▣
+                    </span>
+
+                    <strong>
+                        My Classes
+                    </strong>
+
+                    <span>
+                        Manage your classes
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="quick-card"
+                    data-action="schedule"
+                >
+
+                    <span class="quick-icon">
+                        ◷
+                    </span>
+
+                    <strong>
+                        Schedule
+                    </strong>
+
+                    <span>
+                        Manage availability
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="quick-card"
+                    data-action="students"
+                >
+
+                    <span class="quick-icon">
+                        ♙
+                    </span>
+
+                    <strong>
+                        Students
+                    </strong>
+
+                    <span>
+                        View your students
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="quick-card"
+                    data-action="profile"
+                >
+
+                    <span class="quick-icon">
+                        ◎
+                    </span>
+
+                    <strong>
+                        Edit Profile
+                    </strong>
+
+                    <span>
+                        Update information
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================
+     MOBILE OVERLAY
+========================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script
+    src="../../js/teacher/teacher-dashboard.js"
+></script>
+
+
+</body>
+
+</html>

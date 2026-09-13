@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hiring | Talent Hunt Admin</title>
+
+    <link rel="stylesheet" href="../../css/admin/hiring.css">
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">TH</div>
+
+            <div class="brand-info">
+                <h2>Talent Hunt</h2>
+                <span>Admin Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="teacher-applications.html" class="nav-item">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Teacher Applications</span>
+                <span class="nav-count">08</span>
+            </a>
+
+            <a href="verification.html" class="nav-item">
+                <i class="fa-solid fa-check"></i>
+                <span>Verification</span>
+                <span class="nav-count">05</span>
+            </a>
+
+            <a href="demo-reviews.html" class="nav-item">
+                <i class="fa-solid fa-play"></i>
+                <span>Demo Reviews</span>
+                <span class="nav-count">04</span>
+            </a>
+
+            <a href="interviews.html" class="nav-item">
+                <i class="fa-regular fa-clock"></i>
+                <span>Interviews</span>
+            </a>
+
+            <a href="hiring.html" class="nav-item active">
+                <i class="fa-solid fa-star"></i>
+                <span>Hiring</span>
+            </a>
+
+            <a href="onboarding.html" class="nav-item">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span>Onboarding</span>
+            </a>
+
+            <a href="teachers.html" class="nav-item">
+                <i class="fa-solid fa-chess-pawn"></i>
+                <span>Teachers</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+                <div class="help-icon">
+                    <i class="fa-solid fa-question"></i>
+                </div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <span>Contact support</span>
+                </div>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Top Header -->
+        <header class="top-header">
+
+            <div>
+                <span class="portal-label">ADMIN PORTAL</span>
+                <h1>Hiring</h1>
+            </div>
+
+            <div class="admin-profile">
+                <div class="avatar">AU</div>
+
+                <div class="admin-details">
+                    <strong>Admin</strong>
+                    <span>Administrator</span>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="page-content">
+
+            <div class="page-heading">
+                <div>
+                    <span class="section-label">HIRING MANAGEMENT</span>
+                    <h2>Manage Hiring</h2>
+                    <p>
+                        Review interview-selected teachers and manage their hiring status.
+                    </p>
+                </div>
+
+                <button class="primary-btn" id="refreshBtn">
+                    <i class="fa-solid fa-rotate"></i>
+                    Refresh
+                </button>
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Candidates</span>
+                        <h3 id="totalCandidates">12</h3>
+                        <small>Interview selected</small>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+
+                    <div>
+                        <span>Offer Pending</span>
+                        <h3 id="offerPending">04</h3>
+                        <small>Awaiting offer</small>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <span>Offers Sent</span>
+                        <h3 id="offersSent">03</h3>
+                        <small>Awaiting response</small>
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Hired</span>
+                        <h3 id="hiredCount">05</h3>
+                        <small>Successfully hired</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ================= FILTER AREA ================= -->
+            <div class="toolbar">
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search teacher or subject..."
+                    >
+                </div>
+
+                <select id="subjectFilter">
+                    <option value="all">All Subjects</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="Computer Science">Computer Science</option>
+                </select>
+
+                <select id="statusFilter">
+                    <option value="all">All Status</option>
+                    <option value="offer-pending">Offer Pending</option>
+                    <option value="offer-sent">Offer Sent</option>
+                    <option value="accepted">Accepted</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+
+            </div>
+
+
+            <!-- ================= CANDIDATE TABLE ================= -->
+            <div class="table-card">
+
+                <div class="table-header">
+                    <div>
+                        <span class="section-label">SELECTED CANDIDATES</span>
+                        <h3>Hiring Candidates</h3>
+                    </div>
+
+                    <span class="candidate-count" id="candidateCount">
+                        12 Candidates
+                    </span>
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Teacher</th>
+                                <th>Subject</th>
+                                <th>Experience</th>
+                                <th>Interview Score</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="candidateTable">
+
+                            <tr
+                                data-name="Rahul Sharma"
+                                data-subject="Mathematics"
+                                data-status="offer-pending"
+                            >
+                                <td>
+                                    <div class="teacher-cell">
+                                        <div class="teacher-avatar">RS</div>
+
+                                        <div>
+                                            <strong>Rahul Sharma</strong>
+                                            <span>rahul@example.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>Mathematics</td>
+                                <td>5 Years</td>
+
+                                <td>
+                                    <div class="score">
+                                        <strong>92%</strong>
+                                        <div class="score-bar">
+                                            <span style="width:92%"></span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Offer Pending
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="action-btn offer-btn"
+                                        data-name="Rahul Sharma"
+                                    >
+                                        Send Offer
+                                    </button>
+                                </td>
+                            </tr>
+
+
+                            <tr
+                                data-name="Priya Verma"
+                                data-subject="Physics"
+                                data-status="offer-sent"
+                            >
+                                <td>
+                                    <div class="teacher-cell">
+                                        <div class="teacher-avatar">PV</div>
+
+                                        <div>
+                                            <strong>Priya Verma</strong>
+                                            <span>priya@example.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>Physics</td>
+                                <td>4 Years</td>
+
+                                <td>
+                                    <div class="score">
+                                        <strong>89%</strong>
+                                        <div class="score-bar">
+                                            <span style="width:89%"></span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status sent">
+                                        Offer Sent
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="action-btn view-btn"
+                                        data-name="Priya Verma"
+                                    >
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+
+
+                            <tr
+                                data-name="Amit Kumar"
+                                data-subject="Computer Science"
+                                data-status="accepted"
+                            >
+                                <td>
+                                    <div class="teacher-cell">
+                                        <div class="teacher-avatar">AK</div>
+
+                                        <div>
+                                            <strong>Amit Kumar</strong>
+                                            <span>amit@example.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>Computer Science</td>
+                                <td>6 Years</td>
+
+                                <td>
+                                    <div class="score">
+                                        <strong>95%</strong>
+                                        <div class="score-bar">
+                                            <span style="width:95%"></span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status accepted">
+                                        Accepted
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="action-btn view-btn"
+                                        data-name="Amit Kumar"
+                                    >
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+
+
+                            <tr
+                                data-name="Neha Singh"
+                                data-subject="Chemistry"
+                                data-status="offer-pending"
+                            >
+                                <td>
+                                    <div class="teacher-cell">
+                                        <div class="teacher-avatar">NS</div>
+
+                                        <div>
+                                            <strong>Neha Singh</strong>
+                                            <span>neha@example.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>Chemistry</td>
+                                <td>3 Years</td>
+
+                                <td>
+                                    <div class="score">
+                                        <strong>87%</strong>
+                                        <div class="score-bar">
+                                            <span style="width:87%"></span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Offer Pending
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="action-btn offer-btn"
+                                        data-name="Neha Singh"
+                                    >
+                                        Send Offer
+                                    </button>
+                                </td>
+                            </tr>
+
+
+                            <tr
+                                data-name="Ankit Gupta"
+                                data-subject="English"
+                                data-status="rejected"
+                            >
+                                <td>
+                                    <div class="teacher-cell">
+                                        <div class="teacher-avatar">AG</div>
+
+                                        <div>
+                                            <strong>Ankit Gupta</strong>
+                                            <span>ankit@example.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>English</td>
+                                <td>2 Years</td>
+
+                                <td>
+                                    <div class="score">
+                                        <strong>72%</strong>
+                                        <div class="score-bar">
+                                            <span style="width:72%"></span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status rejected">
+                                        Rejected
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="action-btn view-btn"
+                                        data-name="Ankit Gupta"
+                                    >
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="empty-state" id="emptyState">
+                    <i class="fa-solid fa-user-slash"></i>
+                    <h3>No candidates found</h3>
+                    <p>Try changing your search or filter.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= OFFER MODAL ================= -->
+<div class="modal-overlay" id="offerModal">
+
+    <div class="modal">
+
+        <button class="modal-close" id="closeModal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-paper-plane"></i>
+        </div>
+
+        <h2>Send Hiring Offer</h2>
+
+        <p>
+            Send an official hiring offer to
+            <strong id="selectedTeacher">Teacher</strong>.
+        </p>
+
+        <div class="form-group">
+            <label for="salary">Monthly Salary</label>
+
+            <input
+                type="number"
+                id="salary"
+                placeholder="Enter salary"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="joiningDate">Expected Joining Date</label>
+
+            <input
+                type="date"
+                id="joiningDate"
+            >
+        </div>
+
+        <div class="modal-actions">
+
+            <button class="secondary-btn" id="cancelOffer">
+                Cancel
+            </button>
+
+            <button class="primary-btn" id="confirmOffer">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Offer
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+<div class="toast" id="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Action completed successfully.
+    </span>
+
+</div>
+
+
+<script src="../../js/admin/hiring.js"></script>
+
+</body>
+</html>

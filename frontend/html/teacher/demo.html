@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Demo Class | Talent-Hunt</title>
+
+    <link rel="stylesheet" href="../../css/teacher/demo.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="top-header">
+
+        <div class="brand">
+            <div class="brand-logo">TH</div>
+
+            <div>
+                <h2>Talent-Hunt</h2>
+                <span>Teacher Hiring</span>
+            </div>
+        </div>
+
+        <a href="teacher-profile.html" class="back-btn">
+            ← Back to Profile
+        </a>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="page-container">
+
+        <!-- Progress -->
+        <section class="progress-section">
+
+            <div class="progress-heading">
+                <div>
+                    <span class="small-label">TEACHER APPLICATION</span>
+                    <h1>Demo Class</h1>
+                    <p>
+                        Show us how you teach and connect with students.
+                    </p>
+                </div>
+
+                <div class="step-counter">
+                    Step <strong>5</strong> of 8
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= INFO CARD ================= -->
+        <section class="info-card">
+
+            <div class="info-icon">🎥</div>
+
+            <div>
+                <h3>Show Your Teaching Skills</h3>
+
+                <p>
+                    Upload a short demo class for the subject you want
+                    to teach. This helps our team understand your
+                    teaching style, communication and subject knowledge.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ================= FORM ================= -->
+        <section class="demo-card">
+
+            <div class="card-header">
+                <div>
+                    <span class="section-number">01</span>
+                    <h2>Demo Class Details</h2>
+                </div>
+
+                <span class="required-text">* Required fields</span>
+            </div>
+
+
+            <form id="demoForm">
+
+
+                <!-- Subject -->
+                <div class="form-group">
+
+                    <label for="subject">
+                        Subject <span>*</span>
+                    </label>
+
+                    <select id="subject" required>
+
+                        <option value="">
+                            Select the subject you want to teach
+                        </option>
+
+                        <option value="Mathematics">
+                            Mathematics
+                        </option>
+
+                        <option value="Science">
+                            Science
+                        </option>
+
+                        <option value="Physics">
+                            Physics
+                        </option>
+
+                        <option value="Chemistry">
+                            Chemistry
+                        </option>
+
+                        <option value="Biology">
+                            Biology
+                        </option>
+
+                        <option value="English">
+                            English
+                        </option>
+
+                        <option value="Computer Science">
+                            Computer Science
+                        </option>
+
+                        <option value="Programming">
+                            Programming
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Class -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="classLevel">
+                            Class / Level <span>*</span>
+                        </label>
+
+                        <select id="classLevel" required>
+
+                            <option value="">
+                                Select class
+                            </option>
+
+                            <option>Class 5</option>
+                            <option>Class 6</option>
+                            <option>Class 7</option>
+                            <option>Class 8</option>
+                            <option>Class 9</option>
+                            <option>Class 10</option>
+                            <option>Class 11</option>
+                            <option>Class 12</option>
+
+                            <option>College / University</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Topic -->
+                    <div class="form-group">
+
+                        <label for="topic">
+                            Demo Topic <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="topic"
+                            placeholder="e.g. Quadratic Equations"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Teaching Mode -->
+                <div class="form-group">
+
+                    <label>
+                        Teaching Mode <span>*</span>
+                    </label>
+
+                    <div class="mode-options">
+
+                        <label class="mode-option">
+
+                            <input
+                                type="radio"
+                                name="mode"
+                                value="Online"
+                                required
+                            >
+
+                            <span class="mode-content">
+                                <strong>💻 Online</strong>
+                                <small>Virtual teaching</small>
+                            </span>
+
+                        </label>
+
+
+                        <label class="mode-option">
+
+                            <input
+                                type="radio"
+                                name="mode"
+                                value="One-to-One"
+                            >
+
+                            <span class="mode-content">
+                                <strong>👤 One-to-One</strong>
+                                <small>Personal coaching</small>
+                            </span>
+
+                        </label>
+
+
+                        <label class="mode-option">
+
+                            <input
+                                type="radio"
+                                name="mode"
+                                value="Home / Center"
+                            >
+
+                            <span class="mode-content">
+                                <strong>🏠 Home / Center</strong>
+                                <small>Offline teaching</small>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= VIDEO UPLOAD ================= -->
+
+                <div class="upload-section">
+
+                    <div class="upload-heading">
+
+                        <div>
+                            <span class="section-number">02</span>
+
+                            <h2>Upload Demo Class</h2>
+
+                            <p>
+                                Upload a short video showing your teaching.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="upload-box"
+                        id="uploadBox"
+                    >
+
+                        <div class="upload-icon">
+                            🎬
+                        </div>
+
+                        <h3>
+                            Upload your demo video
+                        </h3>
+
+                        <p>
+                            Drag & drop your video here or browse from
+                            your device.
+                        </p>
+
+                        <span class="upload-limit">
+                            MP4, MOV or WEBM • Maximum 100 MB
+                        </span>
+
+                        <label
+                            for="demoVideo"
+                            class="browse-btn"
+                        >
+                            Choose Video
+                        </label>
+
+                        <input
+                            type="file"
+                            id="demoVideo"
+                            accept="video/mp4,video/mov,video/webm"
+                            hidden
+                        >
+
+                    </div>
+
+
+                    <!-- Selected file -->
+                    <div
+                        class="selected-file"
+                        id="selectedFile"
+                        hidden
+                    >
+
+                        <div class="file-icon">
+                            🎥
+                        </div>
+
+                        <div class="file-details">
+
+                            <strong id="fileName">
+                                Demo Video
+                            </strong>
+
+                            <span id="fileSize">
+                                0 MB
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="removeFile"
+                            class="remove-file"
+                        >
+                            Remove
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= DESCRIPTION ================= -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        About Your Demo
+                    </label>
+
+                    <textarea
+                        id="description"
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Briefly explain what you teach in this demo..."
+                    ></textarea>
+
+                    <div class="character-count">
+                        <span id="charCount">0</span>/500
+                    </div>
+
+                </div>
+
+
+                <!-- ================= CONFIRMATION ================= -->
+
+                <div class="confirmation-box">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="confirmation"
+                            required
+                        >
+
+                        <span>
+                            I confirm that this demo class is my own
+                            teaching sample and the information provided
+                            is accurate.
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- ================= ACTIONS ================= -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="save-btn"
+                        id="saveDraft"
+                    >
+                        Save Draft
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        Submit Demo Class →
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= PRIVACY ================= -->
+
+        <section class="privacy-card">
+
+            <div class="privacy-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <h3>Your application is private</h3>
+
+                <p>
+                    Your demo video and application details are visible
+                    only to you and authorized Talent-Hunt administrators.
+                    Other teachers cannot access your application.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Toast -->
+    <div
+        class="toast"
+        id="toast"
+    ></div>
+
+
+    <script src="../../js/teacher/demo.js"></script>
+
+</body>
+</html>

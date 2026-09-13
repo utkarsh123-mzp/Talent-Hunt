@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hiring Status | Talent Hunt</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Hiring CSS -->
+    <link rel="stylesheet" href="../../css/teacher/hiring.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="top-navbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                TH
+            </div>
+
+            <div class="brand-content">
+                <h2>Talent Hunt</h2>
+                <span>Teacher Hiring Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="nav-actions">
+
+            <a href="teacher-profile.html" class="nav-link">
+                My Profile
+            </a>
+
+            <a href="interview.html" class="nav-link">
+                Interview
+            </a>
+
+            <button class="logout-btn" id="logoutBtn">
+                Logout
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="page-container">
+
+
+        <!-- =====================================
+             PAGE HEADER
+        ====================================== -->
+
+        <section class="page-heading">
+
+            <div class="heading-content">
+
+                <span class="eyebrow">
+                    FINAL SELECTION STAGE
+                </span>
+
+                <h1>
+                    Hiring & Selection
+                </h1>
+
+                <p>
+                    Track the final stage of your teacher application,
+                    selection status and onboarding process.
+                </p>
+
+            </div>
+
+
+            <div class="status-pill" id="statusPill">
+
+                <span class="status-dot"></span>
+
+                <span id="statusText">
+                    Decision Pending
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             APPLICATION PROGRESS
+        ====================================== -->
+
+        <section class="progress-card">
+
+            <div class="progress-header">
+
+                <div>
+                    <h3>
+                        Your Hiring Journey
+                    </h3>
+
+                    <p>
+                        Track your application progress.
+                    </p>
+                </div>
+
+                <strong id="progressPercent">
+                    90%
+                </strong>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div class="progress-step completed">
+
+                    <div class="step-circle">
+                        ✓
+                    </div>
+
+                    <span>
+                        Registration
+                    </span>
+
+                </div>
+
+
+                <div class="progress-step completed">
+
+                    <div class="step-circle">
+                        ✓
+                    </div>
+
+                    <span>
+                        Profile
+                    </span>
+
+                </div>
+
+
+                <div class="progress-step completed">
+
+                    <div class="step-circle">
+                        ✓
+                    </div>
+
+                    <span>
+                        Demo
+                    </span>
+
+                </div>
+
+
+                <div class="progress-step completed">
+
+                    <div class="step-circle">
+                        ✓
+                    </div>
+
+                    <span>
+                        Interview
+                    </span>
+
+                </div>
+
+
+                <div class="progress-step active">
+
+                    <div class="step-circle">
+                        5
+                    </div>
+
+                    <span>
+                        Hiring
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MAIN HIRING GRID
+        ====================================== -->
+
+        <section class="hiring-grid">
+
+
+            <!-- =================================
+                 HIRING STATUS
+            ================================== -->
+
+            <div class="hiring-card status-card">
+
+                <div class="card-heading">
+
+                    <div class="card-icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <span>
+                            APPLICATION STATUS
+                        </span>
+
+                        <h2 id="hiringTitle">
+                            Final Review
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-message" id="statusMessage">
+
+                    <div class="message-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Hiring Decision Pending
+                        </h3>
+
+                        <p>
+                            Your interview has been completed.
+                            Our hiring team is currently reviewing
+                            your complete application.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-details">
+
+                    <div class="detail-item">
+
+                        <span>
+                            Application ID
+                        </span>
+
+                        <strong id="applicationId">
+                            TH-2026-00124
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Interview Status
+                        </span>
+
+                        <strong class="success-text">
+                            ✓ Completed
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Application Review
+                        </span>
+
+                        <strong id="reviewStatus">
+                            In Progress
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span>
+                            Final Decision
+                        </span>
+
+                        <strong id="finalDecision">
+                            Pending
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 TEACHER SUMMARY
+            ================================== -->
+
+            <div class="hiring-card summary-card">
+
+                <div class="card-heading">
+
+                    <div class="card-icon purple">
+                        👨‍🏫
+                    </div>
+
+                    <div>
+
+                        <span>
+                            TEACHER PROFILE
+                        </span>
+
+                        <h2>
+                            Application Summary
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="teacher-summary">
+
+                    <div class="teacher-avatar" id="teacherAvatar">
+                        U
+                    </div>
+
+                    <div>
+
+                        <h3 id="teacherName">
+                            Teacher Applicant
+                        </h3>
+
+                        <p id="teacherSubject">
+                            Mathematics Teacher
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-list">
+
+                    <div class="summary-row">
+
+                        <span>
+                            Teaching Classes
+                        </span>
+
+                        <strong>
+                            Class 5 - 10
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Experience
+                        </span>
+
+                        <strong>
+                            3+ Years
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Demo
+                        </span>
+
+                        <strong class="success-text">
+                            ✓ Verified
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Interview
+                        </span>
+
+                        <strong class="success-text">
+                            ✓ Completed
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SELECTION RESULT
+        ====================================== -->
+
+        <section class="selection-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    SELECTION RESULT
+                </span>
+
+                <h2>
+                    What Happens Next?
+                </h2>
+
+                <p>
+                    Once your application is approved,
+                    you will move to the onboarding stage.
+                </p>
+
+            </div>
+
+
+            <div class="selection-grid">
+
+
+                <div class="selection-card">
+
+                    <div class="selection-icon">
+                        🔍
+                    </div>
+
+                    <h3>
+                        Final Review
+                    </h3>
+
+                    <p>
+                        Our authorized hiring team reviews
+                        your profile, demo and interview.
+                    </p>
+
+                    <span class="card-status active">
+                        Current
+                    </span>
+
+                </div>
+
+
+
+                <div class="selection-card">
+
+                    <div class="selection-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Selection
+                    </h3>
+
+                    <p>
+                        Selected teachers receive confirmation
+                        and onboarding instructions.
+                    </p>
+
+                    <span class="card-status">
+                        Upcoming
+                    </span>
+
+                </div>
+
+
+
+                <div class="selection-card">
+
+                    <div class="selection-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Onboarding
+                    </h3>
+
+                    <p>
+                        Complete the required agreement and
+                        teaching setup.
+                    </p>
+
+                    <span class="card-status">
+                        Upcoming
+                    </span>
+
+                </div>
+
+
+
+                <div class="selection-card">
+
+                    <div class="selection-icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Start Teaching
+                    </h3>
+
+                    <p>
+                        Access teaching opportunities and
+                        begin working with students.
+                    </p>
+
+                    <span class="card-status">
+                        Upcoming
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SELECTION NOTICE
+        ====================================== -->
+
+        <section class="selection-notice">
+
+            <div class="notice-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <h3>
+                    Your Application is Private
+                </h3>
+
+                <p>
+                    Your hiring information is visible only to
+                    you and authorized administrators. Other
+                    teachers cannot access your application,
+                    documents, interview details or selection status.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ACTION AREA
+        ====================================== -->
+
+        <section class="action-section" id="actionSection">
+
+            <div>
+
+                <span class="eyebrow">
+                    NEXT STEP
+                </span>
+
+                <h2 id="actionTitle">
+                    Please wait for the hiring decision
+                </h2>
+
+                <p id="actionDescription">
+                    You will be notified when the hiring team
+                    updates your application.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                id="continueBtn"
+                disabled
+            >
+                Continue
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Talent Hunt. Teacher Hiring Portal.
+        </p>
+
+        <span>
+            Secure • Private • Professional
+        </span>
+
+    </footer>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="../../js/teacher/hiring.js"></script>
+
+</body>
+</html>

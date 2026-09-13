@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Talent Hunt</title>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Settings CSS -->
+    <link rel="stylesheet" href="../../css/dashboard/settings.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <!-- LOGO -->
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="ph ph-star-four"></i>
+            </div>
+
+            <div class="logo-text">
+                <h2>Talent Hunt</h2>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+            <p class="nav-heading">MAIN MENU</p>
+
+            <a href="student-dashboard.html" class="nav-item">
+                <i class="ph ph-squares-four"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="student-profile.html" class="nav-item">
+                <i class="ph ph-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="assessments.html" class="nav-item">
+                <i class="ph ph-clipboard-text"></i>
+                <span>Assessments</span>
+            </a>
+
+            <a href="talent-score.html" class="nav-item">
+                <i class="ph ph-chart-line-up"></i>
+                <span>Talent Score</span>
+            </a>
+
+            <a href="skill-analysis.html" class="nav-item">
+                <i class="ph ph-chart-bar"></i>
+                <span>Skill Analysis</span>
+            </a>
+
+
+            <p class="nav-heading">OPPORTUNITIES</p>
+
+            <a href="competitions.html" class="nav-item">
+                <i class="ph ph-trophy"></i>
+                <span>Competitions</span>
+            </a>
+
+            <a href="opportunities.html" class="nav-item">
+                <i class="ph ph-briefcase"></i>
+                <span>Opportunities</span>
+            </a>
+
+            <a href="achievements.html" class="nav-item">
+                <i class="ph ph-medal"></i>
+                <span>Achievements</span>
+            </a>
+
+
+            <p class="nav-heading">ACCOUNT</p>
+
+            <a href="settings.html" class="nav-item active">
+                <i class="ph ph-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <button class="logout-btn" id="logoutBtn">
+
+            <i class="ph ph-sign-out"></i>
+
+            <span>Logout</span>
+
+        </button>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">
+                <i class="ph ph-list"></i>
+            </button>
+
+
+            <div class="topbar-title">
+
+                <h1>Settings</h1>
+
+                <p>
+                    Manage your account and preferences.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-user">
+
+                <button class="notification-btn" id="notificationBtn">
+                    <i class="ph ph-bell"></i>
+                </button>
+
+                <div class="user-avatar" id="topAvatar">
+                    U
+                </div>
+
+                <div class="user-details">
+
+                    <strong id="topName">
+                        Student
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="settings-container">
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <span>
+                    ACCOUNT SETTINGS
+                </span>
+
+                <h2>
+                    Settings
+                </h2>
+
+                <p>
+                    Manage your profile, preferences and account security.
+                </p>
+
+            </div>
+
+
+            <!-- SETTINGS WRAPPER -->
+
+            <div class="settings-wrapper">
+
+
+                <!-- SETTINGS TABS -->
+
+                <div class="settings-navigation">
+
+                    <button
+                        class="setting-tab active"
+                        data-section="profile">
+
+                        <i class="ph ph-user"></i>
+
+                        <span>
+                            Profile
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="setting-tab"
+                        data-section="preferences">
+
+                        <i class="ph ph-sliders-horizontal"></i>
+
+                        <span>
+                            Preferences
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="setting-tab"
+                        data-section="notifications">
+
+                        <i class="ph ph-bell"></i>
+
+                        <span>
+                            Notifications
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="setting-tab"
+                        data-section="security">
+
+                        <i class="ph ph-shield-check"></i>
+
+                        <span>
+                            Security
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="setting-tab"
+                        data-section="account">
+
+                        <i class="ph ph-user-circle"></i>
+
+                        <span>
+                            Account
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- SETTINGS CONTENT -->
+
+                <div class="settings-content">
+
+
+                    <!-- ================= PROFILE ================= -->
+
+                    <div
+                        class="setting-section active"
+                        id="profile">
+
+                        <div class="section-header">
+
+                            <h3>
+                                Profile Information
+                            </h3>
+
+                            <p>
+                                Update your personal information.
+                            </p>
+
+                        </div>
+
+
+                        <div class="profile-preview">
+
+                            <div
+                                class="profile-avatar"
+                                id="profileAvatar">
+
+                                U
+
+                            </div>
+
+
+                            <div>
+
+                                <h4 id="profileName">
+                                    Student
+                                </h4>
+
+                                <span>
+                                    Student Profile
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="profileForm">
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Full Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="fullName"
+                                        placeholder="Enter your full name"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Email Address
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        placeholder="Enter your email"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Phone Number
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        placeholder="Enter phone number"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        College / University
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="college"
+                                        placeholder="Enter college name"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Course
+                                    </label>
+
+                                    <select id="course">
+
+                                        <option value="">
+                                            Select Course
+                                        </option>
+
+                                        <option value="B.Tech CSE">
+                                            B.Tech Computer Science
+                                        </option>
+
+                                        <option value="B.Tech IT">
+                                            B.Tech Information Technology
+                                        </option>
+
+                                        <option value="BCA">
+                                            BCA
+                                        </option>
+
+                                        <option value="MCA">
+                                            MCA
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Graduation Year
+                                    </label>
+
+                                    <select id="graduationYear">
+
+                                        <option value="">
+                                            Select Year
+                                        </option>
+
+                                        <option>2026</option>
+                                        <option>2027</option>
+                                        <option>2028</option>
+                                        <option>2029</option>
+                                        <option>2030</option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label>
+                                        About You
+                                    </label>
+
+                                    <textarea
+                                        id="bio"
+                                        placeholder="Write something about yourself"
+                                    ></textarea>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-actions">
+
+                                <button
+                                    type="submit"
+                                    class="save-btn">
+
+                                    <i class="ph ph-floppy-disk"></i>
+
+                                    Save Changes
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- ================= PREFERENCES ================= -->
+
+                    <div
+                        class="setting-section"
+                        id="preferences">
+
+                        <div class="section-header">
+
+                            <h3>
+                                Preferences
+                            </h3>
+
+                            <p>
+                                Customize your Talent Hunt experience.
+                            </p>
+
+                        </div>
+
+
+                        <div class="option-list">
+
+
+                            <div class="option">
+
+                                <div class="option-info">
+
+                                    <div class="option-icon">
+                                        <i class="ph ph-sparkle"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <h4>
+                                            Personalized Recommendations
+                                        </h4>
+
+                                        <p>
+                                            Get opportunities based on your skills.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="recommendations"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <div class="option-info">
+
+                                    <div class="option-icon">
+                                        <i class="ph ph-trophy"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <h4>
+                                            Competition Suggestions
+                                        </h4>
+
+                                        <p>
+                                            Receive relevant competition suggestions.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="competitionSuggestions"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <div class="option-info">
+
+                                    <div class="option-icon">
+                                        <i class="ph ph-briefcase"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <h4>
+                                            Career Opportunities
+                                        </h4>
+
+                                        <p>
+                                            Get relevant job and internship updates.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="careerUpdates"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= NOTIFICATIONS ================= -->
+
+                    <div
+                        class="setting-section"
+                        id="notifications">
+
+                        <div class="section-header">
+
+                            <h3>
+                                Notifications
+                            </h3>
+
+                            <p>
+                                Manage your notification preferences.
+                            </p>
+
+                        </div>
+
+
+                        <div class="option-list">
+
+
+                            <div class="option">
+
+                                <div class="option-info">
+
+                                    <div class="option-icon">
+                                        <i class="ph ph-bell-ringing"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <h4>
+                                            Push Notifications
+                                        </h4>
+
+                                        <p>
+                                            Receive important portal updates.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="pushNotifications"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <div class="option-info">
+
+                                    <div class="option-icon">
+                                        <i class="ph ph-envelope"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <h4>
+                                            Email Notifications
+                                        </h4>
+
+                                        <p>
+                                            Receive updates through email.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="emailNotifications"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="option">
+
+                                <div class="option-info">
+
+                                    <div class="option-icon">
+                                        <i class="ph ph-calendar-check"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <h4>
+                                            Deadline Reminders
+                                        </h4>
+
+                                        <p>
+                                            Get reminders before deadlines.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        id="deadlineReminders"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= SECURITY ================= -->
+
+                    <div
+                        class="setting-section"
+                        id="security">
+
+                        <div class="section-header">
+
+                            <h3>
+                                Security
+                            </h3>
+
+                            <p>
+                                Manage your account password.
+                            </p>
+
+                        </div>
+
+
+                        <div class="security-box">
+
+                            <i class="ph ph-shield-check"></i>
+
+                            <div>
+
+                                <h4>
+                                    Account Security
+                                </h4>
+
+                                <p>
+                                    Use a strong password to protect your account.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <div class="form-group full">
+
+                                <label>
+                                    Current Password
+                                </label>
+
+                                <div class="password-input">
+
+                                    <input
+                                        type="password"
+                                        id="currentPassword"
+                                        placeholder="Current password"
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-btn"
+                                        data-target="currentPassword">
+
+                                        <i class="ph ph-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    New Password
+                                </label>
+
+                                <div class="password-input">
+
+                                    <input
+                                        type="password"
+                                        id="newPassword"
+                                        placeholder="New password"
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-btn"
+                                        data-target="newPassword">
+
+                                        <i class="ph ph-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Confirm Password
+                                </label>
+
+                                <div class="password-input">
+
+                                    <input
+                                        type="password"
+                                        id="confirmPassword"
+                                        placeholder="Confirm password"
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="password-btn"
+                                        data-target="confirmPassword">
+
+                                        <i class="ph ph-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                class="save-btn"
+                                id="passwordBtn">
+
+                                <i class="ph ph-lock-key"></i>
+
+                                Update Password
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= ACCOUNT ================= -->
+
+                    <div
+                        class="setting-section"
+                        id="account">
+
+                        <div class="section-header">
+
+                            <h3>
+                                Account
+                            </h3>
+
+                            <p>
+                                Manage your Talent Hunt account.
+                            </p>
+
+                        </div>
+
+
+                        <div class="account-info">
+
+                            <div>
+
+                                <span>
+                                    Account Type
+                                </span>
+
+                                <strong>
+                                    Student Account
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Platform
+                                </span>
+
+                                <strong>
+                                    Talent Hunt
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="danger-zone">
+
+                            <h4>
+                                Danger Zone
+                            </h4>
+
+                            <p>
+                                Delete saved Talent Hunt settings from this browser.
+                            </p>
+
+                            <button
+                                class="delete-btn"
+                                id="deleteAccount">
+
+                                Delete Account
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOAST -->
+
+        <div
+            class="toast"
+            id="toast">
+
+            <i class="ph ph-check-circle"></i>
+
+            <span id="toastText">
+                Saved successfully.
+            </span>
+
+        </div>
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="../../js/dashboard/settings.js"></script>
+
+</body>
+
+</html>

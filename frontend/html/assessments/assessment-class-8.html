@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Class 8 Assessment | Talent Hunt</title>
+
+    <link rel="stylesheet"
+        href="../../css/assessments/assessment-class-8.css">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="ph ph-graduation-cap"></i>
+            </div>
+
+            <div class="brand-text">
+                <h2>Talent<span>Hunt</span></h2>
+                <p>Class 8 Assessment</p>
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <div class="class-badge">
+                Class 8
+            </div>
+
+            <button
+                class="home-btn"
+                id="homeBtn"
+                title="Back to Class 8">
+
+                <i class="ph ph-house"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="assessment-container">
+
+
+        <!-- ================= INTRO ================= -->
+
+        <section
+            class="intro-section"
+            id="introSection">
+
+            <div class="intro-icon">
+
+                <i class="ph ph-clipboard-text"></i>
+
+            </div>
+
+            <span class="small-title">
+                CLASS 8
+            </span>
+
+            <h1>
+                Knowledge <span>Assessment</span>
+            </h1>
+
+            <p>
+                Choose a subject and test your understanding.
+                Questions are designed to check concepts,
+                reasoning and problem-solving skills.
+            </p>
+
+            <div class="instruction-box">
+
+                <div>
+                    <i class="ph ph-info"></i>
+                </div>
+
+                <div>
+                    <h3>Assessment Instructions</h3>
+
+                    <p>
+                        Select a subject to begin.
+                        Answer every question and submit
+                        the assessment to see your score.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SUBJECT SELECTION ================= -->
+
+        <section
+            class="subject-selection"
+            id="subjectSelection">
+
+            <div class="section-title">
+
+                <span>SELECT SUBJECT</span>
+
+                <h2>
+                    Which subject would you like to attempt?
+                </h2>
+
+            </div>
+
+
+            <div class="subject-buttons">
+
+                <button
+                    class="subject-btn"
+                    data-subject="Mathematics">
+
+                    <i class="ph ph-calculator"></i>
+
+                    <span>Mathematics</span>
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </button>
+
+
+                <button
+                    class="subject-btn"
+                    data-subject="Science">
+
+                    <i class="ph ph-flask"></i>
+
+                    <span>Science</span>
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </button>
+
+
+                <button
+                    class="subject-btn"
+                    data-subject="English">
+
+                    <i class="ph ph-book-open-text"></i>
+
+                    <span>English</span>
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </button>
+
+
+                <button
+                    class="subject-btn"
+                    data-subject="Hindi">
+
+                    <i class="ph ph-translate"></i>
+
+                    <span>Hindi</span>
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </button>
+
+
+                <button
+                    class="subject-btn"
+                    data-subject="Social Science">
+
+                    <i class="ph ph-globe-hemisphere-west"></i>
+
+                    <span>Social Science</span>
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </button>
+
+
+                <button
+                    class="subject-btn"
+                    data-subject="Computer">
+
+                    <i class="ph ph-monitor"></i>
+
+                    <span>Computer</span>
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUIZ SECTION ================= -->
+
+        <section
+            class="quiz-section hidden"
+            id="quizSection">
+
+            <!-- Quiz Header -->
+
+            <div class="quiz-header">
+
+                <div>
+
+                    <span id="quizSubject">
+                        Mathematics
+                    </span>
+
+                    <h2>
+                        Class 8 Assessment
+                    </h2>
+
+                </div>
+
+                <div class="question-counter">
+
+                    Question
+                    <strong id="currentQuestion">
+                        1
+                    </strong>
+                    /
+                    <strong id="totalQuestions">
+                        5
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Progress -->
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar">
+                </div>
+
+            </div>
+
+
+            <!-- Question Card -->
+
+            <div class="question-card">
+
+                <div class="question-number"
+                    id="questionNumber">
+                    Question 1
+                </div>
+
+                <h2 id="questionText">
+                    Question will appear here
+                </h2>
+
+
+                <div
+                    class="options-container"
+                    id="optionsContainer">
+
+                    <!-- Options generated by JS -->
+
+                </div>
+
+            </div>
+
+
+            <!-- Quiz Controls -->
+
+            <div class="quiz-controls">
+
+                <button
+                    class="previous-btn"
+                    id="previousBtn">
+
+                    <i class="ph ph-arrow-left"></i>
+
+                    Previous
+
+                </button>
+
+
+                <button
+                    class="next-btn"
+                    id="nextBtn">
+
+                    Next
+
+                    <i class="ph ph-arrow-right"></i>
+
+                </button>
+
+
+                <button
+                    class="submit-btn hidden"
+                    id="submitBtn">
+
+                    <i class="ph ph-check-circle"></i>
+
+                    Submit Assessment
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESULT ================= -->
+
+        <section
+            class="result-section hidden"
+            id="resultSection">
+
+            <div class="result-icon">
+
+                <i class="ph ph-trophy"></i>
+
+            </div>
+
+            <span class="result-label">
+                ASSESSMENT COMPLETED
+            </span>
+
+            <h1>
+                Great Job! 🎉
+            </h1>
+
+            <p id="resultMessage">
+                You have successfully completed
+                your assessment.
+            </p>
+
+
+            <div class="score-card">
+
+                <div class="score-circle">
+
+                    <span id="score">
+                        0
+                    </span>
+
+                    <small>
+                        Score
+                    </small>
+
+                </div>
+
+
+                <div class="score-details">
+
+                    <div>
+                        <span>Correct</span>
+                        <strong id="correctAnswers">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Wrong</span>
+                        <strong id="wrongAnswers">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Total</span>
+                        <strong id="totalAnswered">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-actions">
+
+                <button
+                    class="retry-btn"
+                    id="retryBtn">
+
+                    <i class="ph ph-arrow-counter-clockwise"></i>
+
+                    Try Again
+
+                </button>
+
+                <button
+                    class="choose-btn"
+                    id="chooseSubjectBtn">
+
+                    <i class="ph ph-books"></i>
+
+                    Choose Another Subject
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Talent Hunt. Learn. Discover. Achieve.
+        </p>
+
+        <span>
+            Class 8
+        </span>
+
+    </footer>
+
+
+    <script src="../../js/assessments/assessment-class-8.js"></script>
+
+</body>
+
+</html>

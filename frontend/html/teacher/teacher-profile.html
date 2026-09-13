@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Profile | Talent-Hunt</title>
+
+    <link rel="stylesheet" href="../../css/teacher/teacher-profile.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TOP NAVBAR
+    ========================== -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div>
+                <h2>Talent-Hunt</h2>
+                <span>Teacher Portal</span>
+            </div>
+        </div>
+
+        <div class="top-actions">
+
+            <div class="notification">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </div>
+
+            <div class="teacher-mini-profile">
+                <div class="avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <strong>Teacher</strong>
+                    <small>Applicant</small>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN LAYOUT
+    ========================== -->
+    <div class="page-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+        <aside class="sidebar">
+
+            <div class="sidebar-title">
+                <span>APPLICATION</span>
+            </div>
+
+            <nav>
+
+                <a href="../hire-teachers/hire-teachers.html">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Registration</span>
+                    <i class="fa-solid fa-check step-check"></i>
+                </a>
+
+                <a href="#" class="active">
+                    <i class="fa-solid fa-id-card"></i>
+                    <span>Teacher Profile</span>
+                    <span class="current-dot"></span>
+                </a>
+
+                <a href="#" class="disabled-link">
+                    <i class="fa-solid fa-video"></i>
+                    <span>Demo Class</span>
+                </a>
+
+                <a href="#" class="disabled-link">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Interview</span>
+                </a>
+
+                <a href="#" class="disabled-link">
+                    <i class="fa-solid fa-user-check"></i>
+                    <span>Hiring Status</span>
+                </a>
+
+                <a href="#" class="disabled-link">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <span>Assessment</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="privacy-box">
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <div>
+                        <strong>Private Application</strong>
+                        <p>Your information is visible only to you and authorized administrators.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             CONTENT
+        ========================== -->
+        <main class="main-content">
+
+            <!-- Page Header -->
+            <section class="page-header">
+
+                <div>
+                    <div class="breadcrumb">
+                        Teacher Application
+                        <i class="fa-solid fa-chevron-right"></i>
+                        Teacher Profile
+                    </div>
+
+                    <h1>Complete Your Teacher Profile</h1>
+
+                    <p>
+                        Add your professional information, teaching preferences
+                        and availability to continue your application.
+                    </p>
+                </div>
+
+                <div class="profile-progress">
+
+                    <div class="progress-circle">
+                        <span id="progressPercent">0%</span>
+                    </div>
+
+                    <div>
+                        <strong>Profile Completion</strong>
+                        <span>Complete all required details</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 PROFILE FORM
+            ========================== -->
+            <form id="teacherProfileForm">
+
+
+                <!-- =========================
+                     PERSONAL INFORMATION
+                ========================== -->
+                <section class="form-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h2>Personal Information</h2>
+                            <p>Basic information about you</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="fullName">
+                                Full Name <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address <span>*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="example@email.com"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="phone">
+                                Phone Number <span>*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter phone number"
+                                maxlength="10"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="city">
+                                City
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                name="city"
+                                placeholder="Enter your city"
+                            >
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     QUALIFICATION
+                ========================== -->
+                <section class="form-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <div>
+                            <h2>Qualification & Experience</h2>
+                            <p>Tell us about your academic and teaching background</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="highestQualification">
+                                Highest Qualification <span>*</span>
+                            </label>
+
+                            <select id="highestQualification" required>
+
+                                <option value="">Select qualification</option>
+                                <option value="12th">12th / Senior Secondary</option>
+                                <option value="diploma">Diploma</option>
+                                <option value="graduation">Graduation</option>
+                                <option value="post-graduation">Post Graduation</option>
+                                <option value="phd">PhD</option>
+                                <option value="other">Other</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="specialization">
+                                Specialization
+                            </label>
+
+                            <input
+                                type="text"
+                                id="specialization"
+                                placeholder="e.g. Mathematics, Computer Science"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="experience">
+                                Teaching Experience <span>*</span>
+                            </label>
+
+                            <select id="experience" required>
+
+                                <option value="">Select experience</option>
+                                <option value="fresher">Fresher</option>
+                                <option value="1-2">1 - 2 Years</option>
+                                <option value="3-5">3 - 5 Years</option>
+                                <option value="6-10">6 - 10 Years</option>
+                                <option value="10+">10+ Years</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="teachingType">
+                                Teaching Type <span>*</span>
+                            </label>
+
+                            <select id="teachingType" required>
+
+                                <option value="">Select teaching type</option>
+                                <option value="online">Online</option>
+                                <option value="offline">Offline</option>
+                                <option value="both">Online + Offline</option>
+                                <option value="one-to-one">One-to-One</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     SUBJECT & CLASS
+                ========================== -->
+                <section class="form-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <div>
+                            <h2>Teaching Preferences</h2>
+                            <p>Select subjects and classes you want to teach</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Subjects You Want To Teach <span>*</span>
+                        </label>
+
+                        <div class="checkbox-grid">
+
+                            <label class="check-item">
+                                <input type="checkbox" name="subjects" value="Mathematics">
+                                <span>Mathematics</span>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" name="subjects" value="Science">
+                                <span>Science</span>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" name="subjects" value="Physics">
+                                <span>Physics</span>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" name="subjects" value="Chemistry">
+                                <span>Chemistry</span>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" name="subjects" value="Biology">
+                                <span>Biology</span>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" name="subjects" value="English">
+                                <span>English</span>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" name="subjects" value="Computer Science">
+                                <span>Computer Science</span>
+                            </label>
+
+                            <label class="check-item">
+                                <input type="checkbox" name="subjects" value="Social Science">
+                                <span>Social Science</span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group class-selection">
+
+                        <label>
+                            Classes You Can Teach <span>*</span>
+                        </label>
+
+                        <div class="class-buttons">
+
+                            <label>
+                                <input type="checkbox" name="classes" value="5">
+                                <span>5</span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="classes" value="6">
+                                <span>6</span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="classes" value="7">
+                                <span>7</span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="classes" value="8">
+                                <span>8</span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="classes" value="9">
+                                <span>9</span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="classes" value="10">
+                                <span>10</span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="classes" value="11">
+                                <span>11</span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="classes" value="12">
+                                <span>12</span>
+                            </label>
+
+                            <label>
+                                <input type="checkbox" name="classes" value="college">
+                                <span>College</span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="teachingBio">
+                            About Your Teaching
+                        </label>
+
+                        <textarea
+                            id="teachingBio"
+                            rows="5"
+                            placeholder="Describe your teaching style, experience and strengths..."
+                        ></textarea>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     DOCUMENTS
+                ========================== -->
+                <section class="form-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-file-shield"></i>
+                        </div>
+
+                        <div>
+                            <h2>Documents & Verification</h2>
+                            <p>Upload documents that support your application</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="upload-grid">
+
+                        <div class="upload-box">
+
+                            <input
+                                type="file"
+                                id="resume"
+                                accept=".pdf,.doc,.docx"
+                                hidden
+                            >
+
+                            <label for="resume">
+
+                                <div class="upload-icon">
+                                    <i class="fa-solid fa-file-arrow-up"></i>
+                                </div>
+
+                                <strong>Upload Resume</strong>
+
+                                <span id="resumeName">
+                                    PDF, DOC or DOCX
+                                </span>
+
+                                <small>Maximum 5 MB</small>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="upload-box">
+
+                            <input
+                                type="file"
+                                id="certificate"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                hidden
+                            >
+
+                            <label for="certificate">
+
+                                <div class="upload-icon">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+
+                                <strong>Certificates</strong>
+
+                                <span id="certificateName">
+                                    PDF, JPG or PNG
+                                </span>
+
+                                <small>Maximum 5 MB</small>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     AVAILABILITY & PRICE
+                ========================== -->
+                <section class="form-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+
+                        <div>
+                            <h2>Availability & Pricing</h2>
+                            <p>Tell us when and how you want to teach</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="availability">
+                                Availability <span>*</span>
+                            </label>
+
+                            <select id="availability" required>
+
+                                <option value="">Select availability</option>
+                                <option value="weekdays">Weekdays</option>
+                                <option value="weekends">Weekends</option>
+                                <option value="both">Weekdays + Weekends</option>
+                                <option value="flexible">Flexible</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="hours">
+                                Preferred Teaching Hours
+                            </label>
+
+                            <input
+                                type="text"
+                                id="hours"
+                                placeholder="e.g. 4 PM - 8 PM"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="price">
+                                Expected Fee / Hour <span>*</span>
+                            </label>
+
+                            <div class="price-input">
+
+                                <span>₹</span>
+
+                                <input
+                                    type="number"
+                                    id="price"
+                                    min="0"
+                                    placeholder="Enter amount"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="location">
+                                Preferred Teaching Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="location"
+                                placeholder="e.g. Lucknow / Online"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     AGREEMENT
+                ========================== -->
+                <section class="agreement-card">
+
+                    <label class="agreement">
+
+                        <input
+                            type="checkbox"
+                            id="agreement"
+                            required
+                        >
+
+                        <span>
+                            I confirm that the information provided by me is
+                            accurate and the uploaded documents belong to me.
+                            I understand that Talent-Hunt may verify this
+                            information before proceeding with the hiring process.
+                        </span>
+
+                    </label>
+
+                </section>
+
+
+                <!-- =========================
+                     FORM ACTIONS
+                ========================== -->
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="btn secondary-btn"
+                        id="saveDraftBtn"
+                    >
+                        <i class="fa-regular fa-floppy-disk"></i>
+                        Save Draft
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="btn primary-btn"
+                    >
+                        Continue to Demo Class
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- =========================
+                 FOOTER
+            ========================== -->
+            <footer class="page-footer">
+
+                <span>
+                    <i class="fa-solid fa-lock"></i>
+                    Your application is private and secure.
+                </span>
+
+                <span>
+                    Talent-Hunt Teacher Portal
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div>
+            <strong id="toastTitle">Success</strong>
+            <p id="toastMessage">Your changes have been saved.</p>
+        </div>
+
+        <button id="closeToast">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <script src="../../js/teacher/teacher-profile.js"></script>
+
+</body>
+</html>

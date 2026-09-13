@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recruiter Questions | TalentHunt</title>
+
+    <link rel="stylesheet"
+        href="../../css/college/recruiter-questions.css">
+</head>
+
+<body>
+
+    <div class="portal-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+                <div class="brand-logo">T</div>
+
+                <div class="brand-text">
+                    <h2>TalentHunt</h2>
+                    <span>College Portal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-label">MAIN</p>
+
+                <a href="college-dashboard.html"
+                    class="nav-link">
+                    <span class="nav-icon">⌂</span>
+                    Dashboard
+                </a>
+
+                <p class="nav-label">
+                    SELECTION PREPARATION
+                </p>
+
+                <a href="assessments.html"
+                    class="nav-link">
+                    <span class="nav-icon">✓</span>
+                    Assessments
+                </a>
+
+                <a href="recruiter-questions.html"
+                    class="nav-link active">
+                    <span class="nav-icon">?</span>
+                    Recruiter Questions
+                </a>
+
+                <a href="resume-analyzer.html"
+                    class="nav-link">
+                    <span class="nav-icon">▤</span>
+                    Resume Analyzer
+                </a>
+
+                <a href="mock-interview.html"
+                    class="nav-link">
+                    <span class="nav-icon">◉</span>
+                    Mock Interview
+                </a>
+
+                <p class="nav-label">PROGRESS</p>
+
+                <a href="skill-gap.html"
+                    class="nav-link">
+                    <span class="nav-icon">◫</span>
+                    Skill Gap
+                </a>
+
+                <a href="placement-readiness.html"
+                    class="nav-link">
+                    <span class="nav-icon">★</span>
+                    Placement Readiness
+                </a>
+
+                <p class="nav-label">ACCOUNT</p>
+
+                <a href="profile.html"
+                    class="nav-link">
+                    <span class="nav-icon">◯</span>
+                    Profile
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="help-box">
+
+                    <span class="help-icon">?</span>
+
+                    <div>
+                        <strong>Prepare Smart</strong>
+                        <p>Practice real interview questions</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                    type="button">
+                    ☰
+                </button>
+
+                <div class="page-heading">
+
+                    <span>COLLEGE PORTAL</span>
+
+                    <h1>Recruiter Questions</h1>
+
+                </div>
+
+                <div class="topbar-right">
+
+                    <div class="saved-counter">
+
+                        <span>★</span>
+
+                        <strong id="savedCount">
+                            0
+                        </strong>
+
+                        <small>Saved</small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= PAGE ================= -->
+
+            <section class="page-content">
+
+                <!-- HERO -->
+
+                <div class="hero-section">
+
+                    <div class="hero-content">
+
+                        <span class="eyebrow">
+                            INTERVIEW PREPARATION
+                        </span>
+
+                        <h2>
+                            Practice Questions Asked by Recruiters
+                        </h2>
+
+                        <p>
+                            Prepare for technical and HR rounds
+                            with recruiter-style questions covering
+                            the skills commonly evaluated during
+                            college placements.
+                        </p>
+
+                    </div>
+
+                    <div class="hero-stat">
+
+                        <strong id="totalQuestionCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Questions
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <span class="search-icon">
+                        ⌕
+                    </span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search questions, companies, skills...">
+
+                    <button
+                        type="button"
+                        id="clearSearch"
+                        class="clear-search">
+                        ×
+                    </button>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="filters-section">
+
+                    <div class="filter-group">
+
+                        <label for="categoryFilter">
+                            Category
+                        </label>
+
+                        <select id="categoryFilter">
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="dsa">
+                                DSA
+                            </option>
+
+                            <option value="dbms">
+                                DBMS
+                            </option>
+
+                            <option value="sql">
+                                SQL
+                            </option>
+
+                            <option value="web">
+                                Web Development
+                            </option>
+
+                            <option value="python">
+                                Python
+                            </option>
+
+                            <option value="javascript">
+                                JavaScript
+                            </option>
+
+                            <option value="core">
+                                Core CS
+                            </option>
+
+                            <option value="hr">
+                                HR
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="difficultyFilter">
+                            Difficulty
+                        </label>
+
+                        <select id="difficultyFilter">
+
+                            <option value="all">
+                                All Levels
+                            </option>
+
+                            <option value="easy">
+                                Easy
+                            </option>
+
+                            <option value="medium">
+                                Medium
+                            </option>
+
+                            <option value="hard">
+                                Hard
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="companyFilter">
+                            Company
+                        </label>
+
+                        <select id="companyFilter">
+
+                            <option value="all">
+                                All Companies
+                            </option>
+
+                            <option value="tcs">
+                                TCS
+                            </option>
+
+                            <option value="infosys">
+                                Infosys
+                            </option>
+
+                            <option value="accenture">
+                                Accenture
+                            </option>
+
+                            <option value="wipro">
+                                Wipro
+                            </option>
+
+                            <option value="capgemini">
+                                Capgemini
+                            </option>
+
+                            <option value="product">
+                                Product Companies
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="typeFilter">
+                            Question Type
+                        </label>
+
+                        <select id="typeFilter">
+
+                            <option value="all">
+                                All Questions
+                            </option>
+
+                            <option value="technical">
+                                Technical
+                            </option>
+
+                            <option value="hr">
+                                HR
+                            </option>
+
+                            <option value="scenario">
+                                Scenario Based
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="reset-btn"
+                        id="resetFilters">
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <!-- QUICK FILTERS -->
+
+                <div class="quick-filters">
+
+                    <button
+                        type="button"
+                        class="quick-filter active"
+                        data-quick="all">
+                        All Questions
+                    </button>
+
+                    <button
+                        type="button"
+                        class="quick-filter"
+                        data-quick="frequent">
+                        ⭐ Frequently Asked
+                    </button>
+
+                    <button
+                        type="button"
+                        class="quick-filter"
+                        data-quick="saved">
+                        ★ My Saved
+                    </button>
+
+                </div>
+
+
+                <!-- RESULTS HEADER -->
+
+                <div class="results-header">
+
+                    <div>
+
+                        <h3>
+                            Interview Question Bank
+                        </h3>
+
+                        <p id="resultsText">
+                            Showing all questions
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUESTION GRID -->
+
+                <div
+                    class="questions-grid"
+                    id="questionsGrid">
+                </div>
+
+
+                <!-- EMPTY STATE -->
+
+                <div
+                    class="empty-state hidden"
+                    id="emptyState">
+
+                    <div class="empty-icon">
+                        ⌕
+                    </div>
+
+                    <h3>
+                        No questions found
+                    </h3>
+
+                    <p>
+                        Try changing your search or filters.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="emptyReset"
+                        class="reset-empty">
+                        Clear Filters
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= QUESTION MODAL ================= -->
+
+    <div
+        class="modal-overlay"
+        id="questionModal">
+
+        <div class="question-modal">
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose">
+                ×
+            </button>
+
+            <div class="modal-top">
+
+                <div>
+
+                    <span
+                        class="modal-category"
+                        id="modalCategory">
+                        DSA
+                    </span>
+
+                    <span
+                        class="modal-difficulty"
+                        id="modalDifficulty">
+                        Medium
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-save"
+                    id="modalSave">
+                    ☆ Save
+                </button>
+
+            </div>
+
+
+            <div class="modal-company"
+                id="modalCompany">
+                TCS
+            </div>
+
+
+            <h2 id="modalQuestion">
+                Question
+            </h2>
+
+
+            <div class="modal-meta">
+
+                <span id="modalType">
+                    Technical
+                </span>
+
+                <span>
+                    Interview Preparation
+                </span>
+
+            </div>
+
+
+            <div class="answer-section">
+
+                <div class="answer-heading">
+
+                    <h3>
+                        How to Approach
+                    </h3>
+
+                </div>
+
+                <p id="modalAnswer">
+                    Expected answer approach.
+                </p>
+
+            </div>
+
+
+            <div class="interviewer-tip">
+
+                <span class="tip-icon">
+                    💡
+                </span>
+
+                <div>
+
+                    <strong>
+                        Interviewer Tip
+                    </strong>
+
+                    <p id="modalTip">
+                        Explain your thought process
+                        clearly before giving the final answer.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="modal-practice"
+                    id="modalPractice">
+                    Practice This Question
+                </button>
+
+                <button
+                    type="button"
+                    class="modal-close-secondary"
+                    id="modalCloseSecondary">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        class="toast"
+        id="toast">
+        <span id="toastMessage">
+            Saved
+        </span>
+    </div>
+
+
+    <script
+        src="../../js/college/recruiter-questions.js">
+    </script>
+
+</body>
+
+</html>

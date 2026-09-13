@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Earnings | Teacher Portal | Talent Hunt</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="../../css/teacher-portal/earnings.css">
+</head>
+
+<body>
+
+<!-- ================= TOPBAR ================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div>
+            <h2>Talent Hunt</h2>
+            <span>Teacher Portal</span>
+        </div>
+
+    </div>
+
+    <div class="topbar-right">
+
+        <button class="notification-btn" id="notificationBtn">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-dot"></span>
+        </button>
+
+        <div class="teacher-profile">
+
+            <div class="profile-avatar">TU</div>
+
+            <div class="teacher-info">
+                <strong>Teacher</strong>
+                <span>Teacher Account</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PORTAL LAYOUT ================= -->
+
+<div class="portal-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            TEACHER MENU
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../teacher/teacher-dashboard.html" class="nav-item">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="my-classes.html" class="nav-item">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <span>My Classes</span>
+            </a>
+
+            <a href="students.html" class="nav-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>Students</span>
+            </a>
+
+            <a href="schedule.html" class="nav-item">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Schedule</span>
+            </a>
+
+            <a href="earnings.html" class="nav-item active">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Earnings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <i class="fa-regular fa-circle-question"></i>
+                <span>Help & Support</span>
+            </a>
+
+            <a href="#" class="nav-item" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <div>
+
+                <div class="breadcrumb">
+                    <span>Teacher Portal</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <span>Earnings</span>
+                </div>
+
+                <h1>Earnings</h1>
+
+                <p>
+                    Track your teaching income, payments and transactions.
+                </p>
+
+            </div>
+
+            <button class="withdraw-btn" id="withdrawBtn">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+                Request Payment
+            </button>
+
+        </section>
+
+
+        <!-- ================= EARNING SUMMARY ================= -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <div class="summary-content">
+                    <span>Total Earnings</span>
+                    <h3 id="totalEarnings">₹48,500</h3>
+                    <small>
+                        <i class="fa-solid fa-arrow-up"></i>
+                        12.5% this year
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div class="summary-content">
+                    <span>This Month</span>
+                    <h3 id="monthlyEarnings">₹12,800</h3>
+                    <small>
+                        <i class="fa-solid fa-arrow-up"></i>
+                        8.4% from last month
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-hourglass-half"></i>
+                </div>
+
+                <div class="summary-content">
+                    <span>Pending Amount</span>
+                    <h3 id="pendingAmount">₹3,500</h3>
+                    <small class="pending-text">
+                        Awaiting payment
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+
+                <div class="summary-content">
+                    <span>Available Balance</span>
+                    <h3 id="availableBalance">₹9,300</h3>
+                    <small>
+                        Available for withdrawal
+                    </small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EARNING OVERVIEW ================= -->
+
+        <section class="overview-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Earnings Overview</h2>
+                    <p>Monthly income performance</p>
+                </div>
+
+                <select id="yearFilter">
+
+                    <option value="2026">
+                        2026
+                    </option>
+
+                    <option value="2025">
+                        2025
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="chart-area">
+
+                <div class="y-axis">
+
+                    <span>₹15k</span>
+                    <span>₹12k</span>
+                    <span>₹9k</span>
+                    <span>₹6k</span>
+                    <span>₹3k</span>
+                    <span>₹0</span>
+
+                </div>
+
+                <div class="chart">
+
+                    <div class="grid-lines">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="bars">
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 35%;"></div>
+                            <span>Jan</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 46%;"></div>
+                            <span>Feb</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 52%;"></div>
+                            <span>Mar</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 44%;"></div>
+                            <span>Apr</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 61%;"></div>
+                            <span>May</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 68%;"></div>
+                            <span>Jun</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 58%;"></div>
+                            <span>Jul</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 73%;"></div>
+                            <span>Aug</span>
+                        </div>
+
+                        <div class="bar-item current">
+                            <div class="bar" style="height: 85%;"></div>
+                            <span>Sep</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 0%;"></div>
+                            <span>Oct</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 0%;"></div>
+                            <span>Nov</span>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar" style="height: 0%;"></div>
+                            <span>Dec</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BOTTOM GRID ================= -->
+
+        <section class="bottom-grid">
+
+            <!-- RECENT TRANSACTIONS -->
+
+            <div class="transactions-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Recent Transactions</h2>
+                        <p>Your latest payments</p>
+                    </div>
+
+                    <button class="view-all-btn" id="viewAllBtn">
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div class="transaction-table">
+
+                    <div class="table-head">
+
+                        <span>Transaction</span>
+                        <span>Class / Session</span>
+                        <span>Date</span>
+                        <span>Amount</span>
+                        <span>Status</span>
+
+                    </div>
+
+
+                    <div class="transaction-row">
+
+                        <div class="transaction-name">
+
+                            <div class="transaction-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+
+                            <div>
+                                <strong>Web Development</strong>
+                                <small>#TH-1024</small>
+                            </div>
+
+                        </div>
+
+                        <span>College Batch</span>
+
+                        <span>05 Sep 2026</span>
+
+                        <strong>₹2,500</strong>
+
+                        <span class="status paid">
+                            Paid
+                        </span>
+
+                    </div>
+
+
+                    <div class="transaction-row">
+
+                        <div class="transaction-name">
+
+                            <div class="transaction-icon">
+                                <i class="fa-brands fa-python"></i>
+                            </div>
+
+                            <div>
+                                <strong>Python Basics</strong>
+                                <small>#TH-1023</small>
+                            </div>
+
+                        </div>
+
+                        <span>Class 9</span>
+
+                        <span>02 Sep 2026</span>
+
+                        <strong>₹1,800</strong>
+
+                        <span class="status paid">
+                            Paid
+                        </span>
+
+                    </div>
+
+
+                    <div class="transaction-row">
+
+                        <div class="transaction-name">
+
+                            <div class="transaction-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+
+                            <div>
+                                <strong>Data Analytics</strong>
+                                <small>#TH-1022</small>
+                            </div>
+
+                        </div>
+
+                        <span>College Batch</span>
+
+                        <span>30 Aug 2026</span>
+
+                        <strong>₹3,200</strong>
+
+                        <span class="status processing">
+                            Processing
+                        </span>
+
+                    </div>
+
+
+                    <div class="transaction-row">
+
+                        <div class="transaction-name">
+
+                            <div class="transaction-icon">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+
+                            <div>
+                                <strong>SQL Fundamentals</strong>
+                                <small>#TH-1021</small>
+                            </div>
+
+                        </div>
+
+                        <span>College Batch</span>
+
+                        <span>26 Aug 2026</span>
+
+                        <strong>₹2,000</strong>
+
+                        <span class="status pending">
+                            Pending
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENT INFORMATION -->
+
+            <div class="payment-card">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Payment Information</h2>
+                        <p>Your payment details</p>
+                    </div>
+
+                    <button
+                        class="edit-payment"
+                        id="editPaymentBtn"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="payment-method">
+
+                    <div class="bank-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+
+                    <div>
+                        <strong>Bank Account</strong>
+                        <span>•••• •••• 4582</span>
+                    </div>
+
+                    <span class="verified">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Verified
+                    </span>
+
+                </div>
+
+
+                <div class="payment-details">
+
+                    <div>
+                        <span>Account Holder</span>
+                        <strong>Teacher</strong>
+                    </div>
+
+                    <div>
+                        <span>Payment Cycle</span>
+                        <strong>Monthly</strong>
+                    </div>
+
+                    <div>
+                        <span>Next Payment</span>
+                        <strong>15 Sep 2026</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="payment-note">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <p>
+                        Payments are processed after successful
+                        completion and verification of teaching sessions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= WITHDRAW MODAL ================= -->
+
+<div class="modal-overlay" id="withdrawModal">
+
+    <div class="modal">
+
+        <button class="modal-close" id="closeWithdraw">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+        </div>
+
+        <h2>Request Payment</h2>
+
+        <p class="modal-description">
+            Request your available earnings for withdrawal.
+        </p>
+
+
+        <div class="balance-box">
+
+            <span>Available Balance</span>
+
+            <strong>
+                ₹9,300
+            </strong>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Withdrawal Amount</label>
+
+            <input
+                type="number"
+                id="withdrawAmount"
+                placeholder="Enter amount"
+                min="1"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Payment Method</label>
+
+            <select id="withdrawMethod">
+
+                <option value="Bank Account">
+                    Bank Account •••• 4582
+                </option>
+
+                <option value="UPI">
+                    UPI
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="cancel-btn"
+                id="cancelWithdraw"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="confirm-btn"
+                id="confirmWithdraw"
+            >
+                Request Payment
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PAYMENT MODAL ================= -->
+
+<div class="modal-overlay" id="paymentModal">
+
+    <div class="modal">
+
+        <button class="modal-close" id="closePayment">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-building-columns"></i>
+        </div>
+
+        <h2>Payment Information</h2>
+
+        <p class="modal-description">
+            Update your payment information.
+        </p>
+
+
+        <div class="form-group">
+
+            <label>Account Holder Name</label>
+
+            <input
+                type="text"
+                id="accountHolder"
+                value="Teacher"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Payment Method</label>
+
+            <select id="paymentMethod">
+
+                <option value="Bank Account">
+                    Bank Account
+                </option>
+
+                <option value="UPI">
+                    UPI
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Account / UPI Details</label>
+
+            <input
+                type="text"
+                id="paymentDetails"
+                placeholder="Enter payment details"
+            >
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="cancel-btn"
+                id="cancelPayment"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="confirm-btn"
+                id="savePayment"
+            >
+                Save Changes
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../../js/teacher-portal/earnings.js"></script>
+
+</body>
+</html>

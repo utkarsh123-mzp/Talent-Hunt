@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Analyzer | TalentHunt</title>
+
+    <link rel="stylesheet" href="../../css/college/resume-analyzer.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="brand-logo">T</div>
+
+            <div>
+                <h2>TalentHunt</h2>
+                <span>College Portal</span>
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-label">MAIN</p>
+
+            <a href="college-dashboard.html" class="nav-link">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <p class="nav-label">SELECTION PREPARATION</p>
+
+            <a href="assessments.html" class="nav-link">
+                <span class="nav-icon">✓</span>
+                <span>Assessments</span>
+            </a>
+
+            <a href="recruiter-questions.html" class="nav-link">
+                <span class="nav-icon">?</span>
+                <span>Recruiter Questions</span>
+            </a>
+
+            <a href="resume-analyzer.html" class="nav-link active">
+                <span class="nav-icon">▤</span>
+                <span>Resume Analyzer</span>
+            </a>
+
+            <a href="mock-interview.html" class="nav-link">
+                <span class="nav-icon">◉</span>
+                <span>Mock Interview</span>
+            </a>
+
+
+            <p class="nav-label">PROGRESS</p>
+
+            <a href="skill-gap.html" class="nav-link">
+                <span class="nav-icon">◫</span>
+                <span>Skill Gap</span>
+            </a>
+
+            <a href="placement-readiness.html" class="nav-link">
+                <span class="nav-icon">★</span>
+                <span>Placement Readiness</span>
+            </a>
+
+
+            <p class="nav-label">ACCOUNT</p>
+
+            <a href="profile.html" class="nav-link">
+                <span class="nav-icon">◯</span>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <!-- HELP -->
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+
+                <span class="help-icon">?</span>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <p>Improve your preparation</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open menu">
+                ☰
+            </button>
+
+
+            <div class="page-heading">
+
+                <span>COLLEGE PORTAL</span>
+
+                <h1>Resume Analyzer</h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    class="notification-btn"
+                    id="notificationBtn"
+                    aria-label="Notifications">
+
+                    ♢
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <a href="profile.html" class="user-profile">
+
+                    <div class="avatar">
+                        U
+                    </div>
+
+                    <div class="user-info">
+
+                        <strong>Student</strong>
+
+                        <span>College Student</span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div class="content">
+
+
+            <!-- PAGE INTRO -->
+
+            <section class="page-intro">
+
+                <div>
+
+                    <span class="eyebrow">
+                        RESUME OPTIMIZATION
+                    </span>
+
+                    <h2>
+                        Analyze & Improve Your Resume
+                    </h2>
+
+                    <p>
+                        Check your resume for ATS compatibility,
+                        recruiter keywords, skills and overall
+                        placement readiness.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 UPLOAD SECTION
+            ================================================== -->
+
+            <section class="upload-card">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="card-label">
+                            RESUME ANALYSIS
+                        </span>
+
+                        <h3>
+                            Upload Your Resume
+                        </h3>
+
+                        <p>
+                            Upload your latest resume in PDF, DOC
+                            or DOCX format.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DROP AREA -->
+
+                <div
+                    class="drop-zone"
+                    id="dropZone">
+
+                    <input
+                        type="file"
+                        id="resumeInput"
+                        accept=".pdf,.doc,.docx"
+                        hidden
+                    >
+
+
+                    <div class="upload-icon">
+                        ↑
+                    </div>
+
+
+                    <h3>
+                        Drag & Drop your resume here
+                    </h3>
+
+                    <p>
+                        or
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="browse-btn"
+                        id="browseBtn">
+
+                        Browse Resume
+
+                    </button>
+
+
+                    <small>
+                        PDF, DOC, DOCX • Maximum 5 MB
+                    </small>
+
+                </div>
+
+
+                <!-- SELECTED FILE -->
+
+                <div
+                    class="selected-file"
+                    id="selectedFile">
+
+                    <div class="file-icon">
+                        PDF
+                    </div>
+
+
+                    <div class="file-details">
+
+                        <strong id="fileName">
+                            resume.pdf
+                        </strong>
+
+                        <span id="fileSize">
+                            0 KB
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="remove-file"
+                        id="removeFile">
+
+                        ×
+
+                    </button>
+
+                </div>
+
+
+                <!-- ANALYZE BUTTON -->
+
+                <button
+                    type="button"
+                    class="primary-btn analyze-btn"
+                    id="analyzeBtn"
+                    disabled>
+
+                    Analyze Resume →
+
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOADING
+            ================================================== -->
+
+            <section
+                class="loading-card"
+                id="loadingCard">
+
+                <div class="loader"></div>
+
+                <h3>
+                    Analyzing Your Resume
+                </h3>
+
+                <p>
+                    Checking ATS compatibility, keywords,
+                    skills and resume structure...
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 RESULTS
+            ================================================== -->
+
+            <section
+                class="results-section"
+                id="resultsSection">
+
+
+                <!-- RESULT HEADER -->
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            ANALYSIS COMPLETE
+                        </span>
+
+                        <h2>
+                            Resume Analysis Report
+                        </h2>
+
+                        <p>
+                            Here is your current resume performance.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="outline-btn"
+                        id="reanalyzeBtn">
+
+                        ↻ Re-analyze
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     SCORE CARDS
+                ================================================== -->
+
+                <section class="score-grid">
+
+
+                    <!-- ATS -->
+
+                    <div class="score-card ats-card">
+
+                        <div class="score-circle">
+
+                            <strong id="atsScore">
+                                82
+                            </strong>
+
+                            <span>
+                                /100
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="score-label">
+                                ATS SCORE
+                            </span>
+
+                            <h3>
+                                Good
+                            </h3>
+
+                            <p>
+                                Resume is ATS friendly.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- KEYWORDS -->
+
+                    <div class="score-card">
+
+                        <div class="mini-score-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <span class="score-label">
+                                KEYWORDS
+                            </span>
+
+                            <strong>
+                                78%
+                            </strong>
+
+                            <p>
+                                Keyword Match
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SKILLS -->
+
+                    <div class="score-card">
+
+                        <div class="mini-score-icon">
+                            ★
+                        </div>
+
+                        <div>
+
+                            <span class="score-label">
+                                SKILLS
+                            </span>
+
+                            <strong>
+                                85%
+                            </strong>
+
+                            <p>
+                                Skills Strength
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FORMAT -->
+
+                    <div class="score-card">
+
+                        <div class="mini-score-icon">
+                            ▤
+                        </div>
+
+                        <div>
+
+                            <span class="score-label">
+                                FORMAT
+                            </span>
+
+                            <strong>
+                                90%
+                            </strong>
+
+                            <p>
+                                Formatting Score
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     ANALYSIS GRID
+                ================================================== -->
+
+                <section class="analysis-grid">
+
+
+                    <!-- RESUME SECTIONS -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    RESUME QUALITY
+                                </span>
+
+                                <h3>
+                                    Section Analysis
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-list">
+
+
+                            <div class="progress-item">
+
+                                <div class="progress-heading">
+
+                                    <span>
+                                        Contact Information
+                                    </span>
+
+                                    <strong>
+                                        100%
+                                    </strong>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:100%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-item">
+
+                                <div class="progress-heading">
+
+                                    <span>
+                                        Professional Summary
+                                    </span>
+
+                                    <strong>
+                                        85%
+                                    </strong>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:85%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-item">
+
+                                <div class="progress-heading">
+
+                                    <span>
+                                        Education
+                                    </span>
+
+                                    <strong>
+                                        95%
+                                    </strong>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:95%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-item">
+
+                                <div class="progress-heading">
+
+                                    <span>
+                                        Technical Skills
+                                    </span>
+
+                                    <strong>
+                                        90%
+                                    </strong>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:90%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-item">
+
+                                <div class="progress-heading">
+
+                                    <span>
+                                        Projects
+                                    </span>
+
+                                    <strong>
+                                        80%
+                                    </strong>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:80%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-item">
+
+                                <div class="progress-heading">
+
+                                    <span>
+                                        Experience
+                                    </span>
+
+                                    <strong>
+                                        65%
+                                    </strong>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:65%"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DETECTED SKILLS -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    TECHNICAL PROFILE
+                                </span>
+
+                                <h3>
+                                    Detected Skills
+                                </h3>
+
+                            </div>
+
+                            <span class="count-badge">
+                                12 Skills
+                            </span>
+
+                        </div>
+
+
+                        <div class="skill-tags">
+
+                            <span>Python</span>
+                            <span>JavaScript</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>SQL</span>
+                            <span>React</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>Power BI</span>
+                            <span>Excel</span>
+                            <span>DSA</span>
+                            <span>DBMS</span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     KEYWORDS + MISSING
+                ================================================== -->
+
+                <section class="analysis-grid">
+
+
+                    <!-- KEYWORDS -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    ATS OPTIMIZATION
+                                </span>
+
+                                <h3>
+                                    Recommended Keywords
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="keyword-list">
+
+                            <span>
+                                Problem Solving
+                            </span>
+
+                            <span>
+                                Data Structures
+                            </span>
+
+                            <span>
+                                Algorithms
+                            </span>
+
+                            <span>
+                                REST API
+                            </span>
+
+                            <span>
+                                OOP
+                            </span>
+
+                            <span>
+                                Agile
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MISSING SECTIONS -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    IMPROVEMENT
+                                </span>
+
+                                <h3>
+                                    Missing Sections
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="missing-list">
+
+
+                            <div class="missing-item">
+
+                                <span class="warning-icon">
+                                    !
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Certifications
+                                    </strong>
+
+                                    <p>
+                                        Add relevant technical
+                                        certifications.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="missing-item">
+
+                                <span class="warning-icon">
+                                    !
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Achievements
+                                    </strong>
+
+                                    <p>
+                                        Add measurable academic or
+                                        extracurricular achievements.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     AI SUGGESTIONS
+                ================================================== -->
+
+                <section class="panel suggestions-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                AI RECOMMENDATIONS
+                            </span>
+
+                            <h3>
+                                Improve Your Resume
+                            </h3>
+
+                            <p>
+                                Follow these recommendations to
+                                improve recruiter response.
+                            </p>
+
+                        </div>
+
+                        <span class="count-badge">
+                            4 Suggestions
+                        </span>
+
+                    </div>
+
+
+                    <div class="suggestions-list">
+
+
+                        <div class="suggestion high">
+
+                            <div class="suggestion-number">
+                                01
+                            </div>
+
+                            <div class="suggestion-content">
+
+                                <strong>
+                                    Add measurable project results
+                                </strong>
+
+                                <p>
+                                    Mention measurable results such
+                                    as users, records processed,
+                                    performance or accuracy.
+                                </p>
+
+                            </div>
+
+                            <span class="priority high">
+                                High
+                            </span>
+
+                        </div>
+
+
+                        <div class="suggestion medium">
+
+                            <div class="suggestion-number">
+                                02
+                            </div>
+
+                            <div class="suggestion-content">
+
+                                <strong>
+                                    Strengthen your professional summary
+                                </strong>
+
+                                <p>
+                                    Mention your strongest technical
+                                    skills, target role and career goal.
+                                </p>
+
+                            </div>
+
+                            <span class="priority medium">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="suggestion medium">
+
+                            <div class="suggestion-number">
+                                03
+                            </div>
+
+                            <div class="suggestion-content">
+
+                                <strong>
+                                    Add relevant certifications
+                                </strong>
+
+                                <p>
+                                    Include certifications that support
+                                    your target software role.
+                                </p>
+
+                            </div>
+
+                            <span class="priority medium">
+                                Medium
+                            </span>
+
+                        </div>
+
+
+                        <div class="suggestion low">
+
+                            <div class="suggestion-number">
+                                04
+                            </div>
+
+                            <div class="suggestion-content">
+
+                                <strong>
+                                    Improve keyword coverage
+                                </strong>
+
+                                <p>
+                                    Add relevant technical and
+                                    role-specific keywords naturally.
+                                </p>
+
+                            </div>
+
+                            <span class="priority low">
+                                Low
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     FINAL CTA
+                ================================================== -->
+
+                <section class="recommendation">
+
+                    <div class="recommendation-icon">
+                        ✓
+                    </div>
+
+                    <div class="recommendation-content">
+
+                        <span class="card-label">
+                            NEXT STEP
+                        </span>
+
+                        <h3>
+                            Improve your resume and analyze it again.
+                        </h3>
+
+                        <p>
+                            Use the recommendations above to create
+                            a stronger recruiter-ready resume.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="analyzeAgainBtn">
+
+                        Analyze Again →
+
+                    </button>
+
+                </section>
+
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     NOTIFICATION PANEL
+========================================================= -->
+
+<div
+    class="notification-panel"
+    id="notificationPanel">
+
+    <div class="notification-header">
+
+        <strong>
+            Notifications
+        </strong>
+
+        <button id="closeNotification">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="notification-body">
+
+        <div class="notification-item">
+
+            <span>✓</span>
+
+            <div>
+
+                <strong>
+                    Resume analysis available
+                </strong>
+
+                <p>
+                    Analyze your resume to check your ATS score.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <span>!</span>
+
+            <div>
+
+                <strong>
+                    Improve your resume
+                </strong>
+
+                <p>
+                    Add projects and achievements to improve
+                    recruiter readiness.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../../js/college/resume-analyzer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports | Talent Hunt Admin</title>
+
+    <link rel="stylesheet" href="../../css/admin/reports.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                TH
+            </div>
+
+            <div class="brand-info">
+                <h2>Talent Hunt</h2>
+                <span>Admin Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="admin-dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="teacher-applications.html" class="nav-item">
+                <span class="nav-icon">▣</span>
+                <span>Teacher Applications</span>
+                <span class="nav-badge">08</span>
+            </a>
+
+            <a href="verification.html" class="nav-item">
+                <span class="nav-icon">✓</span>
+                <span>Verification</span>
+                <span class="nav-badge">05</span>
+            </a>
+
+            <a href="demo-reviews.html" class="nav-item">
+                <span class="nav-icon">▶</span>
+                <span>Demo Reviews</span>
+                <span class="nav-badge">04</span>
+            </a>
+
+            <a href="interviews.html" class="nav-item">
+                <span class="nav-icon">◷</span>
+                <span>Interviews</span>
+            </a>
+
+            <a href="hiring.html" class="nav-item">
+                <span class="nav-icon">★</span>
+                <span>Hiring</span>
+            </a>
+
+            <a href="onboarding.html" class="nav-item">
+                <span class="nav-icon">↗</span>
+                <span>Onboarding</span>
+            </a>
+
+            <a href="teachers.html" class="nav-item">
+                <span class="nav-icon">♟</span>
+                <span>Teachers</span>
+            </a>
+
+            <a href="reports.html" class="nav-item active">
+                <span class="nav-icon">▤</span>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box" id="helpBox">
+
+                <div class="help-icon">
+                    ?
+                </div>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <span>Contact support</span>
+                </div>
+
+            </div>
+
+
+            <button class="logout-btn" id="logoutBtn">
+                ↪ Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div>
+
+                <span class="page-label">
+                    ADMIN PANEL
+                </span>
+
+                <h1>Reports</h1>
+
+            </div>
+
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">
+                    AU
+                </div>
+
+                <div class="admin-details">
+
+                    <strong>Admin</strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+                <button
+                    class="profile-arrow"
+                    id="profileBtn"
+                >
+                    ⌄
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE INTRO -->
+
+        <section class="page-intro">
+
+            <div>
+
+                <span class="section-label">
+                    ANALYTICS & INSIGHTS
+                </span>
+
+                <h2>Hiring & Teacher Reports</h2>
+
+                <p>
+                    Monitor teacher recruitment, hiring,
+                    onboarding and teacher management performance.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <select id="periodFilter">
+
+                    <option value="all">
+                        All Time
+                    </option>
+
+                    <option value="month">
+                        This Month
+                    </option>
+
+                    <option value="quarter">
+                        This Quarter
+                    </option>
+
+                    <option value="year">
+                        This Year
+                    </option>
+
+                </select>
+
+
+                <button
+                    class="primary-btn"
+                    id="exportReportBtn"
+                >
+                    ↓ Export Report
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= OVERVIEW ================= -->
+
+        <section class="overview-grid">
+
+            <div class="overview-card">
+
+                <div class="overview-icon blue">
+                    ▣
+                </div>
+
+                <div>
+
+                    <span>Total Applications</span>
+
+                    <strong id="applicationCount">
+                        128
+                    </strong>
+
+                    <small>
+                        Teacher applications
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon orange">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>Verified</span>
+
+                    <strong id="verifiedCount">
+                        96
+                    </strong>
+
+                    <small>
+                        Identity verified
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon purple">
+                    ★
+                </div>
+
+                <div>
+
+                    <span>Hired</span>
+
+                    <strong id="hiredCount">
+                        32
+                    </strong>
+
+                    <small>
+                        Teachers hired
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon green">
+                    ♟
+                </div>
+
+                <div>
+
+                    <span>Active Teachers</span>
+
+                    <strong id="activeTeacherCount">
+                        24
+                    </strong>
+
+                    <small>
+                        Currently active
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PIPELINE ================= -->
+
+        <section class="report-grid">
+
+            <div class="report-card pipeline-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Hiring Pipeline
+                        </h3>
+
+                        <span>
+                            Teacher recruitment progress
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pipeline">
+
+                    <div class="pipeline-item">
+
+                        <div class="pipeline-label">
+
+                            <span>
+                                Applications
+                            </span>
+
+                            <strong>
+                                128
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+                            <span style="width: 100%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline-item">
+
+                        <div class="pipeline-label">
+
+                            <span>
+                                Verified
+                            </span>
+
+                            <strong>
+                                96
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+                            <span style="width: 75%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline-item">
+
+                        <div class="pipeline-label">
+
+                            <span>
+                                Demo Approved
+                            </span>
+
+                            <strong>
+                                68
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+                            <span style="width: 53%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline-item">
+
+                        <div class="pipeline-label">
+
+                            <span>
+                                Interviews
+                            </span>
+
+                            <strong>
+                                45
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+                            <span style="width: 35%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline-item">
+
+                        <div class="pipeline-label">
+
+                            <span>
+                                Hired
+                            </span>
+
+                            <strong>
+                                32
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+                            <span style="width: 25%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pipeline-item">
+
+                        <div class="pipeline-label">
+
+                            <span>
+                                Onboarded
+                            </span>
+
+                            <strong>
+                                28
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+                            <span style="width: 22%"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= STATUS ================= -->
+
+            <div class="report-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Teacher Status
+                        </h3>
+
+                        <span>
+                            Current teacher distribution
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-chart">
+
+                    <div
+                        class="donut"
+                        id="statusDonut"
+                    >
+                        <div class="donut-center">
+
+                            <strong>
+                                24
+                            </strong>
+
+                            <span>
+                                Active
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <div class="status-legend">
+
+                        <div>
+                            <span class="legend-dot active-dot"></span>
+                            <span>Active</span>
+                            <strong>24</strong>
+                        </div>
+
+                        <div>
+                            <span class="legend-dot leave-dot"></span>
+                            <span>On Leave</span>
+                            <strong>3</strong>
+                        </div>
+
+                        <div>
+                            <span class="legend-dot inactive-dot"></span>
+                            <span>Inactive</span>
+                            <strong>5</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MONTHLY PERFORMANCE ================= -->
+
+        <section class="report-card monthly-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        Recruitment Overview
+                    </h3>
+
+                    <span>
+                        Applications and hiring activity
+                    </span>
+
+                </div>
+
+                <span class="report-period">
+                    2026
+                </span>
+
+            </div>
+
+
+            <div class="bar-chart" id="barChart">
+
+                <div class="bar-group">
+                    <span class="bar-value">18</span>
+                    <div class="bar" style="height: 55%"></div>
+                    <span class="bar-label">Jan</span>
+                </div>
+
+                <div class="bar-group">
+                    <span class="bar-value">22</span>
+                    <div class="bar" style="height: 68%"></div>
+                    <span class="bar-label">Feb</span>
+                </div>
+
+                <div class="bar-group">
+                    <span class="bar-value">15</span>
+                    <div class="bar" style="height: 46%"></div>
+                    <span class="bar-label">Mar</span>
+                </div>
+
+                <div class="bar-group">
+                    <span class="bar-value">28</span>
+                    <div class="bar" style="height: 86%"></div>
+                    <span class="bar-label">Apr</span>
+                </div>
+
+                <div class="bar-group">
+                    <span class="bar-value">24</span>
+                    <div class="bar" style="height: 74%"></div>
+                    <span class="bar-label">May</span>
+                </div>
+
+                <div class="bar-group">
+                    <span class="bar-value">31</span>
+                    <div class="bar" style="height: 95%"></div>
+                    <span class="bar-label">Jun</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SUBJECT REPORT ================= -->
+
+        <section class="report-grid">
+
+            <div class="report-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Teachers by Subject
+                        </h3>
+
+                        <span>
+                            Current teacher distribution
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="subject-list">
+
+                    <div class="subject-row">
+
+                        <div class="subject-info">
+
+                            <span>
+                                Mathematics
+                            </span>
+
+                            <strong>
+                                8
+                            </strong>
+
+                        </div>
+
+                        <div class="subject-progress">
+                            <span style="width: 80%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="subject-row">
+
+                        <div class="subject-info">
+
+                            <span>
+                                Physics
+                            </span>
+
+                            <strong>
+                                5
+                            </strong>
+
+                        </div>
+
+                        <div class="subject-progress">
+                            <span style="width: 60%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="subject-row">
+
+                        <div class="subject-info">
+
+                            <span>
+                                Chemistry
+                            </span>
+
+                            <strong>
+                                4
+                            </strong>
+
+                        </div>
+
+                        <div class="subject-progress">
+                            <span style="width: 48%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="subject-row">
+
+                        <div class="subject-info">
+
+                            <span>
+                                Computer Science
+                            </span>
+
+                            <strong>
+                                4
+                            </strong>
+
+                        </div>
+
+                        <div class="subject-progress">
+                            <span style="width: 48%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="subject-row">
+
+                        <div class="subject-info">
+
+                            <span>
+                                English
+                            </span>
+
+                            <strong>
+                                3
+                            </strong>
+
+                        </div>
+
+                        <div class="subject-progress">
+                            <span style="width: 35%"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= QUICK INSIGHTS ================= -->
+
+            <div class="report-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Quick Insights
+                        </h3>
+
+                        <span>
+                            Key recruitment metrics
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="insight-list">
+
+                    <div class="insight-item">
+
+                        <div class="insight-icon green">
+                            ↑
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                25%
+                            </strong>
+
+                            <span>
+                                Hiring conversion rate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-item">
+
+                        <div class="insight-icon blue">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                75%
+                            </strong>
+
+                            <span>
+                                Verification success rate
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-item">
+
+                        <div class="insight-icon orange">
+                            ◷
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                4.2 Days
+                            </strong>
+
+                            <span>
+                                Average hiring time
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-item">
+
+                        <div class="insight-icon purple">
+                            ★
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                89%
+                            </strong>
+
+                            <span>
+                                Onboarding completion
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECENT ACTIVITY ================= -->
+
+        <section class="report-card activity-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        Recent Recruitment Activity
+                    </h3>
+
+                    <span>
+                        Latest actions across the hiring workflow
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="activity-table">
+
+                <div class="activity-head">
+
+                    <span>ACTIVITY</span>
+                    <span>TEACHER</span>
+                    <span>DATE</span>
+                    <span>STATUS</span>
+
+                </div>
+
+
+                <div class="activity-row">
+
+                    <span>
+                        Application Approved
+                    </span>
+
+                    <strong>
+                        Anjali Sharma
+                    </strong>
+
+                    <span>
+                        24 Sep 2026
+                    </span>
+
+                    <span class="activity-status success">
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="activity-row">
+
+                    <span>
+                        Interview Completed
+                    </span>
+
+                    <strong>
+                        Rahul Verma
+                    </strong>
+
+                    <span>
+                        23 Sep 2026
+                    </span>
+
+                    <span class="activity-status success">
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="activity-row">
+
+                    <span>
+                        Teacher Onboarding
+                    </span>
+
+                    <strong>
+                        Priya Singh
+                    </strong>
+
+                    <span>
+                        22 Sep 2026
+                    </span>
+
+                    <span class="activity-status pending">
+                        In Progress
+                    </span>
+
+                </div>
+
+
+                <div class="activity-row">
+
+                    <span>
+                        Demo Review
+                    </span>
+
+                    <strong>
+                        Amit Kumar
+                    </strong>
+
+                    <span>
+                        21 Sep 2026
+                    </span>
+
+                    <span class="activity-status review">
+                        Under Review
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="../../js/admin/reports.js"></script>
+
+</body>
+</html>

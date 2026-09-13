@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Opportunities | Talent Hunt</title>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet"
+          href="../../css/dashboard/student-dashboard.css">
+
+    <!-- Opportunities CSS -->
+    <link rel="stylesheet"
+          href="../../css/dashboard/opportunities.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+
+                <i class="ph ph-star-four"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>Talent Hunt</h2>
+
+                <span>Student Portal</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+
+            <div class="nav-title">
+                MAIN MENU
+            </div>
+
+
+            <a href="student-dashboard.html"
+               class="nav-link">
+
+                <i class="ph ph-squares-four"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="student-profile.html"
+               class="nav-link">
+
+                <i class="ph ph-user"></i>
+
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a href="assessments.html"
+               class="nav-link">
+
+                <i class="ph ph-clipboard-text"></i>
+
+                <span>Assessments</span>
+
+            </a>
+
+
+            <a href="talent-score.html"
+               class="nav-link">
+
+                <i class="ph ph-chart-line-up"></i>
+
+                <span>Talent Score</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                EXPLORE
+            </div>
+
+
+            <a href="skill-analysis.html"
+               class="nav-link">
+
+                <i class="ph ph-chart-bar"></i>
+
+                <span>Skill Analysis</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                OPPORTUNITIES
+            </div>
+
+
+            <a href="competitions.html"
+               class="nav-link">
+
+                <i class="ph ph-trophy"></i>
+
+                <span>Competitions</span>
+
+            </a>
+
+
+            <a href="opportunities.html"
+               class="nav-link active">
+
+                <i class="ph ph-briefcase"></i>
+
+                <span>Opportunities</span>
+
+            </a>
+
+
+            <a href="achievements.html"
+               class="nav-link">
+
+                <i class="ph ph-medal"></i>
+
+                <span>Achievements</span>
+
+            </a>
+
+
+            <div class="nav-title">
+                ACCOUNT
+            </div>
+
+
+            <a href="settings.html"
+               class="nav-link">
+
+                <i class="ph ph-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- LOGOUT -->
+
+        <div class="sidebar-bottom">
+
+            <button class="logout-btn"
+                    id="logoutBtn">
+
+                <i class="ph ph-sign-out"></i>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+
+            <button class="menu-btn"
+                    id="menuBtn">
+
+                <i class="ph ph-list"></i>
+
+            </button>
+
+
+            <div class="topbar-title">
+
+                <h1>Opportunities</h1>
+
+                <p>
+                    Discover opportunities that match your skills.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+
+                <button class="icon-btn">
+
+                    <i class="ph ph-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="user-profile">
+
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <strong id="studentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =========================================
+             OPPORTUNITIES CONTENT
+        ========================================== -->
+
+        <section class="opportunities-container">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="page-heading">
+
+
+                <div>
+
+                    <span class="page-label">
+                        OPPORTUNITIES
+                    </span>
+
+
+                    <h2>
+                        Explore Your Next Opportunity
+                    </h2>
+
+
+                    <p>
+                        Find internships, jobs and career opportunities
+                        that match your skills and interests.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 STATS
+            ========================================== -->
+
+            <div class="opportunity-stats">
+
+
+                <!-- AVAILABLE -->
+
+                <div class="opportunity-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="ph ph-briefcase"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Available
+                        </span>
+
+                        <strong id="availableCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RECOMMENDED -->
+
+                <div class="opportunity-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="ph ph-sparkle"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Recommended
+                        </span>
+
+                        <strong id="recommendedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- APPLIED -->
+
+                <div class="opportunity-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="ph ph-paper-plane-tilt"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Applied
+                        </span>
+
+                        <strong id="appliedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SAVED -->
+
+                <div class="opportunity-stat-card">
+
+                    <div class="stat-icon">
+
+                        <i class="ph ph-bookmark-simple"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Saved
+                        </span>
+
+                        <strong id="savedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 SEARCH & FILTER
+            ========================================== -->
+
+            <div class="opportunity-toolbar">
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+
+                    <i class="ph ph-magnifying-glass"></i>
+
+
+                    <input
+                        type="text"
+                        id="opportunitySearch"
+                        placeholder="Search jobs, internships, skills..."
+                    >
+
+
+                </div>
+
+
+
+                <!-- TYPE -->
+
+                <select id="opportunityType">
+
+                    <option value="all">
+                        All Types
+                    </option>
+
+                    <option value="internship">
+                        Internship
+                    </option>
+
+                    <option value="fulltime">
+                        Full Time
+                    </option>
+
+                    <option value="parttime">
+                        Part Time
+                    </option>
+
+                    <option value="hackathon">
+                        Hackathon
+                    </option>
+
+                </select>
+
+
+
+                <!-- CATEGORY -->
+
+                <select id="opportunityCategory">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="software">
+                        Software Development
+                    </option>
+
+                    <option value="data">
+                        Data Analytics
+                    </option>
+
+                    <option value="ai">
+                        AI / ML
+                    </option>
+
+                    <option value="web">
+                        Web Development
+                    </option>
+
+                    <option value="design">
+                        UI / UX
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- =========================================
+                 RECOMMENDED
+            ========================================== -->
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <span class="section-label">
+                        FOR YOU
+                    </span>
+
+
+                    <h2>
+                        Recommended Opportunities
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+            <div id="recommendedGrid"
+                 class="opportunity-grid">
+
+                <!-- JavaScript will add cards -->
+
+            </div>
+
+
+
+            <!-- =========================================
+                 ALL OPPORTUNITIES
+            ========================================== -->
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+
+                    <h2>
+                        All Opportunities
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+            <div id="opportunityGrid"
+                 class="opportunity-grid">
+
+                <!-- JavaScript will add cards -->
+
+            </div>
+
+
+
+            <!-- =========================================
+                 MY APPLICATIONS
+            ========================================== -->
+
+            <section class="applications-section">
+
+
+                <div class="section-header">
+
+
+                    <div>
+
+                        <span class="section-label">
+                            YOUR ACTIVITY
+                        </span>
+
+
+                        <h2>
+                            My Applications
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+
+                <div id="applicationsGrid"
+                     class="applications-grid">
+
+                    <!-- JavaScript will add applications -->
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../../js/dashboard/opportunities.js"></script>
+
+
+</body>
+
+</html>
