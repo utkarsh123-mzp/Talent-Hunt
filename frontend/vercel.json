@@ -4,6 +4,22 @@
     {
       "source": "/",
       "destination": "/html/index.html"
+    },
+    {
+      "source": "/css/:path*",
+      "destination": "/css/:path*"
+    },
+    {
+      "source": "/js/:path*",
+      "destination": "/js/:path*"
+    },
+    {
+      "source": "/html/:path*",
+      "destination": "/html/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/html/:path*"
     }
   ]
 }
