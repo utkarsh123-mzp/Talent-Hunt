@@ -81,54 +81,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       GET SAVED RESULTS
+       GET SAVED RESULTS (FROM BACKEND & LOCALSTORAGE)
     ========================================= */
 
-    const assessmentResults =
+    let assessmentResults =
         JSON.parse(
             localStorage.getItem("assessmentResults")
         ) || {};
 
+    async function syncBackendResults() {
+        try {
+            if (window.TalentHuntAPI) {
+                const [profRes, resultsRes, scoreRes] = await Promise.allSettled([
+                    window.TalentHuntAPI.students.getProfile(),
+                    window.TalentHuntAPI.students.getResults(),
+                    window.TalentHuntAPI.students.getTalentScore()
+                ]);
 
-    /*
-       Compatibility with old Technical
-       Assessment storage
-    */
+                if (profRes.status === "fulfilled" && profRes.value.data?.student) {
+                    const s = profRes.value.data.student;
+                    if (studentName) studentName.textContent = s.name.split(" ")[0];
+                }
 
-    const oldTechnicalScore =
-        localStorage.getItem(
-            "technicalAssessmentScore"
-        );
-
-    const oldTechnicalCorrect =
-        localStorage.getItem(
-            "technicalAssessmentCorrect"
-        );
-
-
-    if (
-        !assessmentResults["Technical Skills"] &&
-        oldTechnicalScore !== null
-    ) {
-
-        assessmentResults["Technical Skills"] = {
-
-            score: Number(oldTechnicalCorrect || 0),
-
-            total: 10,
-
-            percentage: Number(oldTechnicalScore),
-
-            correct: Number(
-                oldTechnicalCorrect || 0
-            ),
-
-            wrong: 0,
-
-            unanswered: 0
-
-        };
-
+                if (resultsRes.status === "fulfilled" && resultsRes.value.data?.results) {
+                    resultsRes.value.data.results.forEach(r => {
+                        assessmentResults[r.assessmentTitle] = {
+                            score: r.score,
+                            total: r.total,
+                            percentage: r.percentage,
+                            correct: r.correctCount,
+                            wrong: r.wrongCount,
+                            unanswered: r.unansweredCount
+                        };
+                    });
+                }
+            }
+        } catch (e) {
+            console.warn("[TalentScore Sync Warning]", e.message);
+        }
     }
 
 
@@ -746,15 +736,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         logoutBtn.addEventListener(
             "click",
-            function () {
-
-                localStorage.removeItem(
-                    "studentName"
-                );
-
-                window.location.href =
-                    "../index.html";
-
+            async function () {
+                if (window.TalentHuntAPI) {
+                    await window.TalentHuntAPI.auth.logout();
+                } else {
+                    localStorage.clear();
+                }
+                window.location.href = "../auth/login.html";
             }
         );
 

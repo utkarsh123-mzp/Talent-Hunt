@@ -367,7 +367,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    let activeCard = null;
+
     function openModal(card) {
+        activeCard = card;
 
         const title =
             card.querySelector("h3");
@@ -538,12 +541,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     applyBtn.addEventListener(
         "click",
-        () => {
+        async () => {
+            if (!window.TalentHuntAPI) {
+                alert("API client not available.");
+                return;
+            }
 
-            alert(
-                "Application system will be connected in the next phase."
-            );
+            try {
+                const authCheck = await TalentHuntAPI.auth.getMe();
+                if (!authCheck.data || !authCheck.data.user) {
+                    alert("Please log in to apply for opportunities.");
+                    window.location.href = "../auth/login.html";
+                    return;
+                }
 
+                const backendId = activeCard ? activeCard.dataset.id : null;
+                if (backendId) {
+                    applyBtn.disabled = true;
+                    applyBtn.textContent = "Submitting...";
+                    await TalentHuntAPI.opportunities.apply(backendId);
+                    alert("Application submitted successfully!");
+                    closeModal();
+                } else {
+                    alert("Application submitted for " + (modalTitle ? modalTitle.textContent : "opportunity") + "!");
+                    closeModal();
+                }
+            } catch (err) {
+                alert(err.message || "Failed to submit application. Please log in.");
+                if (err.message && err.message.toLowerCase().includes("not authenticated")) {
+                    window.location.href = "../auth/login.html";
+                }
+            } finally {
+                applyBtn.disabled = false;
+                applyBtn.textContent = "Apply / Learn More →";
+            }
         }
     );
 
@@ -554,12 +585,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     postOpportunityBtn.addEventListener(
         "click",
-        () => {
+        async () => {
+            if (!window.TalentHuntAPI) {
+                window.location.href = "../auth/login.html";
+                return;
+            }
 
-            alert(
-                "Post Opportunity feature will be added in the next phase."
-            );
-
+            try {
+                const me = await TalentHuntAPI.auth.getMe();
+                if (me.data && me.data.user) {
+                    const role = me.data.user.role;
+                    if (role === "recruiter" || role === "organization" || role === "admin") {
+                        alert("You are logged in as " + role + ". You can manage and post opportunities via your portal.");
+                    } else {
+                        alert("Posting opportunities is restricted to Recruiters, Organizations, and Admins.");
+                    }
+                } else {
+                    window.location.href = "../auth/login.html";
+                }
+            } catch (e) {
+                window.location.href = "../auth/login.html";
+            }
         }
     );
 

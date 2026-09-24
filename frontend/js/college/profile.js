@@ -611,7 +611,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    function saveProfileData() {
+    async function saveProfileData() {
 
         const profileData = {
 
@@ -695,6 +695,23 @@ document.addEventListener("DOMContentLoaded", () => {
             )
         );
 
+        if (window.TalentHuntAPI) {
+            try {
+                await TalentHuntAPI.students.updateProfile({
+                    name: profileData.name,
+                    phone: profileData.phone,
+                    city: profileData.location,
+                    institution: profileData.college,
+                    course: profileData.degree,
+                    branch: profileData.branch,
+                    year: profileData.graduation,
+                    bio: profileData.careerGoal
+                });
+            } catch (err) {
+                console.warn("Backend profile save error:", err);
+            }
+        }
+
     }
 
 
@@ -705,7 +722,31 @@ document.addEventListener("DOMContentLoaded", () => {
     loadProfile();
 
 
-    function loadProfile() {
+    async function loadProfile() {
+
+        if (window.TalentHuntAPI) {
+            try {
+                const res = await TalentHuntAPI.students.getProfile();
+                if (res.data && res.data.student) {
+                    const s = res.data.student;
+                    if (s.name) document.getElementById("fullName").value = s.name;
+                    if (s.email) document.getElementById("email").value = s.email;
+                    if (s.phone) document.getElementById("phone").value = s.phone;
+                    if (s.city) document.getElementById("location").value = s.city;
+                    if (s.institution) document.getElementById("college").value = s.institution;
+                    if (s.course) document.getElementById("degree").value = s.course;
+                    if (s.branch) document.getElementById("branch").value = s.branch;
+                    if (s.year) document.getElementById("graduation").value = s.year;
+                    if (s.bio) document.getElementById("careerGoal").value = s.bio;
+
+                    updateHeaderName();
+                    updateCompletion();
+                    return;
+                }
+            } catch (err) {
+                console.warn("Could not load backend profile:", err);
+            }
+        }
 
         const saved =
             localStorage.getItem(
@@ -784,6 +825,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             updateHeaderName();
+            updateCompletion();
 
         } catch (error) {
 

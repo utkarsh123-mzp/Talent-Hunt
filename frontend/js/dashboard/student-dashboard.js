@@ -22,77 +22,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       STUDENT NAME
+       STUDENT DATA & TALENT SCORE FROM BACKEND
     ========================================= */
 
-    // Demo student name
-    const savedName = localStorage.getItem("studentName");
+    async function loadStudentDashboard() {
+        try {
+            const api = window.TalentHuntAPI;
+            if (!api) return;
 
-    if (savedName) {
-        studentName.textContent = savedName;
-        welcomeName.textContent = savedName + "!";
+            // Fetch profile and talent score in parallel
+            const [profileRes, scoreRes] = await Promise.allSettled([
+                api.students.getProfile(),
+                api.students.getTalentScore()
+            ]);
+
+            if (profileRes.status === "fulfilled" && profileRes.value.data) {
+                const student = profileRes.value.data.student;
+                const firstName = (student.name || "Student").split(" ")[0];
+                if (studentName) studentName.textContent = firstName;
+                if (welcomeName) welcomeName.textContent = firstName + "!";
+            } else {
+                const user = api.auth.getUser();
+                if (user && user.name) {
+                    const firstName = user.name.split(" ")[0];
+                    if (studentName) studentName.textContent = firstName;
+                    if (welcomeName) welcomeName.textContent = firstName + "!";
+                }
+            }
+
+            if (scoreRes.status === "fulfilled" && scoreRes.value.data) {
+                const data = scoreRes.value.data;
+                if (talentScore) talentScore.textContent = data.talentScore;
+
+                if (talentPerformance) {
+                    talentPerformance.innerHTML = `
+                        <i class="ph ph-trend-up"></i>
+                        ${data.statusMessage || "Keep improving your skills"}
+                    `;
+                }
+            }
+        } catch (error) {
+            console.warn("[Dashboard Error] Backend sync warning:", error.message);
+        }
     }
 
-    /* =========================================
-       TALENT SCORE
-    ========================================= */
-
-    const assessmentResults =
-        JSON.parse(
-            localStorage.getItem("assessmentResults")
-        ) || {};
-
-    const resultValues =
-        Object.values(assessmentResults);
-
-    let calculatedTalentScore = 0;
-
-    if (resultValues.length > 0) {
-
-        const totalPercentage =
-            resultValues.reduce(
-                (sum, result) =>
-                    sum + Number(result.percentage || 0),
-                0
-            );
-
-        calculatedTalentScore =
-            Math.round(
-                totalPercentage / resultValues.length
-            );
-    }
-
-    if (talentScore) {
-        talentScore.textContent =
-            calculatedTalentScore;
-    }
-
-    if (talentPerformance) {
-
-        let message = "";
-
-        if (resultValues.length === 0) {
-            message =
-                "Complete assessments to build your score";
-        }
-        else if (calculatedTalentScore >= 80) {
-            message = "Excellent performance";
-        }
-        else if (calculatedTalentScore >= 60) {
-            message = "Good performance";
-        }
-        else if (calculatedTalentScore >= 40) {
-            message = "Keep improving your skills";
-        }
-        else {
-            message = "More practice recommended";
-        }
-
-        talentPerformance.innerHTML = `
-        <i class="ph ph-trend-up"></i>
-        ${message}
-    `;
-    }
+    loadStudentDashboard();
     /* =========================================
        MOBILE SIDEBAR
     ========================================= */
@@ -165,19 +139,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (logoutBtn) {
 
-        logoutBtn.addEventListener("click", () => {
+        logoutBtn.addEventListener("click", async () => {
 
             const confirmLogout = confirm(
                 "Are you sure you want to logout?"
             );
 
             if (confirmLogout) {
-
-                // Clear login-related demo data
-                localStorage.removeItem("studentName");
-
+                if (window.TalentHuntAPI) {
+                    await window.TalentHuntAPI.auth.logout();
+                } else {
+                    localStorage.clear();
+                }
                 window.location.href = "../auth/login.html";
-
             }
 
         });
@@ -193,15 +167,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (notificationBtn) {
 
-        notificationBtn.addEventListener("click", () => {
-
-            alert(
-                "You have 3 new notifications.\n\n" +
-                "• New coding competition available\n" +
-                "• Python assessment result published\n" +
-                "• New skill recommendation available"
-            );
-
+        notificationBtn.addEventListener("click", async () => {
+            try {
+                if (window.TalentHuntAPI) {
+                    const res = await window.TalentHuntAPI.notifications.getAll();
+                    const notifs = res.data.notifications || [];
+                    if (notifs.length === 0) {
+                        alert("You have no new notifications right now.");
+                    } else {
+                        const messages = notifs.slice(0, 4).map(n => `• ${n.title}: ${n.message}`).join("\n\n");
+                        alert(`Your Notifications (${res.data.unreadCount || notifs.length} unread):\n\n${messages}`);
+                    }
+                } else {
+                    alert("Notification system connected.");
+                }
+            } catch (err) {
+                alert("You have no new notifications right now.");
+            }
         });
 
     }

@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // FORM SUBMIT
     // =====================================================
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
 
         event.preventDefault();
 
@@ -268,18 +268,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         // =================================================
-        // SAVE CURRENT TEACHER APPLICATION
+        // BACKEND REGISTRATION & LOCAL STORAGE
         // =================================================
+
+        if (window.TalentHuntAPI) {
+            submitBtn.disabled = true;
+            submitBtn.querySelector("span").textContent = "Registering...";
+
+            try {
+                await TalentHuntAPI.auth.register({
+                    name: teacherApplication.personal.fullName,
+                    email: teacherApplication.personal.email,
+                    password: password.value,
+                    role: "teacher",
+                    phone: teacherApplication.personal.phone,
+                    city: teacherApplication.personal.city,
+                    qualification: teacherApplication.teaching.qualification,
+                    experience: teacherApplication.teaching.experience,
+                    subjects: [teacherApplication.teaching.subject],
+                    specialization: teacherApplication.teaching.category
+                });
+            } catch (err) {
+                alert(err.message || "Registration failed. Please check your details.");
+                submitBtn.disabled = false;
+                submitBtn.querySelector("span").textContent = "Submit Teacher Application";
+                return;
+            }
+        }
 
         localStorage.setItem(
             "talentHuntTeacherApplication",
             JSON.stringify(teacherApplication)
         );
-
-
-        // =================================================
-        // SAVE APPLICATION LIST
-        // =================================================
 
         let applications =
             JSON.parse(
@@ -288,15 +308,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 )
             ) || [];
 
-
         applications.push(teacherApplication);
-
 
         localStorage.setItem(
             "talentHuntTeacherApplications",
             JSON.stringify(applications)
         );
-
 
         // =================================================
         // SHOW SUCCESS MODAL
@@ -305,14 +322,9 @@ document.addEventListener("DOMContentLoaded", () => {
         applicationIdElement.textContent =
             applicationId;
 
-
         successModal.classList.add("show");
 
-
-        // Disable button
         submitBtn.disabled = true;
-
-
         submitBtn.querySelector("span").textContent =
             "Application Submitted";
 

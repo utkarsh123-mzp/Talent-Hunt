@@ -939,6 +939,30 @@ document.addEventListener("DOMContentLoaded", () => {
             JSON.stringify(assessmentResults)
         );
 
+        // Sync to backend for server-side evaluation & talent score updating
+        (async () => {
+            try {
+                if (window.TalentHuntAPI && window.TalentHuntAPI.auth.isAuthenticated()) {
+                    const res = await window.TalentHuntAPI.assessments.getAll();
+                    const list = res.data?.assessments || [];
+                    const target = list.find(a => 
+                        a.title.toLowerCase() === selectedAssessment.toLowerCase() ||
+                        selectedAssessment.toLowerCase().includes(a.title.toLowerCase())
+                    );
+                    if (target) {
+                        const answersPayload = userAnswers.map((ans, idx) => ({
+                            questionIndex: idx,
+                            selectedOption: ans
+                        }));
+                        await window.TalentHuntAPI.assessments.submit(target._id, answersPayload);
+                        console.log("[Backend Assessment Verified]");
+                    }
+                }
+            } catch (err) {
+                console.warn("[Assessment Backend Sync Notice]", err.message);
+            }
+        })();
+
         console.log(
             "Saved Assessment Result:",
             assessmentResults[selectedAssessment]

@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     applyBtn.addEventListener(
         "click",
-        () => {
+        async () => {
 
             const id =
                 applyBtn.dataset.id;
@@ -296,6 +296,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!confirmApply) {
                 return;
+            }
+
+            if (window.TalentHuntAPI && data._id) {
+                try {
+                    await TalentHuntAPI.opportunities.apply(data._id);
+                } catch (err) {
+                    alert(err.message || "Failed to apply");
+                    return;
+                }
             }
 
 
@@ -658,7 +667,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .getElementById("logoutBtn")
         .addEventListener(
             "click",
-            (event) => {
+            async (event) => {
 
                 event.preventDefault();
 
@@ -671,9 +680,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (confirmation) {
 
-                    alert(
-                        "Logout functionality will be connected during backend integration."
-                    );
+                    if (window.TalentHuntAPI) {
+                        try {
+                            await TalentHuntAPI.auth.logout();
+                        } catch (e) {
+                            console.warn("Logout error:", e);
+                        }
+                    }
+
+                    window.location.href =
+                        "../../html/auth/login.html";
 
                 }
 

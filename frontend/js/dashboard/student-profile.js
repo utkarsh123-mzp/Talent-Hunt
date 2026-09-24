@@ -27,21 +27,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       ORIGINAL VALUES
+       ORIGINAL VALUES & BACKEND DATA LOAD
     ========================================= */
 
     let originalValues = {};
 
     function storeOriginalValues() {
-
         editableFields.forEach(field => {
             originalValues[field.id] = field.value;
         });
-
     }
 
-    storeOriginalValues();
+    async function loadStudentProfileData() {
+        try {
+            const api = window.TalentHuntAPI;
+            if (!api) return;
 
+            const res = await api.students.getProfile();
+            if (res.data && res.data.student) {
+                const s = res.data.student;
+                const fn = document.getElementById("fullName");
+                const em = document.getElementById("email");
+                const ph = document.getElementById("phone");
+                const db = document.getElementById("dob");
+                const ct = document.getElementById("city");
+                const cn = document.getElementById("country");
+                const inst = document.getElementById("institution");
+                const yr = document.getElementById("year");
+                const cg = document.getElementById("cgpa");
+                const bio = document.getElementById("bio");
+
+                if (fn && s.name) fn.value = s.name;
+                if (em && s.email) em.value = s.email;
+                if (ph && s.phone) ph.value = s.phone;
+                if (db && s.dateOfBirth) db.value = s.dateOfBirth;
+                if (ct && s.city) ct.value = s.city;
+                if (cn && s.country) cn.value = s.country;
+                if (inst && s.institution) inst.value = s.institution;
+                if (yr && s.year) yr.value = s.year;
+                if (cg && s.cgpa) cg.value = s.cgpa;
+                if (bio && s.bio) bio.value = s.bio;
+
+                if (profileName && s.name) profileName.textContent = s.name;
+                if (topName && s.name) topName.textContent = s.name.split(" ")[0];
+                if (profileInitial && s.name) {
+                    profileInitial.textContent = s.name.trim().charAt(0).toUpperCase();
+                }
+
+                // Render skills from backend
+                if (Array.isArray(s.skills) && s.skills.length > 0 && skillTags) {
+                    skillTags.innerHTML = "";
+                    s.skills.forEach(skill => {
+                        const tag = document.createElement("span");
+                        tag.innerHTML = `
+                            ${escapeHtml(skill)}
+                            <button type="button" class="remove-skill">×</button>
+                        `;
+                        skillTags.appendChild(tag);
+                    });
+                }
+            }
+        } catch (err) {
+            console.warn("[Profile Load Warning]", err.message);
+        } finally {
+            storeOriginalValues();
+        }
+    }
+
+    loadStudentProfileData();
 
     /* =========================================
        EDIT PROFILE
@@ -70,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
        SAVE PROFILE
     ========================================= */
 
-    saveBtn.addEventListener("click", () => {
+    saveBtn.addEventListener("click", async () => {
 
         const fullName = document.getElementById("fullName");
 
@@ -83,47 +136,59 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        // Collect form data
+        const profilePayload = {
+            name: fullName.value.trim(),
+            phone: document.getElementById("phone")?.value.trim() || "",
+            dateOfBirth: document.getElementById("dob")?.value || "",
+            city: document.getElementById("city")?.value.trim() || "",
+            country: document.getElementById("country")?.value.trim() || "India",
+            institution: document.getElementById("institution")?.value.trim() || "",
+            year: document.getElementById("year")?.value || "",
+            cgpa: document.getElementById("cgpa")?.value.trim() || "",
+            bio: document.getElementById("bio")?.value.trim() || ""
+        };
 
-        // Save current values
-        editableFields.forEach(field => {
-            originalValues[field.id] = field.value;
-        });
+        saveBtn.disabled = true;
+        saveBtn.innerHTML = '<i class="ph ph-circle-notch"></i> Saving...';
 
+        try {
+            if (window.TalentHuntAPI) {
+                await window.TalentHuntAPI.students.updateProfile(profilePayload);
+            }
 
-        // Update profile name
-        profileName.textContent = fullName.value;
-        topName.textContent = fullName.value.split(" ")[0];
+            // Save current values
+            editableFields.forEach(field => {
+                originalValues[field.id] = field.value;
+            });
 
-        // Update avatar initial
-        profileInitial.textContent =
-            fullName.value.trim().charAt(0).toUpperCase();
+            // Update profile name
+            profileName.textContent = fullName.value;
+            topName.textContent = fullName.value.split(" ")[0];
 
+            // Update avatar initial
+            profileInitial.textContent =
+                fullName.value.trim().charAt(0).toUpperCase();
 
-        // Save demo data in localStorage
-        localStorage.setItem(
-            "studentName",
-            fullName.value.split(" ")[0]
-        );
+            // Disable editing
+            editableFields.forEach(field => {
+                field.disabled = true;
+            });
 
+            skillInput.value = "";
 
-        // Disable editing
-        editableFields.forEach(field => {
-            field.disabled = true;
-        });
+            editProfileBtn.innerHTML =
+                '<i class="ph ph-pencil-simple"></i> Edit Profile';
 
+            editProfileBtn.classList.remove("editing");
 
-        skillInput.value = "";
-
-        editProfileBtn.innerHTML =
-            '<i class="ph ph-pencil-simple"></i> Edit Profile';
-
-        editProfileBtn.classList.remove("editing");
-
-
-        alert("Profile changes saved successfully!");
-
-
-        console.log("Talent Hunt profile saved.");
+            alert("Profile changes saved successfully!");
+        } catch (error) {
+            alert(error.message || "Failed to update profile.");
+        } finally {
+            saveBtn.disabled = false;
+            saveBtn.innerHTML = '<i class="ph ph-floppy-disk"></i> Save Changes';
+        }
 
     });
 
@@ -355,19 +420,19 @@ document.addEventListener("DOMContentLoaded", () => {
        LOGOUT
     ========================================= */
 
-    logoutBtn.addEventListener("click", () => {
+    logoutBtn.addEventListener("click", async () => {
 
         const confirmLogout = confirm(
             "Are you sure you want to logout?"
         );
 
         if (confirmLogout) {
-
-            localStorage.removeItem("studentName");
-
-            window.location.href =
-                "../auth/login.html";
-
+            if (window.TalentHuntAPI) {
+                await window.TalentHuntAPI.auth.logout();
+            } else {
+                localStorage.clear();
+            }
+            window.location.href = "../auth/login.html";
         }
 
     });

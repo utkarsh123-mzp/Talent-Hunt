@@ -760,7 +760,7 @@ document.addEventListener("DOMContentLoaded", () => {
        APPLY
     ========================================== */
 
-    function applyOpportunity(id) {
+    async function applyOpportunity(id) {
 
         const opportunity =
             opportunities.find(
@@ -783,6 +783,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
+        if (window.TalentHuntAPI && opportunity._id) {
+            try {
+                await TalentHuntAPI.opportunities.apply(opportunity._id);
+            } catch (err) {
+                alert(err.message || "Failed to submit application");
+                return;
+            }
+        }
 
         appliedOpportunities.push({
 
@@ -816,6 +824,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
     }
+
 
 
     /* =========================================
@@ -1145,7 +1154,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         logoutBtn.addEventListener(
             "click",
-            () => {
+            async () => {
+                if (window.TalentHuntAPI) {
+                    try {
+                        await TalentHuntAPI.auth.logout();
+                    } catch (e) {
+                        console.warn("Logout error:", e);
+                    }
+                }
 
                 localStorage.removeItem(
                     "studentName"
@@ -1182,13 +1198,77 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       INITIAL LOAD
+       INITIAL LOAD & BACKEND SYNC
     ========================================== */
 
-    renderOpportunities();
+    async function initOpportunities() {
+        if (window.TalentHuntAPI) {
+            try {
+                const me = await TalentHuntAPI.auth.getMe();
+                if (me.data && me.data.user && studentName) {
+                    studentName.textContent = me.data.user.name;
+                }
+            } catch (e) {}
 
-    renderApplications();
+            try {
+                const res = await TalentHuntAPI.opportunities.getAll();
+                if (res.data && res.data.opportunities && res.data.opportunities.length > 0) {
+                    const backendOpps = res.data.opportunities.map((item, index) => ({
+                        _id: item._id,
+                        id: 5000 + index,
+                        title: item.title,
+                        company: item.organization || "Company",
+                        type: (item.type || "internship").toLowerCase(),
+                        category: (item.category || "software").toLowerCase(),
+                        description: item.description,
+                        location: item.location || "Remote",
+                        mode: item.mode || "Online",
+                        deadline: item.deadline ? new Date(item.deadline).toLocaleDateString("en-IN", { month: "short", day: "numeric", year: "numeric" }) : "Ongoing",
+                        stipend: item.salary || "Competitive",
+                        icon: "ph-briefcase",
+                        skills: item.skills || [],
+                        recommended: true
+                    }));
 
-    updateStats();
+                    backendOpps.forEach(bo => {
+                        if (!opportunities.some(o => o.title.toLowerCase() === bo.title.toLowerCase())) {
+                            opportunities.unshift(bo);
+                        }
+                    });
+                }
+            } catch (e) {
+                console.warn("Error fetching backend opportunities:", e);
+            }
+
+            try {
+                const appRes = await TalentHuntAPI.applications.getMy();
+                if (appRes.data && appRes.data.applications) {
+                    appRes.data.applications.forEach(app => {
+                        if (app.opportunity) {
+                            const oppTitle = app.opportunity.title || "Opportunity";
+                            const oppCompany = app.opportunity.organization || "Company";
+                            if (!appliedOpportunities.some(item => item.title === oppTitle)) {
+                                appliedOpportunities.push({
+                                    id: app.opportunity._id,
+                                    title: oppTitle,
+                                    company: oppCompany,
+                                    date: new Date(app.appliedAt).toLocaleDateString("en-IN"),
+                                    status: app.status
+                                });
+                            }
+                        }
+                    });
+                }
+            } catch (e) {
+                console.warn("Error fetching backend applications:", e);
+            }
+        }
+
+        renderOpportunities();
+        renderApplications();
+        updateStats();
+    }
+
+    initOpportunities();
 
 });

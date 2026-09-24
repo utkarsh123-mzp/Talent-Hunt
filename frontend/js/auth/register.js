@@ -744,79 +744,106 @@ registerForm.addEventListener("submit", (event) => {
     const phone =
         document.getElementById("phone").value.trim();
 
-
-    // Save selected role + basic account data
-
-    const registeredUser = {
-
+    // Prepare role-specific payload
+    const payload = {
+        name: fullName,
         fullName: fullName,
-
         email: email,
-
         phone: phone,
-
         password: password,
-
-        role: selectedRole,
-
-        studentType:
-            selectedRole === "student"
-                ? document.getElementById("studentType")?.value || ""
-                : "",
-
-        registeredAt: new Date().toISOString()
-
+        role: selectedRole
     };
 
-
-    // Save account
-
-    localStorage.setItem(
-        "talentHuntUser",
-        JSON.stringify(registeredUser)
-    );
-
-
-    // Save login session
-
-    localStorage.setItem(
-        "talentHuntLoggedIn",
-        "true"
-    );
-
-
-    // Success message
-
-    alert(
-        "Account created successfully! Welcome to Talent Hunt."
-    );
-
-
-    // Redirect based on role
-
     if (selectedRole === "student") {
+        const studentType = document.getElementById("studentType")?.value || "college";
+        payload.studentType = studentType;
+        payload.institution = document.getElementById("institution")?.value || "";
 
-        const studentType =
-            registeredUser.studentType;
-
-        if (studentType === "college") {
-
-            window.location.href =
-                "../college/college-dashboard.html";
-
-        } else {
-
-            window.location.href =
-                "../dashboard/student-dashboard.html";
-
+        if (studentType === "school") {
+            payload.class = document.getElementById("class")?.value || "";
+            payload.parentName = document.getElementById("parentName")?.value || "";
+        } else if (studentType === "college") {
+            payload.course = document.getElementById("course")?.value || "";
+            payload.branch = document.getElementById("branch")?.value || "";
+            payload.year = document.getElementById("year")?.value || "";
+            payload.cgpa = document.getElementById("cgpa")?.value || "";
         }
-
-    } else {
-
-        alert(
-            "Your role registration is saved. The relevant portal will be connected in a later step."
-        );
-
+    } else if (selectedRole === "school") {
+        payload.schoolName = document.getElementById("schoolName")?.value || fullName;
+        payload.schoolType = document.getElementById("schoolType")?.value || "Private";
+        payload.city = document.getElementById("city")?.value || "";
+        payload.schoolWebsite = document.getElementById("schoolWebsite")?.value || "";
+    } else if (selectedRole === "recruiter") {
+        payload.companyName = document.getElementById("companyName")?.value || fullName;
+        payload.jobRole = document.getElementById("jobRole")?.value || "";
+        payload.companyWebsite = document.getElementById("companyWebsite")?.value || "";
+        payload.industry = document.getElementById("industry")?.value || "Information Technology";
+    } else if (selectedRole === "organization") {
+        payload.organizationName = document.getElementById("organizationName")?.value || fullName;
+        payload.organizationType = document.getElementById("organizationType")?.value || "Educational Institution";
+        payload.organizationWebsite = document.getElementById("organizationWebsite")?.value || "";
+        payload.eventInterest = document.getElementById("eventInterest")?.value || "Coding Competitions";
     }
 
+    const submitBtn = registerForm.querySelector("button[type='submit']");
+    const originalText = submitBtn ? submitBtn.innerHTML : "Create Account";
+
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Creating Account...";
+    }
+
+    (async () => {
+        try {
+            const api = window.TalentHuntAPI;
+            let result;
+
+            if (api && api.auth) {
+                result = await api.auth.register(payload);
+            } else {
+                const res = await fetch("http://localhost:5000/api/auth/register", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify(payload)
+                });
+                result = await res.json();
+                if (!res.ok) {
+                    throw new Error(result.message || "Registration failed");
+                }
+                if (result.data && result.data.token) {
+                    localStorage.setItem("talentHuntToken", result.data.token);
+                    localStorage.setItem("talentHuntUser", JSON.stringify(result.data.user));
+                }
+            }
+
+            const user = result.data.user;
+
+            alert("Account created successfully! Welcome to Talent Hunt.");
+
+            // Redirect based on role
+            if (selectedRole === "student") {
+                if (user.studentType === "college") {
+                    window.location.href = "../college/college-dashboard.html";
+                } else {
+                    window.location.href = "../dashboard/student-dashboard.html";
+                }
+            } else if (selectedRole === "teacher") {
+                window.location.href = "../teacher/teacher-dashboard.html";
+            } else if (selectedRole === "recruiter" || selectedRole === "organization") {
+                window.location.href = "../opportunities/opportunities.html";
+            } else if (selectedRole === "school") {
+                window.location.href = "../hire-teachers/hire-teachers.html";
+            } else {
+                window.location.href = "../dashboard/student-dashboard.html";
+            }
+        } catch (error) {
+            alert(error.message || "Failed to create account. Please try again.");
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        }
+    })();
 });

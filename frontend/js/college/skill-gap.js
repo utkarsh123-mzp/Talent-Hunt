@@ -442,13 +442,24 @@ document.addEventListener("DOMContentLoaded", () => {
        RENDER SKILLS
     ====================================================== */
 
-    function renderSkills() {
+    async function renderSkills() {
 
         const role =
             targetRole.value;
 
-        const skills =
-            roleSkills[role] || [];
+        let skills = roleSkills[role] || [];
+
+        // Fetch evaluated skill gap from backend
+        try {
+            if (window.TalentHuntAPI && window.TalentHuntAPI.auth.isAuthenticated()) {
+                const res = await window.TalentHuntAPI.students.getSkillGap(role);
+                if (res.data && res.data.skills) {
+                    skills = res.data.skills;
+                }
+            }
+        } catch (err) {
+            console.warn("[Skill Gap Backend Notice]", err.message);
+        }
 
 
         skillsGrid.innerHTML = "";

@@ -172,141 +172,74 @@ loginForm.addEventListener("submit", (event) => {
     // -----------------------------------------
 
     // =========================================
-    // CHECK REGISTERED ACCOUNT
+    // REAL BACKEND AUTHENTICATION
     // =========================================
 
-    const registeredUser =
-        JSON.parse(
-            localStorage.getItem("talentHuntUser")
-        );
+    const submitButton = loginForm.querySelector("button[type='submit']");
+    const originalBtnText = submitButton ? submitButton.innerHTML : "Login";
 
-
-    // =========================================
-    // LOGIN SESSION
-    // =========================================
-
-    if (!registeredUser) {
-
-        alert(
-            "No account found. Please create an account first."
-        );
-
-        return;
-
+    if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.innerHTML = "Logging in...";
     }
 
+    (async () => {
+        try {
+            const api = window.TalentHuntAPI;
+            let result;
 
-    // =========================================
-    // CHECK EMAIL
-    // =========================================
+            if (api && api.auth) {
+                result = await api.auth.login(email, password);
+            } else {
+                // Fallback direct fetch if api.js was somehow loaded out of order
+                const res = await fetch("http://localhost:5000/api/auth/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    credentials: "include",
+                    body: JSON.stringify({ email, password })
+                });
+                result = await res.json();
+                if (!res.ok) {
+                    throw new Error(result.message || "Login failed");
+                }
+                if (result.data && result.data.token) {
+                    localStorage.setItem("talentHuntToken", result.data.token);
+                    localStorage.setItem("talentHuntUser", JSON.stringify(result.data.user));
+                }
+            }
 
-    if (
-        registeredUser.email.toLowerCase() !==
-        email.toLowerCase()
-    ) {
+            const user = result.data.user;
 
-        alert(
-            "No account found with this email address."
-        );
+            alert("Login successful! Welcome to Talent Hunt.");
 
-        return;
-
-    }
-
-
-    // =========================================
-    // CHECK PASSWORD
-    // =========================================
-
-    if (
-        registeredUser.password !== password
-    ) {
-
-        alert(
-            "Incorrect password. Please try again."
-        );
-
-        passwordInput.focus();
-
-        return;
-
-    }
-
-
-    // =========================================
-    // CREATE LOGIN SESSION
-    // =========================================
-
-    localStorage.setItem(
-        "talentHuntLoggedIn",
-        "true"
-    );
-
-
-    // Save current user
-
-    localStorage.setItem(
-        "talentHuntCurrentUser",
-        JSON.stringify(registeredUser)
-    );
-
-
-    // =========================================
-    // SUCCESS
-    // =========================================
-
-    alert(
-        "Login successful! Welcome to Talent Hunt."
-    );
-
-
-    // =========================================
-    // ROLE BASED REDIRECT
-    // =========================================
-
-    if (registeredUser.role === "student") {
-
-        if (
-            registeredUser.studentType ===
-            "college"
-        ) {
-
-            window.location.href =
-                "../college/college-dashboard.html";
-
-        } else {
-
-            window.location.href =
-                "../dashboard/student-dashboard.html";
-
+            // Role-based navigation
+            if (user.role === "student") {
+                if (user.studentType === "college") {
+                    window.location.href = "../college/college-dashboard.html";
+                } else {
+                    window.location.href = "../dashboard/student-dashboard.html";
+                }
+            } else if (user.role === "teacher") {
+                window.location.href = "../teacher/teacher-dashboard.html";
+            } else if (user.role === "recruiter" || user.role === "organization") {
+                window.location.href = "../opportunities/opportunities.html";
+            } else if (user.role === "school") {
+                window.location.href = "../hire-teachers/hire-teachers.html";
+            } else if (user.role === "admin") {
+                window.location.href = "../admin/teacher-applications.html";
+            } else {
+                window.location.href = "../dashboard/student-dashboard.html";
+            }
+        } catch (error) {
+            alert(error.message || "Invalid credentials. Please try again.");
+            passwordInput.focus();
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalBtnText;
+            }
         }
-
-    } else {
-
-        alert(
-            "Your portal will be connected soon."
-        );
-
-    }
-
-
-    /*
-        IMPORTANT:
-
-        Abhi backend/database connected nahi hai.
-
-        Isliye yahan actual authentication nahi ho raha.
-        Backend connect hone ke baad isi section mein:
-
-        1. API request
-        2. Authentication
-        3. JWT token
-        4. Role detection
-        5. Dashboard redirect
-
-        implement karenge.
-    */
-
+    })();
 });
 
 

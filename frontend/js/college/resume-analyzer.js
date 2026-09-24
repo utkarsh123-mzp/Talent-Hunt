@@ -415,7 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
        ANALYZE FUNCTION
     ====================================================== */
 
-    function analyzeResume() {
+    async function analyzeResume() {
 
         analyzeBtn.disabled = true;
 
@@ -427,22 +427,61 @@ document.addEventListener("DOMContentLoaded", () => {
             "show"
         );
 
-
         loadingCard.scrollIntoView({
             behavior: "smooth",
             block: "center"
         });
 
+        try {
+            let analysis = null;
 
-        /*
-         * Frontend demo analysis.
-         *
-         * Later this section can be connected
-         * with backend / AI API.
-         */
+            if (window.TalentHuntAPI && currentFile) {
+                const res = await window.TalentHuntAPI.resumes.upload(currentFile);
+                if (res.data && res.data.resume) {
+                    analysis = res.data.resume.analysis;
+                }
+            }
 
-        setTimeout(() => {
+            if (analysis) {
+                // Populate ATS score
+                const atsScoreEl = document.getElementById("atsScore");
+                if (atsScoreEl) atsScoreEl.textContent = analysis.atsScore || 82;
 
+                const scoreCardHeaders = document.querySelectorAll(".score-grid .score-card strong");
+                if (scoreCardHeaders.length >= 4) {
+                    scoreCardHeaders[1].textContent = `${analysis.keywordsMatch || 78}%`;
+                    scoreCardHeaders[2].textContent = `${analysis.skillsStrength || 85}%`;
+                    scoreCardHeaders[3].textContent = `${analysis.formattingScore || 90}%`;
+                }
+
+                // Populate Detected Skills
+                if (Array.isArray(analysis.detectedSkills) && analysis.detectedSkills.length > 0) {
+                    const skillTagsContainer = document.querySelector(".skill-tags");
+                    if (skillTagsContainer) {
+                        skillTagsContainer.innerHTML = analysis.detectedSkills
+                            .map(skill => `<span>${skill}</span>`)
+                            .join("");
+                    }
+                    const countBadge = document.querySelector(".count-badge");
+                    if (countBadge) {
+                        countBadge.textContent = `${analysis.detectedSkills.length} Skills`;
+                    }
+                }
+
+                // Populate Recommended Keywords
+                if (Array.isArray(analysis.recommendedKeywords) && analysis.recommendedKeywords.length > 0) {
+                    const kwList = document.querySelector(".keyword-list");
+                    if (kwList) {
+                        kwList.innerHTML = analysis.recommendedKeywords
+                            .map(kw => `<span>${kw}</span>`)
+                            .join("");
+                    }
+                }
+            }
+        } catch (err) {
+            console.warn("[Resume API Warning]", err.message);
+            // Graceful fallback to existing visual report
+        } finally {
             loadingCard.classList.remove(
                 "show"
             );
@@ -453,14 +492,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             analyzeBtn.disabled = false;
 
-
             resultsSection.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
-
-
-        }, 2200);
+        }
 
     }
 
